@@ -1,0 +1,6 @@
+2026-10-15T09:00:01Z host01 sshd Failed password for invalid user admin from 203.0.113.25 port 51201 ssh2
+2026-10-15T09:00:04Z host01 sshd Failed password for invalid user admin from 203.0.113.25 port 51202 ssh2
+2026-10-15T09:00:07Z host01 sshd Failed password for invalid user admin from 203.0.113.25 port 51203 ssh2
+2026-10-15T09:00:10Z host01 sshd Failed password for invalid user admin from 203.0.113.25 port 51204 ssh2
+2026-10-15T09:01:15Z host01 sshd Accepted publickey for analyst from 192.0.2.10 port 51400 ssh2
+2026-10-15T09:02:30Z host01 sshd Failed password for invalid user guest from 198.51.100.40 port 51500 ssh2
