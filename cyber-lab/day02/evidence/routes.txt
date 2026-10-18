@@ -1,0 +1,2 @@
+default via 192.168.31.1 dev wlan0 proto dhcp src 192.168.31.80 metric 600 
+192.168.31.0/24 dev wlan0 proto kernel scope link src 192.168.31.80 metric 600 

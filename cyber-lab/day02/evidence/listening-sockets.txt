@@ -1,0 +1,5 @@
+Netid State  Recv-Q Send-Q                     Local Address:Port  Peer Address:PortProcess                                   
+udp   UNCONN 0      0      [fe80::2ddd:13bf:3a90:b971]%wlan0:546           [::]:*    users:(("NetworkManager",pid=1797,fd=22))
+udp   UNCONN 0      0                                      *:58972            *:*    users:(("firefox-esr",pid=5029,fd=136))  
+tcp   LISTEN 0      128                              0.0.0.0:2222       0.0.0.0:*    users:(("sshd",pid=1873,fd=6))           
+tcp   LISTEN 0      128                                 [::]:2222          [::]:*    users:(("sshd",pid=1873,fd=7))           

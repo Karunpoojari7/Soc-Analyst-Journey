@@ -1,0 +1,12 @@
+Netid State Recv-Q Send-Q                             Local Address:Port                              Peer Address:Port
+udp   ESTAB 0      0                            192.168.31.80%wlan0:68                                192.168.31.1:67  
+tcp   ESTAB 0      0                                  192.168.31.80:34204                            34.107.243.93:443 
+tcp   ESTAB 0      0                                  192.168.31.80:41002                            140.82.114.26:443 
+tcp   ESTAB 0      0      [2409:4091:90ec:720a:e02f:b6ce:5e01:5458]:47386  [2606:4700:9c61:d8b7:9ac6:fa:ccf5:ac50]:443 
+tcp   ESTAB 0      0      [2409:4091:90ec:720a:e02f:b6ce:5e01:5458]:51820  [2606:4700:9c61:d8b7:9ac6:fa:ccf5:ac50]:443 
+tcp   ESTAB 0      0      [2409:4091:90ec:720a:e02f:b6ce:5e01:5458]:57304 [2606:4700:9c61:d8b7:9a3b:dcf:ccf5:ac50]:443 
+tcp   ESTAB 0      0      [2409:4091:90ec:720a:e02f:b6ce:5e01:5458]:41500 [2606:4700:9c61:d8b7:9a3b:dcf:ccf5:ac50]:443 
+tcp   ESTAB 0      0      [2409:4091:90ec:720a:e02f:b6ce:5e01:5458]:52464 [2606:4700:83b1:d8b7:9a3b:dd2:ccf5:ac50]:443 
+tcp   ESTAB 0      0      [2409:4091:90ec:720a:e02f:b6ce:5e01:5458]:51006                      [2a04:4e42:25::347]:443 
+tcp   ESTAB 0      0      [2409:4091:90ec:720a:e02f:b6ce:5e01:5458]:43528 [2606:4700:83b1:d8b7:9afe:dd1:ccf5:ac50]:443 
+tcp   ESTAB 0      0      [2409:4091:90ec:720a:e02f:b6ce:5e01:5458]:46014 [2606:4700:9c62:7cbc:c2c6:dcf:5ff2:75c4]:443 

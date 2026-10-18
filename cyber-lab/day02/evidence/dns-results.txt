@@ -1,0 +1,64 @@
+=== A ===
+
+; <<>> DiG 9.20.11-4+b1-Debian <<>> example.com A
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 41639
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		169	IN	A	104.20.23.154
+example.com.		169	IN	A	172.66.147.243
+
+;; Query time: 55 msec
+;; SERVER: 192.168.31.1#53(192.168.31.1) (UDP)
+;; WHEN: Sat Oct 17 07:38:31 UTC 2026
+;; MSG SIZE  rcvd: 72
+
+=== AAAA ===
+
+; <<>> DiG 9.20.11-4+b1-Debian <<>> example.com AAAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 26239
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;example.com.			IN	AAAA
+
+;; ANSWER SECTION:
+example.com.		37	IN	AAAA	2606:4700:9c65:72db:f2c6:dd1:ef6b:ff98
+
+;; Query time: 3 msec
+;; SERVER: 192.168.31.1#53(192.168.31.1) (UDP)
+;; WHEN: Sat Oct 17 07:38:31 UTC 2026
+;; MSG SIZE  rcvd: 68
+
+=== MX ===
+
+; <<>> DiG 9.20.11-4+b1-Debian <<>> example.com MX
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 60632
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;example.com.			IN	MX
+
+;; ANSWER SECTION:
+example.com.		300	IN	MX	0 .
+
+;; Query time: 23 msec
+;; SERVER: 192.168.31.1#53(192.168.31.1) (UDP)
+;; WHEN: Sat Oct 17 07:38:31 UTC 2026
+;; MSG SIZE  rcvd: 55
+
