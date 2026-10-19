@@ -1,42 +1,38 @@
 # SOC Analyst Learning Journey
 
-Hands-on cybersecurity learning portfolio documenting SOC fundamentals, network traffic analysis, and incident investigation using Kali Linux and related tools.
+Hands-on cybersecurity portfolio documenting practical SOC investigations,
+network traffic analysis, log analysis, and defensive security fundamentals.
 
-## Labs
+## Learning Labs
 
-### Day 1 — SOC Fundamentals
-- SOC basics and incident investigation
-- Authentication log analysis
-- SSH investigation notes
-
-### Day 2 — Network Traffic Analysis
-- Network traffic capture and analysis
-- DNS and TCP observations
-- Network investigation notes
-
-### Day 3 — TLS SNI and QUIC Analysis
-- TLS Client Hello and SNI analysis
-- QUIC traffic over UDP port 443
-- Packet metadata and hostname observations
-- Evidence-based reporting
-
-## Repository Structure
-
-- `foundations/` — SOC fundamentals
-- `commands/` — command references
-- `day01/` — Day 1 lab materials
-- `day02/` — Day 2 lab materials
-- `report/` — investigation reports
-- `evidence-notes/` — sanitized evidence notes
-- `social/` — learning progress post drafts
+| Day | Lab | Skills Practiced | Report |
+|---|---|---|---|
+| 01 | SOC Fundamentals | Authentication logs, SSH investigation, incident documentation | [Day 1](Day-01-SOC-Fundamentals/README.md) |
+| 02 | Network Traffic Analysis | Packet capture, DNS, TCP, traffic inspection | [Day 2](Day-02-Network-Traffic-Analysis/README.md) |
+| 03 | TLS SNI and QUIC Analysis | TShark, TLS Client Hello, SNI, UDP/443, evidence-based reporting | [Day 3](Day-03-TLS-SNI-QUIC-Analysis/README.md) |
 
 ## Tools
 
 - Kali Linux
 - TShark
+- Wireshark
 - Git and GitHub
-- PCAP analysis
+- Linux command-line tools
 
-## Ethics and Scope
+## Repository Structure
 
-These exercises are for authorized learning and defensive analysis. No raw packet captures are included in this portfolio. Findings are documented based on observed evidence; suspicious activity is not declared malicious without supporting evidence.
+- `Day-01-SOC-Fundamentals/` — fundamentals, commands, evidence, and investigation notes
+- `Day-02-Network-Traffic-Analysis/` — network analysis commands and evidence
+- `Day-03-TLS-SNI-QUIC-Analysis/` — TLS/QUIC investigation, report, and learning post
+- `docs/` — lab safety and documentation
+
+## Methodology
+
+Each lab records the objective, commands, observations, interpretation, limitations,
+and conclusions. Findings are based on the available evidence; unusual traffic is not
+automatically classified as malicious.
+
+## Ethics and Safety
+
+All practical exercises are conducted within authorized learning environments.
+Raw packet captures and sensitive data are excluded from this public portfolio.
