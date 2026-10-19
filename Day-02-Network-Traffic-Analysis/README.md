@@ -1,15 +1,15 @@
 # Day 2 — Network Traffic Analysis
 
-## Topics
-- Packet capture and inspection
-- DNS query analysis
-- TCP traffic and connection observations
-- Network evidence documentation
+## Objective
+Practice network traffic inspection and document observations from the Day 2 lab.
 
 ## Contents
-- `commands/` — TShark and network investigation commands
-- `evidence/` — sanitized observations
-- `report/` — investigation report
+- `commands/` — network traffic analysis commands
+- `report/` — original Day 2 network traffic report
 
-## Conclusion
-Record observed facts separately from assumptions. A destination, port, or repeated packet alone does not prove malicious activity.
+## Report
+[Read the Day 2 SOC Network Traffic Report](report/Day-2-SOC-Network-Traffic-Report.md)
+
+## Evidence
+Original lab evidence is stored locally under `~/cyber-lab/day02/evidence/`.
+Raw packet captures are not included in this repository.
