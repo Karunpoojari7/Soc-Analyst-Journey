@@ -1,38 +1,41 @@
 # SOC Analyst Learning Journey
 
-Hands-on cybersecurity portfolio documenting practical SOC investigations,
-network traffic analysis, log analysis, and defensive security fundamentals.
+Hands-on cybersecurity portfolio documenting SOC fundamentals, network traffic analysis, protocol investigations, and evidence-based security assessments.
 
 ## Learning Labs
 
-| Day | Lab | Skills Practiced | Report |
+| Day | Investigation | Skills Practiced | Documentation |
 |---|---|---|---|
 | 01 | SOC Fundamentals | Authentication logs, SSH investigation, incident documentation | [Day 1](Day-01-SOC-Fundamentals/README.md) |
-| 02 | Network Traffic Analysis | Packet capture, DNS, TCP, traffic inspection | [Day 2](Day-02-Network-Traffic-Analysis/README.md) |
-| 03 | TLS SNI and QUIC Analysis | TShark, TLS Client Hello, SNI, UDP/443, evidence-based reporting | [Day 3](Day-03-TLS-SNI-QUIC-Analysis/README.md) |
-
-## Tools
-
-- Kali Linux
-- TShark
-- Wireshark
-- Git and GitHub
-- Linux command-line tools
+| 02 | Network Traffic Analysis | PCAPs, DNS, TCP, interfaces, sockets and routes | [Day 2](Day-02-Network-Traffic-Analysis/README.md) |
+| 03 | TLS, SNI & QUIC Analysis | TLS Client Hello, SNI inspection and QUIC over UDP | [Day 3](Day-03-TLS-SNI-QUIC-Analysis/README.md) |
+| 04 | TCP, DNS & TLS Investigation | TCP stream analysis, DNS-to-TLS correlation and connection termination | [Day 4](Day-04-TCP-DNS-TLS-Investigation/README.md) |
 
 ## Repository Structure
 
-- `Day-01-SOC-Fundamentals/` — fundamentals, commands, evidence, and investigation notes
-- `Day-02-Network-Traffic-Analysis/` — network analysis commands and evidence
-- `Day-03-TLS-SNI-QUIC-Analysis/` — TLS/QUIC investigation, report, and learning post
-- `docs/` — lab safety and documentation
+- `Day-01-SOC-Fundamentals/` — authentication logs and investigation fundamentals
+- `Day-02-Network-Traffic-Analysis/` — packet evidence, commands and report
+- `Day-03-TLS-SNI-QUIC-Analysis/` — TLS/SNI and QUIC analysis
+- `Day-04-TCP-DNS-TLS-Investigation/` — TCP stream and DNS/TLS correlation
+- `detections/` — reusable detection content
+- `scripts/` — reusable scripts and automation
 
-## Methodology
+## Tools and Techniques
 
-Each lab records the objective, commands, observations, interpretation, limitations,
-and conclusions. Findings are based on the available evidence; unusual traffic is not
-automatically classified as malicious.
+- Kali Linux and Linux command-line tools
+- TShark and packet capture analysis
+- DNS query and response inspection
+- TCP connection lifecycle analysis
+- TLS SNI and QUIC traffic inspection
+- Git and GitHub
 
-## Ethics and Safety
+## Investigation Principles
 
-All practical exercises are conducted within authorized learning environments.
-Raw packet captures and sensitive data are excluded from this public portfolio.
+- Record observable evidence before drawing conclusions.
+- Separate confirmed observations from assumptions.
+- Do not treat encrypted traffic or TCP resets as inherently malicious.
+- Document limitations and recommended follow-up actions.
+
+## Disclaimer
+
+This repository is for educational and authorized defensive-security practice. Findings should not be interpreted as proof of malicious activity without supporting evidence.
