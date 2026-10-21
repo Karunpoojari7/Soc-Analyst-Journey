@@ -1,0 +1,10 @@
+Oct 21 08:14:02 kali sshd[2101]: Failed password for invalid user admin from 198.51.100.23 port 51422 ssh2
+Oct 21 08:14:08 kali sshd[2102]: Failed password for invalid user test from 198.51.100.23 port 51423 ssh2
+Oct 21 08:14:14 kali sshd[2103]: Failed password for invalid user guest from 198.51.100.23 port 51424 ssh2
+Oct 21 08:14:20 kali sshd[2104]: Failed password for invalid user admin from 198.51.100.23 port 51425 ssh2
+Oct 21 08:15:01 kali sshd[2201]: Failed password for kali from 203.0.113.44 port 52110 ssh2
+Oct 21 08:15:08 kali sshd[2202]: Failed password for kali from 203.0.113.44 port 52111 ssh2
+Oct 21 08:15:16 kali sshd[2203]: Accepted password for kali from 203.0.113.44 port 52112 ssh2
+Oct 21 08:15:17 kali sshd[2203]: pam_unix(sshd:session): session opened for user kali(uid=1000)
+Oct 21 08:16:03 kali sshd[2301]: Accepted publickey for kali from 192.0.2.55 port 53001 ssh2
+Oct 21 08:16:04 kali sshd[2301]: pam_unix(sshd:session): session closed for user kali
