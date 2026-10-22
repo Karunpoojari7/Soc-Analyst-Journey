@@ -1,0 +1,10 @@
+2026-10-21T09:14:02Z EventID=4625 Account=alex LogonType=10 SourceIP=198.51.100.23 Result=Failure
+2026-10-21T09:14:08Z EventID=4625 Account=alex LogonType=10 SourceIP=198.51.100.23 Result=Failure
+2026-10-21T09:14:15Z EventID=4625 Account=alex LogonType=10 SourceIP=198.51.100.23 Result=Failure
+2026-10-21T09:15:01Z EventID=4624 Account=alex LogonType=10 SourceIP=198.51.100.23 Result=Success
+2026-10-21T09:17:20Z EventID=4624 Account=svc_backup LogonType=3 SourceIP=192.0.2.40 Result=Success
+2026-10-21T09:18:45Z EventID=4720 Account=unknown_actor TargetAccount=temp_support Action=UserCreated
+2026-10-21T09:19:10Z EventID=4624 Account=alex LogonType=2 SourceIP=LOCAL Result=Success
+2026-10-21T09:21:05Z EventID=4625 Account=guest LogonType=3 SourceIP=203.0.113.77 Result=Failure
+2026-10-21T09:21:12Z EventID=4625 Account=guest LogonType=3 SourceIP=203.0.113.77 Result=Failure
+2026-10-21T09:25:00Z EventID=1102 Account=admin Action=SecurityAuditLogCleared

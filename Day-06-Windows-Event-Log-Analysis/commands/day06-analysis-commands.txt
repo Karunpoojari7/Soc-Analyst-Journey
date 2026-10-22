@@ -1,0 +1,26 @@
+# Day 6: Windows Event Log Analysis
+# Dataset: synthetic training records only
+
+# Count all records
+wc -l evidence/windows-security-sample.log
+
+# Count failed logons
+grep -c 'EventID=4625' evidence/windows-security-sample.log
+
+# Count successful logons
+grep -c 'EventID=4624' evidence/windows-security-sample.log
+
+# Count events by ID
+grep -o 'EventID=[0-9]*' evidence/windows-security-sample.log | sort | uniq -c
+
+# Display records in chronological order
+sort evidence/windows-security-sample.log
+
+# Review failed logons
+grep 'EventID=4625' evidence/windows-security-sample.log
+
+# Review successful logons
+grep 'EventID=4624' evidence/windows-security-sample.log
+
+# Review account creation and audit-log clearing
+grep -E 'EventID=(4720|1102)' evidence/windows-security-sample.log
