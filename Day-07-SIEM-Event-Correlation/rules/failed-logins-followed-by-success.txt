@@ -1,0 +1,19 @@
+Rule name: Repeated Failed Logins Followed by Success
+
+Purpose:
+Identify an account and source IP with at least 3 failed login
+events followed by a successful login within 5 minutes.
+
+Match conditions:
+1. Same username.
+2. Same source IP.
+3. At least 3 failed login events.
+4. A successful login occurs after the failures.
+5. The successful login is within 5 minutes of the first failure.
+
+Severity: Medium (initial triage; validate local context)
+
+Limitations:
+This is a simplified training rule. It does not establish compromise.
+Production detection requires suitable event parsing, time-window
+handling, deduplication and environment-specific tuning.

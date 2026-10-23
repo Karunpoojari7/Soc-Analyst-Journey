@@ -1,0 +1,1 @@
+ALERT user=alex src_ip=192.0.2.25 failed_count=3 success_time=2026-10-23T09:01:02+00:00 window=5m
