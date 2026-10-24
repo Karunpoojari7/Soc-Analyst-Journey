@@ -1,0 +1,4 @@
+ceddca34f6ae11446385a1ea4d8308933972028102b4cc06966c1a82bf44c8b9  rules/local-lab.rules
+b923a0d115aad4f6dc00a0d40e7a0828e29b0bf5fa872566d72a45608a4aed2f  rules/test-alert.rules
+3b679774d33975a8bb4dffd3cd729e675542ff5005612e1dbad0eacc393bc9c7  results/alerts.txt
+9dba2243878a9d5b400a4bf438b2d0ff93b77960a70b40be261935a817529c1f  report/day08-suricata-investigation.md

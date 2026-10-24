@@ -1,0 +1,1 @@
+alert http any any -> any any (msg:"DAY08 LAB HTTP training marker"; http.uri; content:"/training-check"; sid:1000001; rev:2;)
