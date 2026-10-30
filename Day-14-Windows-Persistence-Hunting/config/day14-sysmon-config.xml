@@ -1,0 +1,15 @@
+﻿<Sysmon schemaversion="4.91">
+  <HashAlgorithms>SHA256</HashAlgorithms>
+  <EventFiltering>
+    <RuleGroup name="Persistence Registry Monitoring" groupRelation="or">
+      <RegistryEvent onmatch="include">
+        <TargetObject condition="contains">\CurrentVersion\Run\</TargetObject>
+        <TargetObject condition="contains">\CurrentVersion\RunOnce</TargetObject>
+        <TargetObject condition="contains">\CurrentControlSet\Services\</TargetObject>
+        <TargetObject condition="contains">\Winlogon</TargetObject>
+        <TargetObject condition="contains">\Schedule\TaskCache\</TargetObject>
+        <TargetObject condition="contains">\Software\VIGILYX-Sysmon-Lab</TargetObject>
+      </RegistryEvent>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
