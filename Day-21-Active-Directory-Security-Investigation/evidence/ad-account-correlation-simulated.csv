@@ -1,0 +1,9 @@
+EventID,TimeCreated,SubjectUserName,TargetUserName,TargetGroupName
+4720,2026-11-06T10:00:00,admin01,newadmin,
+4722,2026-11-06T10:02:00,admin01,newadmin,
+4724,2026-11-06T10:04:00,admin01,newadmin,
+4728,2026-11-06T10:06:00,admin01,newadmin,Domain Admins
+4720,2026-11-06T10:10:00,helpdesk01,newuser,
+4722,2026-11-06T10:12:00,helpdesk01,newuser,
+4728,2026-11-06T10:14:00,helpdesk01,newuser,IT Support
+4728,2026-11-06T10:20:00,unknown_user,guest01,Enterprise Admins

@@ -1,0 +1,8 @@
+EventID,TimeCreated,TargetUserName,IpAddress,PreAuthType,ServiceName,TicketEncryptionType
+4768,2026-11-06T09:00:00,alice,192.0.2.10,2,krbtgt,0x12
+4768,2026-11-06T09:05:00,svc_backup,192.0.2.25,0,krbtgt,0x12
+4769,2026-11-06T09:10:00,alice,192.0.2.10,,HTTP/web01,0x12
+4769,2026-11-06T09:11:00,svc_backup,192.0.2.25,,MSSQLSvc/db01,0x17
+4769,2026-11-06T09:12:00,svc_backup,192.0.2.25,,HTTP/web01,0x17
+4769,2026-11-06T09:13:00,svc_backup,192.0.2.25,,CIFS/fileserver,0x17
+4769,2026-11-06T09:14:00,alice,192.0.2.10,,HTTP/web01,0x12

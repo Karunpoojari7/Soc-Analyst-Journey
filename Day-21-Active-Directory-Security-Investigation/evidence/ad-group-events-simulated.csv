@@ -1,0 +1,7 @@
+EventID,TimeCreated,SubjectUserName,MemberName,TargetGroupName,Computer
+4728,2026-11-06T09:00:00,admin01,alice,Domain Admins,DC01
+4728,2026-11-06T09:05:00,helpdesk01,bob,IT Support,DC01
+4732,2026-11-06T09:10:00,unknown_user,guest01,Administrators,DC01
+4756,2026-11-06T09:15:00,admin01,svc_backup,Enterprise Admins,DC01
+4729,2026-11-06T09:20:00,admin01,alice,Domain Admins,DC01
+4732,2026-11-06T09:25:00,admin01,contractor01,Remote Desktop Users,DC01
