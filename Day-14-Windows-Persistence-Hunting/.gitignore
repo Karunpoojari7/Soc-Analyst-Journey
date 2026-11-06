@@ -1,0 +1,11 @@
+# Private investigation data
+data/
+*.csv
+*.evtx
+
+# Configuration backups
+*.backup
+
+# Temporary files
+*.tmp
+*.log
