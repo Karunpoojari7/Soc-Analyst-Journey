@@ -1,0 +1,25 @@
+{
+    "source_email": "simulated-phishing-email.eml",
+    "analysis_type": "Offline URL structural analysis",
+    "url_count": 1,
+    "results": [
+        {
+            "url": "https://example.net/secure-account-verification",
+            "scheme": "https",
+            "hostname": "example.net",
+            "path": "/secure-account-verification",
+            "query_present": false,
+            "is_ip_address": false,
+            "indicators": [
+                "Contains account-related keywords"
+            ]
+        }
+    ],
+    "limitations": [
+        "No external website was contacted",
+        "No domain reputation lookup was performed",
+        "Structural indicators do not prove maliciousness",
+        "HTTPS does not guarantee a website is safe",
+        "Domain ownership and registration were not verified"
+    ]
+}
