@@ -1,0 +1,43 @@
+{
+    "file_name": "simulated-phishing-email.eml",
+    "message_id": "<training-phishing-001@example.net>",
+    "date": "Sun, 08 Nov 2026 09:30:00 +0000",
+    "subject": "URGENT: Account Verification Required",
+    "from": "IT Support <security@example.com>",
+    "from_addresses": [
+        "security@example.com"
+    ],
+    "reply_to": "account-help@example.net",
+    "reply_to_addresses": [
+        "account-help@example.net"
+    ],
+    "return_path": "<mailer@example.net>",
+    "return_path_addresses": [
+        "mailer@example.net"
+    ],
+    "sender_reply_to_mismatch": true,
+    "received_headers": [],
+    "authentication_results": [
+        {
+            "mechanism": "SPF",
+            "result": "fail"
+        },
+        {
+            "mechanism": "DKIM",
+            "result": "none"
+        },
+        {
+            "mechanism": "DMARC",
+            "result": "fail"
+        }
+    ],
+    "urls": [
+        "https://example.net/secure-account-verification"
+    ],
+    "limitations": [
+        "Header values in an untrusted email may be forged",
+        "Authentication results require trusted gateway validation",
+        "Missing Received headers do not establish the message route",
+        "URL extraction does not establish URL reputation"
+    ]
+}
