@@ -1,0 +1,18 @@
+{
+    "file_name": "invoice-review.html",
+    "extension": ".html",
+    "size_bytes": 319,
+    "detected_file_type": "HTML document, ASCII text",
+    "detected_mime_type": "text/html",
+    "extension_mime_guess": "text/html",
+    "md5": "59a1abd1e7bfcf89a030cd1f171e0b9c",
+    "sha256": "77e9549c6bcaf0a195aa963ca6a256a798694ff7063eb0afb42dd34e94ac06f1",
+    "indicator_matches": [],
+    "potential_extension_mismatch": false,
+    "limitations": [
+        "Static metadata and string inspection only",
+        "No attachment was executed",
+        "String matches do not prove malicious behaviour",
+        "No macro or embedded-object analysis performed"
+    ]
+}
