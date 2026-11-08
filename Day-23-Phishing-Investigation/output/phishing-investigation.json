@@ -1,0 +1,45 @@
+{
+    "source_email": "simulated-phishing-email.eml",
+    "source_sha256": "69177960d656b54bc406b2a073c03fc34afb95b063b942181b620b0fd3f32255",
+    "from": "IT Support <security@example.com>",
+    "reply_to": "account-help@example.net",
+    "sender_reply_to_mismatch": true,
+    "authentication_results": {
+        "SPF": [
+            "fail"
+        ],
+        "DKIM": [
+            "none"
+        ],
+        "DMARC": [
+            "fail"
+        ]
+    },
+    "urls": [
+        {
+            "url": "https://example.net/secure-account-verification",
+            "hostname": "example.net",
+            "path": "/secure-account-verification",
+            "indicators": [
+                "Account-related keywords"
+            ]
+        }
+    ],
+    "attachments": [],
+    "investigation_indicators": [
+        "Account-related keywords",
+        "Email authentication concern reported",
+        "From and Reply-To addresses differ",
+        "Urgency or pressure language"
+    ],
+    "indicator_count": 4,
+    "assessment": "REVIEW REQUIRED",
+    "limitations": [
+        "This is a triage aid, not a definitive phishing classifier",
+        "Authentication headers require trusted gateway validation",
+        "URLs were not visited or reputation-checked",
+        "Attachment content was not executed",
+        "No mailbox or endpoint telemetry was correlated",
+        "Missing attachments cannot be ruled out by this report"
+    ]
+}
