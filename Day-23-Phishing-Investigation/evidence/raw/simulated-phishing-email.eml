@@ -1,0 +1,28 @@
+From: IT Support <security@example.com>
+Reply-To: account-help@example.net
+Return-Path: <mailer@example.net>
+To: employee@example.org
+Date: Sun, 08 Nov 2026 09:30:00 +0000
+Subject: URGENT: Account Verification Required
+Message-ID: <training-phishing-001@example.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Authentication-Results: mx.example.org;
+    spf=fail;
+    dkim=none;
+    dmarc=fail
+
+Dear Employee,
+
+Your company account requires immediate verification.
+
+Failure to complete verification may result in account suspension.
+
+Please review your account using the following training URL:
+
+https://example.net/secure-account-verification
+
+If you have questions, reply to account-help@example.net.
+
+Regards,
+IT Support Team
