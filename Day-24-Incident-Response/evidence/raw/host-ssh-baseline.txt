@@ -1,0 +1,20 @@
+DAY 24 - REAL HOST BASELINE
+Collection type: Read-only local observation
+System: Kali Linux
+Authentication source: systemd journal
+Traditional /var/log/auth.log: Not present
+
+SSH service: Active
+SSH listener: TCP 2222
+IPv4 binding: 0.0.0.0:2222
+IPv6 binding: [::]:2222
+
+Current-boot SSH service records: 4
+Current-boot sshd records: 2
+Successful authentication events observed: 0
+Failed password events observed: 0
+Invalid-user events observed: 0
+
+Assessment:
+The available current-boot records show SSH service startup and listener
+information. No authentication attack is established by this evidence.
