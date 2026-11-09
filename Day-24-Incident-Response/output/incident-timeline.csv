@@ -1,0 +1,10 @@
+timestamp,event,process_id
+"Nov 09 06:10:02","Failed authentication","4101"
+"Nov 09 06:10:18","Failed authentication","4102"
+"Nov 09 06:10:35","Failed authentication","4103"
+"Nov 09 06:10:52","Failed authentication","4104"
+"Nov 09 06:11:09","Failed authentication","4105"
+"Nov 09 06:11:26","Failed authentication","4106"
+"Nov 09 06:11:43","Failed authentication","4107"
+"Nov 09 06:12:01","Successful authentication","4108"
+"Nov 09 06:12:15","Session opened","4108"

@@ -1,0 +1,132 @@
+{
+    "dataset_type": "SYNTHETIC TRAINING EVIDENCE",
+    "source_file": "simulated-auth.log",
+    "source_sha256": "5a936f1aaab8344f01ea9d5cdf4c2e39887169099a28286dfcbaffd9149fe393",
+    "total_parsed_events": 9,
+    "unmatched_lines": 0,
+    "event_counts": {
+        "failed_login": 7,
+        "successful_login": 1,
+        "session_opened": 1
+    },
+    "failed_attempts_by_source": {
+        "198.51.100.23": 7
+    },
+    "successful_logins_by_source": {
+        "198.51.100.23": 1
+    },
+    "correlations": [
+        {
+            "source_ip": "198.51.100.23",
+            "username": "svc-backup",
+            "successful_login_time": "Nov 09 06:12:01",
+            "prior_failed_attempts_from_source": 7,
+            "assessment": "REVIEW_REQUIRED"
+        }
+    ],
+    "investigation_indicators": [
+        "Five or more failed login events observed",
+        "Successful authentication followed failures from the same source"
+    ],
+    "assessment": "REVIEW REQUIRED",
+    "events": [
+        {
+            "line_number": 1,
+            "timestamp": "Nov 09 06:10:02",
+            "host": "ir-lab",
+            "pid": "4101",
+            "event_type": "failed_login",
+            "username": "admin",
+            "source_ip": "198.51.100.23",
+            "message": "Failed password for invalid user admin from 198.51.100.23 port 51001 ssh2"
+        },
+        {
+            "line_number": 2,
+            "timestamp": "Nov 09 06:10:18",
+            "host": "ir-lab",
+            "pid": "4102",
+            "event_type": "failed_login",
+            "username": "test",
+            "source_ip": "198.51.100.23",
+            "message": "Failed password for invalid user test from 198.51.100.23 port 51002 ssh2"
+        },
+        {
+            "line_number": 3,
+            "timestamp": "Nov 09 06:10:35",
+            "host": "ir-lab",
+            "pid": "4103",
+            "event_type": "failed_login",
+            "username": "svc-backup",
+            "source_ip": "198.51.100.23",
+            "message": "Failed password for svc-backup from 198.51.100.23 port 51003 ssh2"
+        },
+        {
+            "line_number": 4,
+            "timestamp": "Nov 09 06:10:52",
+            "host": "ir-lab",
+            "pid": "4104",
+            "event_type": "failed_login",
+            "username": "svc-backup",
+            "source_ip": "198.51.100.23",
+            "message": "Failed password for svc-backup from 198.51.100.23 port 51004 ssh2"
+        },
+        {
+            "line_number": 5,
+            "timestamp": "Nov 09 06:11:09",
+            "host": "ir-lab",
+            "pid": "4105",
+            "event_type": "failed_login",
+            "username": "svc-backup",
+            "source_ip": "198.51.100.23",
+            "message": "Failed password for svc-backup from 198.51.100.23 port 51005 ssh2"
+        },
+        {
+            "line_number": 6,
+            "timestamp": "Nov 09 06:11:26",
+            "host": "ir-lab",
+            "pid": "4106",
+            "event_type": "failed_login",
+            "username": "svc-backup",
+            "source_ip": "198.51.100.23",
+            "message": "Failed password for svc-backup from 198.51.100.23 port 51006 ssh2"
+        },
+        {
+            "line_number": 7,
+            "timestamp": "Nov 09 06:11:43",
+            "host": "ir-lab",
+            "pid": "4107",
+            "event_type": "failed_login",
+            "username": "svc-backup",
+            "source_ip": "198.51.100.23",
+            "message": "Failed password for svc-backup from 198.51.100.23 port 51007 ssh2"
+        },
+        {
+            "line_number": 8,
+            "timestamp": "Nov 09 06:12:01",
+            "host": "ir-lab",
+            "pid": "4108",
+            "event_type": "successful_login",
+            "username": "svc-backup",
+            "source_ip": "198.51.100.23",
+            "message": "Accepted password for svc-backup from 198.51.100.23 port 51008 ssh2"
+        },
+        {
+            "line_number": 9,
+            "timestamp": "Nov 09 06:12:15",
+            "host": "ir-lab",
+            "pid": "4108",
+            "event_type": "session_opened",
+            "username": "svc-backup(uid=1002)",
+            "source_ip": null,
+            "message": "pam_unix(sshd:session): session opened for user svc-backup(uid=1002) by (uid=0)"
+        }
+    ],
+    "limitations": [
+        "Synthetic training data, not real host telemetry",
+        "Correlation uses source IP and event ordering only",
+        "No account owner or business context was validated",
+        "No endpoint, network, or identity telemetry was correlated",
+        "A successful login after failures does not prove compromise",
+        "Timestamp year and timezone were not independently verified"
+    ]
+}
