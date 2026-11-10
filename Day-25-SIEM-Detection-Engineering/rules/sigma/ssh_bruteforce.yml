@@ -1,0 +1,31 @@
+title: SSH Multiple Authentication Failures
+id: 8a6b2c4d-1111-4444-8888-123456789001
+status: experimental
+description: Detects failed SSH password authentication events.
+author: SOC Analyst Learning Lab
+date: 2026/11/10
+
+logsource:
+  product: linux
+  service: sshd
+
+detection:
+  selection:
+    message|contains: 'Failed password'
+  condition: selection
+
+fields:
+  - timestamp
+  - hostname
+  - source_ip
+  - username
+
+falsepositives:
+  - Legitimate users entering incorrect passwords
+  - Misconfigured automation
+
+level: medium
+
+tags:
+  - attack.credential_access
+  - attack.t1110
