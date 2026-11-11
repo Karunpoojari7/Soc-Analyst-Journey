@@ -1,0 +1,33 @@
+{
+    "detection_id": "DET-SSH-002",
+    "total_tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "results": [
+        {
+            "test": "TC-05: Five failures and three usernames",
+            "expected_alert": true,
+            "actual_alert": true,
+            "result": "PASS"
+        },
+        {
+            "test": "TC-06: Four failures and three usernames",
+            "expected_alert": false,
+            "actual_alert": false,
+            "result": "PASS"
+        },
+        {
+            "test": "TC-07: Five failures and only two usernames",
+            "expected_alert": false,
+            "actual_alert": false,
+            "result": "PASS"
+        },
+        {
+            "test": "TC-08: Five failures spread across fifteen minutes",
+            "expected_alert": false,
+            "actual_alert": false,
+            "result": "PASS"
+        }
+    ],
+    "dataset_type": "SYNTHETIC CONTROLLED TEST CASES"
+}
