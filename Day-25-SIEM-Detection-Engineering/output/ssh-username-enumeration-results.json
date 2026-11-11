@@ -1,0 +1,33 @@
+{
+    "dataset_type": "SYNTHETIC TRAINING EVIDENCE",
+    "assumed_year": 2026,
+    "rule": {
+        "id": "DET-SSH-002",
+        "threshold": 5,
+        "distinct_usernames": 3,
+        "window_seconds": 600,
+        "group_by": "source_ip"
+    },
+    "total_events": 9,
+    "findings": [
+        {
+            "detection_id": "DET-SSH-002",
+            "detection_name": "SSH Multiple Username Attempts",
+            "source_ip": "198.51.100.23",
+            "failed_attempts": 5,
+            "distinct_usernames": 3,
+            "usernames": [
+                "admin",
+                "svc-backup",
+                "test"
+            ],
+            "first_failure": "2026-11-10T02:00:01+00:00",
+            "last_failure": "2026-11-10T02:04:40+00:00",
+            "window_seconds": 600,
+            "severity": "medium",
+            "mitre_attack": "T1110",
+            "assessment": "REVIEW_REQUIRED"
+        }
+    ],
+    "assessment": "ALERT_GENERATED"
+}
