@@ -1,0 +1,52 @@
+{
+    "incident_id": "SOC-2026-026",
+    "host": "nexora-linux-01",
+    "account": "svc-backup",
+    "source_ip": "198.51.100.23",
+    "dataset_type": "SYNTHETIC TRAINING EVIDENCE",
+    "observed_findings": {
+        "repeated_authentication_failures": true,
+        "successful_login": true,
+        "session_opened": true,
+        "privileged_activity": true,
+        "process_execution": true,
+        "outbound_connection": true,
+        "account_activity": true
+    },
+    "investigation_priority": "HIGH",
+    "classification": "UNDER_INVESTIGATION",
+    "compromise_confirmed": false,
+    "escalation": {
+        "required": true,
+        "destination": "Tier 2 SOC / Incident Response Team",
+        "reason": "Successful authentication followed by multiple suspicious activity indicators."
+    },
+    "missing_evidence": [
+        "Session identifiers are unavailable",
+        "Process IDs are incomplete",
+        "Process command lines are unavailable",
+        "Process parent-child relationships are unavailable",
+        "Sudo command and exit status are unavailable",
+        "Outbound connection purpose is unknown",
+        "Exact account configuration changes are unavailable"
+    ],
+    "recommended_actions": [
+        "Escalate to Tier 2 SOC for investigation.",
+        "Validate the svc-backup account owner and expected access.",
+        "Review authentication records and session identifiers.",
+        "Obtain complete sudo command and execution status.",
+        "Collect process command line, hash and parent process.",
+        "Review outbound connection destination and traffic metadata.",
+        "Investigate the exact account configuration changes.",
+        "Preserve original evidence and maintain chain of custody."
+    ],
+    "containment": {
+        "status": "RECOMMENDATION_ONLY",
+        "actions": [
+            "Review and validate account access.",
+            "Consider session revocation if unauthorised access is confirmed.",
+            "Consider endpoint isolation if compromise is confirmed.",
+            "Preserve evidence before remediation."
+        ]
+    }
+}
