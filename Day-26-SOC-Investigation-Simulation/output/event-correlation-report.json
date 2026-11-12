@@ -1,0 +1,79 @@
+{
+    "incident_id": "SOC-2026-026",
+    "dataset_type": "SYNTHETIC TRAINING EVIDENCE",
+    "correlation_method": [
+        "Host",
+        "Username",
+        "Timestamp",
+        "15-minute post-login window"
+    ],
+    "correlations": [
+        {
+            "host": "nexora-linux-01",
+            "username": "svc-backup",
+            "successful_login": {
+                "event_id": "EVT-006",
+                "timestamp": "2026-11-12T09:05:50Z",
+                "source_ip": "198.51.100.23"
+            },
+            "subsequent_events_within_15_minutes": [
+                {
+                    "event_id": "EVT-007",
+                    "event_type": "session_opened",
+                    "timestamp": "2026-11-12T09:06:00Z",
+                    "seconds_after_login": 10,
+                    "process": "sshd",
+                    "source_ip": "198.51.100.23",
+                    "message": "Session opened for user svc-backup"
+                },
+                {
+                    "event_id": "EVT-008",
+                    "event_type": "privileged_command",
+                    "timestamp": "2026-11-12T09:08:12Z",
+                    "seconds_after_login": 142,
+                    "process": "sudo",
+                    "source_ip": "198.51.100.23",
+                    "message": "User attempted to execute privileged command"
+                },
+                {
+                    "event_id": "EVT-009",
+                    "event_type": "process_execution",
+                    "timestamp": "2026-11-12T09:10:30Z",
+                    "seconds_after_login": 280,
+                    "process": "python3",
+                    "source_ip": "198.51.100.23",
+                    "message": "Unusual script execution observed"
+                },
+                {
+                    "event_id": "EVT-010",
+                    "event_type": "outbound_connection",
+                    "timestamp": "2026-11-12T09:12:15Z",
+                    "seconds_after_login": 385,
+                    "process": "python3",
+                    "source_ip": "198.51.100.23",
+                    "message": "Outbound TLS connection observed"
+                },
+                {
+                    "event_id": "EVT-011",
+                    "event_type": "account_activity",
+                    "timestamp": "2026-11-12T09:15:00Z",
+                    "seconds_after_login": 550,
+                    "process": "usermod",
+                    "source_ip": null,
+                    "message": "Account configuration change observed"
+                }
+            ],
+            "attribution": "TEMPORAL_AND_ACCOUNT_CORRELATION_ONLY"
+        }
+    ],
+    "evidence_gaps": [
+        "Session identifiers are unavailable",
+        "Process IDs are incomplete",
+        "Process command lines are unavailable",
+        "Process parent-child relationships are unavailable",
+        "Sudo command and exit status are unavailable",
+        "Outbound connection purpose is unknown",
+        "Exact account configuration changes are unavailable"
+    ],
+    "conclusion": "Post-login events are temporally associated with the successful account login. Stronger session and process attribution requires additional endpoint telemetry."
+}
