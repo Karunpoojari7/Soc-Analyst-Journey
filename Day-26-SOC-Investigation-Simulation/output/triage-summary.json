@@ -1,0 +1,55 @@
+{
+    "incident_id": "SOC-2026-026",
+    "dataset_type": "SYNTHETIC TRAINING EVIDENCE",
+    "total_events": 11,
+    "affected_hosts": [
+        "nexora-linux-01"
+    ],
+    "accounts_observed": [
+        "admin",
+        "svc-backup",
+        "test"
+    ],
+    "source_ips_observed": [
+        "198.51.100.23"
+    ],
+    "event_counts": {
+        "ssh_failed_login": 5,
+        "ssh_successful_login": 1,
+        "session_opened": 1,
+        "privileged_command": 1,
+        "process_execution": 1,
+        "outbound_connection": 1,
+        "account_activity": 1
+    },
+    "authentication": {
+        "failed_logins": 5,
+        "successful_logins": 1,
+        "sessions_opened": 1
+    },
+    "post_login_activity": {
+        "privileged_command_events": 1,
+        "process_execution_events": 1,
+        "outbound_connection_events": 1,
+        "account_activity_events": 1
+    },
+    "investigation_leads": [
+        "Repeated SSH authentication failures",
+        "Successful login following authentication failures",
+        "Privileged command activity",
+        "Unusual process execution",
+        "Outbound TLS connection",
+        "Account configuration activity"
+    ],
+    "initial_assessment": "HIGH_PRIORITY_REVIEW",
+    "classification": "UNDER_INVESTIGATION",
+    "compromise_confirmed": false,
+    "limitations": [
+        "All events are synthetic",
+        "Event relationships require further validation",
+        "Outbound connection purpose is unknown",
+        "Privileged command execution outcome is unknown",
+        "Process execution details are incomplete",
+        "Account configuration change details are incomplete"
+    ]
+}
