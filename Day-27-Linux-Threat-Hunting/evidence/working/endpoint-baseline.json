@@ -1,0 +1,2185 @@
+{
+    "collection_time_utc": "2026-11-13T14:58:06.412325+00:00",
+    "dataset_type": "SANITIZED REAL ENDPOINT TELEMETRY",
+    "platform": "Linux",
+    "kernel": "6.12.38+kali-amd64",
+    "processes": [
+        {
+            "pid": "1",
+            "ppid": "0",
+            "user": "REDACTED",
+            "name": "systemd"
+        },
+        {
+            "pid": "2",
+            "ppid": "0",
+            "user": "REDACTED",
+            "name": "kthreadd"
+        },
+        {
+            "pid": "3",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "pool_workqueue_release"
+        },
+        {
+            "pid": "4",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-kvfree_rcu_reclaim"
+        },
+        {
+            "pid": "5",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-rcu_gp"
+        },
+        {
+            "pid": "6",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-sync_wq"
+        },
+        {
+            "pid": "7",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-slub_flushwq"
+        },
+        {
+            "pid": "8",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-netns"
+        },
+        {
+            "pid": "10",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/0:0H-events_highpri"
+        },
+        {
+            "pid": "11",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/0:1-cgroup_destroy"
+        },
+        {
+            "pid": "12",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/u64:0-events_unbound"
+        },
+        {
+            "pid": "13",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-mm_percpu_wq"
+        },
+        {
+            "pid": "14",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "rcu_tasks_kthread"
+        },
+        {
+            "pid": "15",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "rcu_tasks_rude_kthread"
+        },
+        {
+            "pid": "16",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "rcu_tasks_trace_kthread"
+        },
+        {
+            "pid": "17",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/0"
+        },
+        {
+            "pid": "18",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "rcu_preempt"
+        },
+        {
+            "pid": "19",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "rcu_exp_par_gp_kthread_worker/0"
+        },
+        {
+            "pid": "20",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "rcu_exp_gp_kthread_worker"
+        },
+        {
+            "pid": "21",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/0"
+        },
+        {
+            "pid": "22",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/0"
+        },
+        {
+            "pid": "23",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/0"
+        },
+        {
+            "pid": "24",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/2"
+        },
+        {
+            "pid": "25",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/2"
+        },
+        {
+            "pid": "26",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/2"
+        },
+        {
+            "pid": "27",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/2"
+        },
+        {
+            "pid": "28",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/2:0-events"
+        },
+        {
+            "pid": "29",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/2:0H-events_highpri"
+        },
+        {
+            "pid": "30",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/4"
+        },
+        {
+            "pid": "31",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/4"
+        },
+        {
+            "pid": "32",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/4"
+        },
+        {
+            "pid": "33",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/4"
+        },
+        {
+            "pid": "35",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/4:0H-events_highpri"
+        },
+        {
+            "pid": "36",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/6"
+        },
+        {
+            "pid": "37",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/6"
+        },
+        {
+            "pid": "38",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/6"
+        },
+        {
+            "pid": "39",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/6"
+        },
+        {
+            "pid": "41",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/6:0H-events_highpri"
+        },
+        {
+            "pid": "42",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/8"
+        },
+        {
+            "pid": "43",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/8"
+        },
+        {
+            "pid": "44",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/8"
+        },
+        {
+            "pid": "45",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/8"
+        },
+        {
+            "pid": "47",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/8:0H-events_highpri"
+        },
+        {
+            "pid": "48",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/10"
+        },
+        {
+            "pid": "49",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/10"
+        },
+        {
+            "pid": "50",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/10"
+        },
+        {
+            "pid": "51",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/10"
+        },
+        {
+            "pid": "53",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/10:0H-events_highpri"
+        },
+        {
+            "pid": "54",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/12"
+        },
+        {
+            "pid": "55",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/12"
+        },
+        {
+            "pid": "56",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/12"
+        },
+        {
+            "pid": "57",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/12"
+        },
+        {
+            "pid": "59",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/12:0H-events_highpri"
+        },
+        {
+            "pid": "60",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/13"
+        },
+        {
+            "pid": "61",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/13"
+        },
+        {
+            "pid": "62",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/13"
+        },
+        {
+            "pid": "63",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/13"
+        },
+        {
+            "pid": "65",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/13:0H-events_highpri"
+        },
+        {
+            "pid": "66",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/14"
+        },
+        {
+            "pid": "67",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/14"
+        },
+        {
+            "pid": "68",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/14"
+        },
+        {
+            "pid": "69",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/14"
+        },
+        {
+            "pid": "71",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/14:0H-events_highpri"
+        },
+        {
+            "pid": "72",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/15"
+        },
+        {
+            "pid": "73",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/15"
+        },
+        {
+            "pid": "74",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/15"
+        },
+        {
+            "pid": "75",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/15"
+        },
+        {
+            "pid": "77",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/15:0H-events_highpri"
+        },
+        {
+            "pid": "78",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/1"
+        },
+        {
+            "pid": "79",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/1"
+        },
+        {
+            "pid": "80",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/1"
+        },
+        {
+            "pid": "81",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/1"
+        },
+        {
+            "pid": "83",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/1:0H-events_highpri"
+        },
+        {
+            "pid": "84",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/3"
+        },
+        {
+            "pid": "85",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/3"
+        },
+        {
+            "pid": "86",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/3"
+        },
+        {
+            "pid": "87",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/3"
+        },
+        {
+            "pid": "88",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/3:0-cgroup_destroy"
+        },
+        {
+            "pid": "89",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/3:0H-events_highpri"
+        },
+        {
+            "pid": "90",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/5"
+        },
+        {
+            "pid": "91",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/5"
+        },
+        {
+            "pid": "92",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/5"
+        },
+        {
+            "pid": "93",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/5"
+        },
+        {
+            "pid": "95",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/5:0H-events_highpri"
+        },
+        {
+            "pid": "96",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/7"
+        },
+        {
+            "pid": "97",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/7"
+        },
+        {
+            "pid": "98",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/7"
+        },
+        {
+            "pid": "99",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/7"
+        },
+        {
+            "pid": "101",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/7:0H-events_highpri"
+        },
+        {
+            "pid": "102",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/9"
+        },
+        {
+            "pid": "103",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/9"
+        },
+        {
+            "pid": "104",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/9"
+        },
+        {
+            "pid": "105",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/9"
+        },
+        {
+            "pid": "107",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/9:0H-events_highpri"
+        },
+        {
+            "pid": "108",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "cpuhp/11"
+        },
+        {
+            "pid": "109",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "idle_inject/11"
+        },
+        {
+            "pid": "110",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "migration/11"
+        },
+        {
+            "pid": "111",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksoftirqd/11"
+        },
+        {
+            "pid": "113",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/11:0H-events_highpri"
+        },
+        {
+            "pid": "118",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/u64:4+flush-8:0"
+        },
+        {
+            "pid": "120",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kdevtmpfs"
+        },
+        {
+            "pid": "121",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-inet_frag_wq"
+        },
+        {
+            "pid": "122",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kauditd"
+        },
+        {
+            "pid": "123",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "khungtaskd"
+        },
+        {
+            "pid": "124",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "oom_reaper"
+        },
+        {
+            "pid": "125",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-writeback"
+        },
+        {
+            "pid": "126",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kcompactd0"
+        },
+        {
+            "pid": "127",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "ksmd"
+        },
+        {
+            "pid": "128",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "khugepaged"
+        },
+        {
+            "pid": "129",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-kintegrityd"
+        },
+        {
+            "pid": "130",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-kblockd"
+        },
+        {
+            "pid": "131",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-blkcg_punt_bio"
+        },
+        {
+            "pid": "132",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/9-acpi"
+        },
+        {
+            "pid": "135",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/1:1-cgroup_destroy"
+        },
+        {
+            "pid": "136",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-tpm_dev_wq"
+        },
+        {
+            "pid": "137",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-edac-poller"
+        },
+        {
+            "pid": "138",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-devfreq_wq"
+        },
+        {
+            "pid": "140",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/12:1H-kblockd"
+        },
+        {
+            "pid": "141",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kswapd0"
+        },
+        {
+            "pid": "150",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-kthrotld"
+        },
+        {
+            "pid": "154",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/122-aerdrv"
+        },
+        {
+            "pid": "155",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/123-aerdrv"
+        },
+        {
+            "pid": "156",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-acpi_thermal_pm"
+        },
+        {
+            "pid": "159",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/9:1-mm_percpu_wq"
+        },
+        {
+            "pid": "160",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/8:1-mm_percpu_wq"
+        },
+        {
+            "pid": "161",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/10:1-mm_percpu_wq"
+        },
+        {
+            "pid": "162",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/11:1-mm_percpu_wq"
+        },
+        {
+            "pid": "163",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/3:1-mm_percpu_wq"
+        },
+        {
+            "pid": "164",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/2:1-cgroup_destroy"
+        },
+        {
+            "pid": "165",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/4:1-i915-unordered"
+        },
+        {
+            "pid": "166",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/5:1-mm_percpu_wq"
+        },
+        {
+            "pid": "167",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "hwrng"
+        },
+        {
+            "pid": "168",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-hfi-updates"
+        },
+        {
+            "pid": "169",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-mld"
+        },
+        {
+            "pid": "171",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-ipv6_addrconf"
+        },
+        {
+            "pid": "178",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-kstrp"
+        },
+        {
+            "pid": "187",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/u65:0-i915_flip"
+        },
+        {
+            "pid": "243",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/0:1H-kblockd"
+        },
+        {
+            "pid": "273",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/10:1H-kblockd"
+        },
+        {
+            "pid": "291",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/9:1H-events_highpri"
+        },
+        {
+            "pid": "292",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/13:1H-kblockd"
+        },
+        {
+            "pid": "293",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/1:1H-kblockd"
+        },
+        {
+            "pid": "295",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/14:1H-kblockd"
+        },
+        {
+            "pid": "296",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/3:1H-kblockd"
+        },
+        {
+            "pid": "297",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/8:1H-kblockd"
+        },
+        {
+            "pid": "298",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/6:1H-kblockd"
+        },
+        {
+            "pid": "300",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/2:1H-kblockd"
+        },
+        {
+            "pid": "308",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/5:1H-kblockd"
+        },
+        {
+            "pid": "309",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/11:1H-kblockd"
+        },
+        {
+            "pid": "310",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/7:1H-events_highpri"
+        },
+        {
+            "pid": "311",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/15:1H-kblockd"
+        },
+        {
+            "pid": "312",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/4:1H-events_highpri"
+        },
+        {
+            "pid": "338",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-cryptd"
+        },
+        {
+            "pid": "339",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "watchdogd"
+        },
+        {
+            "pid": "359",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/u64:7-events_unbound"
+        },
+        {
+            "pid": "365",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/u64:9-kvfree_rcu_reclaim"
+        },
+        {
+            "pid": "370",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/u64:11-events_unbound"
+        },
+        {
+            "pid": "426",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/6:2-cgroup_destroy"
+        },
+        {
+            "pid": "427",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/152-VEN_04F3:00"
+        },
+        {
+            "pid": "428",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/153-aerdrv"
+        },
+        {
+            "pid": "429",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-USBC000:00-con1"
+        },
+        {
+            "pid": "430",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/6:3-events"
+        },
+        {
+            "pid": "431",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-nvkm-disp"
+        },
+        {
+            "pid": "433",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-ttm"
+        },
+        {
+            "pid": "434",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "card1-crtc0"
+        },
+        {
+            "pid": "435",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "card1-crtc1"
+        },
+        {
+            "pid": "436",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "card1-crtc2"
+        },
+        {
+            "pid": "437",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "card1-crtc3"
+        },
+        {
+            "pid": "438",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-ttm"
+        },
+        {
+            "pid": "439",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "card0-crtc0"
+        },
+        {
+            "pid": "440",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "card0-crtc1"
+        },
+        {
+            "pid": "441",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "card0-crtc2"
+        },
+        {
+            "pid": "442",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "card0-crtc3"
+        },
+        {
+            "pid": "443",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/7:2-cgroup_destroy"
+        },
+        {
+            "pid": "444",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/9:2-cgroup_destroy"
+        },
+        {
+            "pid": "445",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-ata_sff"
+        },
+        {
+            "pid": "446",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/1:2-mm_percpu_wq"
+        },
+        {
+            "pid": "447",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-nvme-wq"
+        },
+        {
+            "pid": "448",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-nvme-reset-wq"
+        },
+        {
+            "pid": "449",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-nvme-delete-wq"
+        },
+        {
+            "pid": "450",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-nvme-auth-wq"
+        },
+        {
+            "pid": "451",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/12:2-mm_percpu_wq"
+        },
+        {
+            "pid": "454",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "scsi_eh_0"
+        },
+        {
+            "pid": "455",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-scsi_tmf_0"
+        },
+        {
+            "pid": "456",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "usb-storage"
+        },
+        {
+            "pid": "457",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-uas"
+        },
+        {
+            "pid": "510",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/0:2-events"
+        },
+        {
+            "pid": "1085",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "jbd2/sda2-8"
+        },
+        {
+            "pid": "1086",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-ext4-rsv-conversion"
+        },
+        {
+            "pid": "1263",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "systemd-journal"
+        },
+        {
+            "pid": "1306",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "systemd-udevd"
+        },
+        {
+            "pid": "1311",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "psimon"
+        },
+        {
+            "pid": "1402",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "systemd-timesyn"
+        },
+        {
+            "pid": "1420",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/173-mei_me"
+        },
+        {
+            "pid": "1421",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/15:2-mm_percpu_wq"
+        },
+        {
+            "pid": "1424",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/16-processor_thermal_device_pci"
+        },
+        {
+            "pid": "1430",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-cfg80211"
+        },
+        {
+            "pid": "1434",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/174-iwlwifi:default_queue"
+        },
+        {
+            "pid": "1435",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/175-iwlwifi:queue_1"
+        },
+        {
+            "pid": "1436",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/176-iwlwifi:queue_2"
+        },
+        {
+            "pid": "1437",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/177-iwlwifi:queue_3"
+        },
+        {
+            "pid": "1438",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/178-iwlwifi:queue_4"
+        },
+        {
+            "pid": "1439",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/179-iwlwifi:queue_5"
+        },
+        {
+            "pid": "1440",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/180-iwlwifi:queue_6"
+        },
+        {
+            "pid": "1441",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/181-iwlwifi:queue_7"
+        },
+        {
+            "pid": "1442",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/182-iwlwifi:queue_8"
+        },
+        {
+            "pid": "1443",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/183-iwlwifi:queue_9"
+        },
+        {
+            "pid": "1444",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/184-iwlwifi:queue_10"
+        },
+        {
+            "pid": "1445",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/185-iwlwifi:queue_11"
+        },
+        {
+            "pid": "1446",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/186-iwlwifi:queue_12"
+        },
+        {
+            "pid": "1447",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/187-iwlwifi:queue_13"
+        },
+        {
+            "pid": "1448",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/188-iwlwifi:queue_14"
+        },
+        {
+            "pid": "1449",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/189-iwlwifi:exception"
+        },
+        {
+            "pid": "1458",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/u65:2-rb_allocator"
+        },
+        {
+            "pid": "1471",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/11:2-mm_percpu_wq"
+        },
+        {
+            "pid": "1480",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "irq/190-AudioDSP"
+        },
+        {
+            "pid": "1508",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "haveged"
+        },
+        {
+            "pid": "1530",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-rpciod"
+        },
+        {
+            "pid": "1531",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/R-xprtiod"
+        },
+        {
+            "pid": "1718",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "accounts-daemon"
+        },
+        {
+            "pid": "1719",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "cron"
+        },
+        {
+            "pid": "1720",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "dbus-daemon"
+        },
+        {
+            "pid": "1725",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "polkitd"
+        },
+        {
+            "pid": "1726",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "smartd"
+        },
+        {
+            "pid": "1727",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "systemd-logind"
+        },
+        {
+            "pid": "1791",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "NetworkManager"
+        },
+        {
+            "pid": "1806",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "ModemManager"
+        },
+        {
+            "pid": "1853",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "wpa_supplicant"
+        },
+        {
+            "pid": "1864",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "lightdm"
+        },
+        {
+            "pid": "1869",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "sshd"
+        },
+        {
+            "pid": "1881",
+            "ppid": "1864",
+            "user": "REDACTED",
+            "name": "Xorg"
+        },
+        {
+            "pid": "1882",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "login"
+        },
+        {
+            "pid": "1886",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "python3"
+        },
+        {
+            "pid": "1903",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "psimon"
+        },
+        {
+            "pid": "1905",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "systemd"
+        },
+        {
+            "pid": "1907",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "(sd-pam)"
+        },
+        {
+            "pid": "1928",
+            "ppid": "1864",
+            "user": "REDACTED",
+            "name": "lightdm"
+        },
+        {
+            "pid": "1946",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "dbus-daemon"
+        },
+        {
+            "pid": "1947",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "pipewire"
+        },
+        {
+            "pid": "1948",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "pipewire"
+        },
+        {
+            "pid": "1949",
+            "ppid": "1882",
+            "user": "REDACTED",
+            "name": "zsh"
+        },
+        {
+            "pid": "1950",
+            "ppid": "1928",
+            "user": "REDACTED",
+            "name": "xfce4-session"
+        },
+        {
+            "pid": "1958",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "mpris-proxy"
+        },
+        {
+            "pid": "1959",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "wireplumber"
+        },
+        {
+            "pid": "1960",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "pipewire-pulse"
+        },
+        {
+            "pid": "1969",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "rtkit-daemon"
+        },
+        {
+            "pid": "2136",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "at-spi-bus-laun"
+        },
+        {
+            "pid": "2143",
+            "ppid": "2136",
+            "user": "REDACTED",
+            "name": "dbus-daemon"
+        },
+        {
+            "pid": "2154",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "at-spi2-registr"
+        },
+        {
+            "pid": "2161",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "ssh-agent"
+        },
+        {
+            "pid": "2170",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "gpg-agent"
+        },
+        {
+            "pid": "2173",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "xfwm4"
+        },
+        {
+            "pid": "2178",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "gvfsd"
+        },
+        {
+            "pid": "2184",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "gvfsd-fuse"
+        },
+        {
+            "pid": "2198",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "xfsettingsd"
+        },
+        {
+            "pid": "2204",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "dconf-service"
+        },
+        {
+            "pid": "2208",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "xfce4-panel"
+        },
+        {
+            "pid": "2214",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "Thunar"
+        },
+        {
+            "pid": "2222",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "xfdesktop"
+        },
+        {
+            "pid": "2223",
+            "ppid": "2208",
+            "user": "REDACTED",
+            "name": "wrapper-2.0"
+        },
+        {
+            "pid": "2247",
+            "ppid": "2208",
+            "user": "REDACTED",
+            "name": "wrapper-2.0"
+        },
+        {
+            "pid": "2248",
+            "ppid": "2208",
+            "user": "REDACTED",
+            "name": "wrapper-2.0"
+        },
+        {
+            "pid": "2249",
+            "ppid": "2208",
+            "user": "REDACTED",
+            "name": "wrapper-2.0"
+        },
+        {
+            "pid": "2250",
+            "ppid": "2208",
+            "user": "REDACTED",
+            "name": "wrapper-2.0"
+        },
+        {
+            "pid": "2251",
+            "ppid": "2208",
+            "user": "REDACTED",
+            "name": "wrapper-2.0"
+        },
+        {
+            "pid": "2252",
+            "ppid": "2208",
+            "user": "REDACTED",
+            "name": "wrapper-2.0"
+        },
+        {
+            "pid": "2267",
+            "ppid": "2208",
+            "user": "REDACTED",
+            "name": "wrapper-2.0"
+        },
+        {
+            "pid": "2295",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "upowerd"
+        },
+        {
+            "pid": "2296",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "xfce4-notifyd"
+        },
+        {
+            "pid": "2299",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "blueman-applet"
+        },
+        {
+            "pid": "2300",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "agent"
+        },
+        {
+            "pid": "2314",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "nm-applet"
+        },
+        {
+            "pid": "2323",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "polkit-mate-aut"
+        },
+        {
+            "pid": "2324",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "applet.py"
+        },
+        {
+            "pid": "2343",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "xcape"
+        },
+        {
+            "pid": "2349",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "xfce4-power-man"
+        },
+        {
+            "pid": "2350",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "xfce4-screensav"
+        },
+        {
+            "pid": "2362",
+            "ppid": "1950",
+            "user": "REDACTED",
+            "name": "xiccd"
+        },
+        {
+            "pid": "2397",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "colord"
+        },
+        {
+            "pid": "2421",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "xdg-permission-"
+        },
+        {
+            "pid": "2515",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "obexd"
+        },
+        {
+            "pid": "2544",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/14:2-cgroup_destroy"
+        },
+        {
+            "pid": "2849",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "gvfs-udisks2-vo"
+        },
+        {
+            "pid": "2860",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/13:3-mm_percpu_wq"
+        },
+        {
+            "pid": "2864",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "udisksd"
+        },
+        {
+            "pid": "2874",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "gvfs-mtp-volume"
+        },
+        {
+            "pid": "2879",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "gvfs-gphoto2-vo"
+        },
+        {
+            "pid": "2884",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "gvfs-goa-volume"
+        },
+        {
+            "pid": "2889",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "gvfs-afc-volume"
+        },
+        {
+            "pid": "2927",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "gvfsd-metadata"
+        },
+        {
+            "pid": "2939",
+            "ppid": "2178",
+            "user": "REDACTED",
+            "name": "gvfsd-trash"
+        },
+        {
+            "pid": "5397",
+            "ppid": "2208",
+            "user": "REDACTED",
+            "name": "firefox-esr"
+        },
+        {
+            "pid": "5521",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "Socket Process"
+        },
+        {
+            "pid": "5529",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "xdg-desktop-por"
+        },
+        {
+            "pid": "5537",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "xdg-document-po"
+        },
+        {
+            "pid": "5545",
+            "ppid": "5537",
+            "user": "REDACTED",
+            "name": "fusermount3"
+        },
+        {
+            "pid": "5548",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "xdg-desktop-por"
+        },
+        {
+            "pid": "5575",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "Privileged Cont"
+        },
+        {
+            "pid": "5643",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "pcscd"
+        },
+        {
+            "pid": "5686",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "WebExtensions"
+        },
+        {
+            "pid": "5742",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "Utility Process"
+        },
+        {
+            "pid": "5750",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "Isolated Web Co"
+        },
+        {
+            "pid": "5752",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "Isolated Web Co"
+        },
+        {
+            "pid": "5758",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "Isolated Servic"
+        },
+        {
+            "pid": "6008",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/u65:3-rb_allocator"
+        },
+        {
+            "pid": "6017",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "Isolated Web Co"
+        },
+        {
+            "pid": "6167",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/u64:2-events_unbound"
+        },
+        {
+            "pid": "6202",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "Web Content"
+        },
+        {
+            "pid": "6264",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/8:0-events"
+        },
+        {
+            "pid": "6430",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/15:0-cgroup_destroy"
+        },
+        {
+            "pid": "6439",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/10:0-mm_percpu_wq"
+        },
+        {
+            "pid": "6491",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/12:0-cgroup_destroy"
+        },
+        {
+            "pid": "6534",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/4:0-kacpi_notify"
+        },
+        {
+            "pid": "6642",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/5:0-cgroup_destroy"
+        },
+        {
+            "pid": "6822",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/14:0-events_freezable"
+        },
+        {
+            "pid": "6832",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/7:0-i915-unordered"
+        },
+        {
+            "pid": "6886",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/13:0-events"
+        },
+        {
+            "pid": "7069",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/1:0-events_freezable"
+        },
+        {
+            "pid": "7104",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/2:2-cgroup_destroy"
+        },
+        {
+            "pid": "7286",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/0:0-cgroup_destroy"
+        },
+        {
+            "pid": "7812",
+            "ppid": "1",
+            "user": "REDACTED",
+            "name": "qterminal"
+        },
+        {
+            "pid": "7845",
+            "ppid": "7812",
+            "user": "REDACTED",
+            "name": "zsh"
+        },
+        {
+            "pid": "7867",
+            "ppid": "1905",
+            "user": "REDACTED",
+            "name": "xfconfd"
+        },
+        {
+            "pid": "8437",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/9:0-events"
+        },
+        {
+            "pid": "9429",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/3:2-cgroup_destroy"
+        },
+        {
+            "pid": "10769",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/4:2"
+        },
+        {
+            "pid": "10804",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/15:1-events"
+        },
+        {
+            "pid": "10814",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/10:2"
+        },
+        {
+            "pid": "10918",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/12:1"
+        },
+        {
+            "pid": "10936",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/8:2"
+        },
+        {
+            "pid": "10993",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "Web Content"
+        },
+        {
+            "pid": "11058",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/u65:1-rb_allocator"
+        },
+        {
+            "pid": "11071",
+            "ppid": "5397",
+            "user": "REDACTED",
+            "name": "Web Content"
+        },
+        {
+            "pid": "11242",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/6:0"
+        },
+        {
+            "pid": "11301",
+            "ppid": "2",
+            "user": "REDACTED",
+            "name": "kworker/14:1-events"
+        },
+        {
+            "pid": "11329",
+            "ppid": "7845",
+            "user": "REDACTED",
+            "name": "python3"
+        },
+        {
+            "pid": "11330",
+            "ppid": "11329",
+            "user": "REDACTED",
+            "name": "python3"
+        },
+        {
+            "pid": "11331",
+            "ppid": "11330",
+            "user": "REDACTED",
+            "name": "ps"
+        }
+    ],
+    "listening_sockets": [
+        {
+            "protocol": "udp",
+            "state": "UNCONN",
+            "local_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "udp",
+            "state": "UNCONN",
+            "local_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "udp",
+            "state": "UNCONN",
+            "local_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "udp",
+            "state": "UNCONN",
+            "local_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "udp",
+            "state": "UNCONN",
+            "local_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "LISTEN",
+            "local_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "LISTEN",
+            "local_endpoint": "REDACTED"
+        }
+    ],
+    "network_connections": [
+        {
+            "protocol": "udp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        },
+        {
+            "protocol": "tcp",
+            "state": "ESTAB",
+            "local_endpoint": "REDACTED",
+            "remote_endpoint": "REDACTED"
+        }
+    ],
+    "running_services": [
+        "accounts-daemon.service",
+        "colord.service",
+        "cron.service",
+        "dbus.service",
+        "g7kbd-hotkey.service",
+        "getty@tty1.service",
+        "haveged.service",
+        "lightdm.service",
+        "ModemManager.service",
+        "NetworkManager.service",
+        "pcscd.service",
+        "polkit.service",
+        "rtkit-daemon.service",
+        "smartmontools.service",
+        "ssh.service",
+        "systemd-journald.service",
+        "systemd-logind.service",
+        "systemd-timesyncd.service",
+        "systemd-udevd.service",
+        "udisks2.service",
+        "upower.service",
+        "user@1000.service",
+        "wpa_supplicant.service"
+    ],
+    "active_session_count": 3,
+    "cron_directories": [
+        {
+            "location": "/etc/cron.d",
+            "entry_count": 5
+        },
+        {
+            "location": "/etc/cron.daily",
+            "entry_count": 8
+        },
+        {
+            "location": "/etc/cron.hourly",
+            "entry_count": 1
+        },
+        {
+            "location": "/etc/cron.weekly",
+            "entry_count": 2
+        }
+    ]
+}
