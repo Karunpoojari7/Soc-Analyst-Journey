@@ -1,0 +1,12 @@
+{
+    "hunt": "AUTHENTICATION_HUNT",
+    "collection_source": "systemd journal",
+    "matching_event_count": 0,
+    "events": [],
+    "raw_log_exported": false,
+    "limitations": [
+        "Authentication events may be incomplete.",
+        "No username or source IP is exported.",
+        "Journal retention affects investigation coverage."
+    ]
+}

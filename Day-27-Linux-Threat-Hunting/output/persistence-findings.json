@@ -1,0 +1,94 @@
+{
+    "hunt": "PERSISTENCE_HUNT",
+    "cron_entries": [
+        {
+            "location": "/etc/cron.d",
+            "entry_type": "FILE",
+            "name": ".placeholder"
+        },
+        {
+            "location": "/etc/cron.d",
+            "entry_type": "FILE",
+            "name": "e2scrub_all"
+        },
+        {
+            "location": "/etc/cron.d",
+            "entry_type": "FILE",
+            "name": "john"
+        },
+        {
+            "location": "/etc/cron.d",
+            "entry_type": "FILE",
+            "name": "php"
+        },
+        {
+            "location": "/etc/cron.d",
+            "entry_type": "FILE",
+            "name": "sysstat"
+        },
+        {
+            "location": "/etc/cron.daily",
+            "entry_type": "FILE",
+            "name": ".placeholder"
+        },
+        {
+            "location": "/etc/cron.daily",
+            "entry_type": "FILE",
+            "name": "apache2"
+        },
+        {
+            "location": "/etc/cron.daily",
+            "entry_type": "FILE",
+            "name": "apt-compat"
+        },
+        {
+            "location": "/etc/cron.daily",
+            "entry_type": "FILE",
+            "name": "dpkg"
+        },
+        {
+            "location": "/etc/cron.daily",
+            "entry_type": "FILE",
+            "name": "logrotate"
+        },
+        {
+            "location": "/etc/cron.daily",
+            "entry_type": "FILE",
+            "name": "man-db"
+        },
+        {
+            "location": "/etc/cron.daily",
+            "entry_type": "FILE",
+            "name": "plocate"
+        },
+        {
+            "location": "/etc/cron.daily",
+            "entry_type": "FILE",
+            "name": "sysstat"
+        },
+        {
+            "location": "/etc/cron.hourly",
+            "entry_type": "FILE",
+            "name": ".placeholder"
+        },
+        {
+            "location": "/etc/cron.weekly",
+            "entry_type": "FILE",
+            "name": ".placeholder"
+        },
+        {
+            "location": "/etc/cron.weekly",
+            "entry_type": "FILE",
+            "name": "man-db"
+        }
+    ],
+    "cron_entry_count": 16,
+    "systemd_timer_output_available": true,
+    "systemd_timer_count": 10,
+    "classification": "REVIEW_REQUIRED",
+    "limitations": [
+        "Entries are not automatically malicious.",
+        "File contents are not collected.",
+        "User-specific and alternate persistence locations are not fully covered."
+    ]
+}

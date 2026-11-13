@@ -1,0 +1,12 @@
+{
+    "hunt": "NETWORK_HUNT",
+    "listening_socket_count": 7,
+    "active_connection_count": 11,
+    "findings": [],
+    "classification": "BASELINE_REVIEW_REQUIRED",
+    "limitations": [
+        "Endpoint addresses were intentionally redacted.",
+        "Socket ownership was not collected.",
+        "No external reputation checks were performed."
+    ]
+}

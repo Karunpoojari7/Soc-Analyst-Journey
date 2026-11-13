@@ -1,0 +1,34 @@
+{
+    "project": "Day 27 Linux Threat Hunting",
+    "dataset_type": "SANITIZED REAL ENDPOINT TELEMETRY",
+    "execution_status": "COMPLETED",
+    "confirmed_compromise": false,
+    "investigation_modules": [
+        {
+            "script": "collect_endpoint.py",
+            "return_code": 0,
+            "status": "PASS"
+        },
+        {
+            "script": "hunt_processes.py",
+            "return_code": 0,
+            "status": "PASS"
+        },
+        {
+            "script": "hunt_network.py",
+            "return_code": 0,
+            "status": "PASS"
+        },
+        {
+            "script": "hunt_authentication.py",
+            "return_code": 0,
+            "status": "PASS"
+        },
+        {
+            "script": "hunt_persistence.py",
+            "return_code": 0,
+            "status": "PASS"
+        }
+    ],
+    "interpretation": "The automation produces investigation candidates. It does not independently establish compromise."
+}
