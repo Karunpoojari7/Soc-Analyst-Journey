@@ -1,0 +1,12 @@
+{
+  "nexora-linux-01": {
+    "asset_criticality": "HIGH",
+    "asset_type": "LINUX_SERVER",
+    "environment": "PRODUCTION"
+  },
+  "nexora-linux-02": {
+    "asset_criticality": "MEDIUM",
+    "asset_type": "LINUX_SERVER",
+    "environment": "PRODUCTION"
+  }
+}
