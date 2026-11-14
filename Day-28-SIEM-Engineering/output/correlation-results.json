@@ -1,0 +1,19 @@
+{
+    "correlation_count": 1,
+    "sequences": [
+        {
+            "alert_id": "ALERT-EVT-001",
+            "correlation_type": "TEMPORAL_AND_ACCOUNT_CONTEXT",
+            "related_event_ids": [
+                "EVT-007",
+                "EVT-008",
+                "EVT-009",
+                "EVT-010"
+            ],
+            "related_event_count": 4,
+            "confirmed_session_linkage": false,
+            "confirmed_causation": false,
+            "classification": "REQUIRES_INVESTIGATION"
+        }
+    ]
+}

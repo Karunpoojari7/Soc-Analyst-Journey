@@ -1,0 +1,54 @@
+{
+    "project": "NEXORA-SIEM-LAB",
+    "dataset": "SYNTHETIC",
+    "events_processed": 10,
+    "alerts_generated": 4,
+    "alerts": [
+        {
+            "alert_id": "SIEM-001-EVT-005",
+            "rule_id": "SIEM-001",
+            "title": "SSH authentication failure threshold exceeded",
+            "severity": "HIGH",
+            "host": "nexora-linux-01",
+            "source_ip": "198.51.100.23",
+            "failure_count": 5,
+            "window_seconds": 600,
+            "classification": "REVIEW_REQUIRED",
+            "correlated_success_event": "EVT-006"
+        },
+        {
+            "alert_id": "SIEM-002-EVT-006",
+            "rule_id": "SIEM-002",
+            "title": "Successful login after repeated authentication failures",
+            "severity": "HIGH",
+            "host": "nexora-linux-01",
+            "source_ip": "198.51.100.23",
+            "username": "svc-backup",
+            "success_event": "EVT-006",
+            "classification": "REVIEW_REQUIRED"
+        },
+        {
+            "alert_id": "SIEM-003-EVT-007",
+            "rule_id": "SIEM-003",
+            "title": "Privileged activity after suspicious login",
+            "severity": "HIGH",
+            "host": "nexora-linux-01",
+            "username": "svc-backup",
+            "privileged_event": "EVT-007",
+            "related_success_event": "EVT-006",
+            "classification": "REVIEW_REQUIRED"
+        },
+        {
+            "alert_id": "SIEM-004-EVT-008",
+            "rule_id": "SIEM-004",
+            "title": "Outbound connection requires review",
+            "severity": "MEDIUM",
+            "host": "nexora-linux-01",
+            "destination_ip": "203.0.113.77",
+            "destination_port": 443,
+            "process_name": "python3",
+            "classification": "REVIEW_REQUIRED"
+        }
+    ],
+    "compromise_confirmed": false
+}

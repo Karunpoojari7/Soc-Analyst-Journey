@@ -1,0 +1,10 @@
+{
+    "pipeline": "NEXORA SIEM",
+    "collection_time_utc": "2026-11-14T14:47:17.849339+00:00",
+    "source": "synthetic JSONL dataset",
+    "events_received": 11,
+    "events_accepted": 11,
+    "events_rejected": 0,
+    "errors": [],
+    "status": "SUCCESS"
+}

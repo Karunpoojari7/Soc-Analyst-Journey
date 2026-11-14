@@ -1,0 +1,22 @@
+{
+    "detection_engine": "NEXORA SIEM",
+    "rules_evaluated": 2,
+    "alert_count": 1,
+    "alerts": [
+        {
+            "alert_id": "ALERT-EVT-001",
+            "rule_id": "DET-SSH-001",
+            "source_ip": "198.51.100.23",
+            "user": "svc-backup",
+            "failed_attempts": 5,
+            "first_failure": "2026-11-14T10:00:01Z",
+            "last_failure": "2026-11-14T10:04:40Z",
+            "successful_login_after_failures": true,
+            "severity": "high",
+            "classification": "REVIEW_REQUIRED",
+            "confirmed_compromise": false,
+            "correlation_rule": "COR-SSH-001",
+            "successful_login_time": "2026-11-14T10:05:50Z"
+        }
+    ]
+}
