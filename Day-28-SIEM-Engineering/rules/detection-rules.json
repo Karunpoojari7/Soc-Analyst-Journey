@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "rule_id": "DET-SSH-001",
+      "name": "SSH Brute Force Threshold",
+      "description": "Detect five or more failed authentication events within ten minutes.",
+      "event_category": "authentication",
+      "outcome": "failure",
+      "threshold": 5,
+      "window_seconds": 600,
+      "group_by": ["source_ip", "user"],
+      "severity": "high"
+    },
+    {
+      "rule_id": "COR-SSH-001",
+      "name": "Authentication Success After Repeated Failures",
+      "description": "Identify successful authentication after the failure threshold.",
+      "correlation_window_seconds": 600,
+      "severity": "high"
+    }
+  ]
+}
