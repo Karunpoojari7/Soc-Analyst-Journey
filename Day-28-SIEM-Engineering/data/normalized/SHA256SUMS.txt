@@ -1,0 +1,2 @@
+546c12125db58d2a13632661e89ad2d3f1769b8498dffc43221840619b54f966  data/raw/security-events.jsonl
+677f8470f5d0984eaeba083943d001078779954c5fdd4e3a896b1c6e3328bab9  data/normalized/normalized-events.jsonl
