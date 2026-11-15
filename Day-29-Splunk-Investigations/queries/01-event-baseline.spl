@@ -1,0 +1,3 @@
+index=nexora sourcetype=_json host="nexora-linux-01"
+| stats count by event_type
+| sort -count

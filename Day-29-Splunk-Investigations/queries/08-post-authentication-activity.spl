@@ -1,0 +1,3 @@
+index=nexora sourcetype=_json username="svc-backup"
+| sort 0 _time
+| table _time event_id event_type username src_ip command process_name dest_ip dest_port

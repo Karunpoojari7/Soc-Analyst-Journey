@@ -1,0 +1,3 @@
+index=nexora sourcetype=_json
+(event_type="AUTH_FAILURE" OR event_type="AUTH_SUCCESS")
+| timechart span=1m count by event_type

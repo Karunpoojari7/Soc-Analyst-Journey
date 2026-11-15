@@ -1,0 +1,3 @@
+index=nexora sourcetype=_json event_type="AUTH_SUCCESS"
+| table _time host username src_ip outcome
+| sort _time

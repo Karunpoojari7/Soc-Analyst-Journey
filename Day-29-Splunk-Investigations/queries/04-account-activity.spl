@@ -1,0 +1,2 @@
+index=nexora sourcetype=_json username="svc-backup"
+| stats count by event_type outcome

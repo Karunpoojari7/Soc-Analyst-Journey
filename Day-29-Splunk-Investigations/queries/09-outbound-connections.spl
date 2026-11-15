@@ -1,0 +1,2 @@
+index=nexora sourcetype=_json event_type="NETWORK_CONNECTION"
+| stats count by host username src_ip dest_ip dest_port process_name

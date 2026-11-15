@@ -1,0 +1,3 @@
+index=nexora sourcetype=_json event_type="AUTH_FAILURE"
+| stats count as failures by username src_ip host
+| sort -failures

@@ -1,0 +1,4 @@
+index=nexora sourcetype=_json event_type="AUTH_FAILURE"
+| bin _time span=10m
+| stats count as failures by _time username src_ip host
+| where failures >= 5

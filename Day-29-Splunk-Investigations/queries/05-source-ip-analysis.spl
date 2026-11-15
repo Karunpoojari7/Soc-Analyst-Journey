@@ -1,0 +1,3 @@
+index=nexora sourcetype=_json
+| stats count dc(username) as targeted_accounts by src_ip
+| sort -count
