@@ -1,0 +1,37 @@
+{
+  "case_id": "SOC-2026-029",
+  "dataset": "synthetic",
+  "total_events": 11,
+  "event_type_counts": {
+    "AUTH_FAILURE": 6,
+    "AUTH_SUCCESS": 1,
+    "SESSION": 1,
+    "PRIVILEGED_ACTIVITY": 1,
+    "PROCESS_EXECUTION": 1,
+    "NETWORK_CONNECTION": 1
+  },
+  "authentication_failures": 6,
+  "authentication_successes": 1,
+  "success_after_failures": true,
+  "privileged_commands": [
+    "sudo systemctl status ssh"
+  ],
+  "processes": [
+    "python3"
+  ],
+  "network_connections": [
+    {
+      "destination": "203.0.113.80",
+      "port": 443,
+      "process": "python3"
+    }
+  ],
+  "assessment": "HIGH_PRIORITY_INVESTIGATION",
+  "compromise_confirmed": false,
+  "limitations": [
+    "Synthetic data only",
+    "No session identifier linking events",
+    "No process tree or packet evidence",
+    "Temporal correlation does not prove causation"
+  ]
+}
