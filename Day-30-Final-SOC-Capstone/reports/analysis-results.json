@@ -1,0 +1,94 @@
+{
+  "case_id": "SOC-2026-030",
+  "case_name": "NEXORA Linux Account Investigation",
+  "dataset_type": "synthetic",
+  "host": "nexora-linux-01",
+  "total_events": 15,
+  "event_counts": {
+    "AUTH_FAILURE": 6,
+    "AUTH_SUCCESS": 2,
+    "SESSION": 1,
+    "PRIVILEGED_ACTIVITY": 1,
+    "PROCESS_EXECUTION": 2,
+    "NETWORK_CONNECTION": 2,
+    "DNS_QUERY": 1
+  },
+  "findings": [
+    {
+      "id": "D30-DET-001",
+      "severity": "HIGH",
+      "title": "Repeated authentication failures",
+      "account": "svc-backup",
+      "count": 5,
+      "source_ips": [
+        "198.51.100.45"
+      ],
+      "description": "Five or more authentication failures observed."
+    },
+    {
+      "id": "D30-DET-002",
+      "severity": "HIGH",
+      "title": "Successful login after repeated failures",
+      "account": "svc-backup",
+      "success_event": "D30-E006",
+      "description": "Successful authentication followed earlier failures."
+    },
+    {
+      "id": "D30-DET-003",
+      "severity": "MEDIUM",
+      "title": "Privileged activity requires validation",
+      "account": "svc-backup",
+      "event_id": "D30-E008",
+      "command": "sudo systemctl status ssh"
+    },
+    {
+      "id": "D30-DET-004",
+      "severity": "MEDIUM",
+      "title": "Process execution requires investigation",
+      "account": "svc-backup",
+      "process": "python3",
+      "event_id": "D30-E009"
+    },
+    {
+      "id": "D30-DET-005",
+      "severity": "MEDIUM",
+      "title": "Outbound network connection requires review",
+      "account": "svc-backup",
+      "destination": "203.0.113.90",
+      "destination_port": 443,
+      "process": "python3",
+      "event_id": "D30-E010"
+    },
+    {
+      "id": "D30-DET-004",
+      "severity": "MEDIUM",
+      "title": "Process execution requires investigation",
+      "account": "backup-operator",
+      "process": "backup-agent",
+      "event_id": "D30-E014"
+    },
+    {
+      "id": "D30-DET-005",
+      "severity": "MEDIUM",
+      "title": "Outbound network connection requires review",
+      "account": "backup-operator",
+      "destination": "192.0.2.80",
+      "destination_port": 443,
+      "process": "backup-agent",
+      "event_id": "D30-E015"
+    }
+  ],
+  "assessment": {
+    "priority": "HIGH",
+    "status": "UNDER_INVESTIGATION",
+    "compromise_confirmed": false,
+    "recommended_action": "Tier 2 investigation",
+    "limitations": [
+      "Synthetic dataset only.",
+      "No session identifier proves event-to-session attribution.",
+      "No process parent-child relationship is provided.",
+      "Outbound connection destination reputation is not established.",
+      "Event correlation does not prove causation."
+    ]
+  }
+}
