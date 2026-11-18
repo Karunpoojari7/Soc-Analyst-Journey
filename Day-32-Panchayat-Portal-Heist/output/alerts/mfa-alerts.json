@@ -1,0 +1,80 @@
+[
+    {
+        "alert_id": "DAY32-MFA-001-001",
+        "rule_id": "MFA-001",
+        "severity": "HIGH",
+        "title": "Excessive MFA Requests",
+        "username": "bdo_mandapam_01",
+        "source_ip": "198.51.100.25",
+        "description": "Multiple MFA requests detected within the configured time window.",
+        "evidence": {
+            "request_count": 3,
+            "window_minutes": 10,
+            "event_ids": [
+                "MFA-010",
+                "MFA-011",
+                "MFA-012"
+            ]
+        },
+        "generated_at": "2026-11-18T17:44:01.886534+00:00"
+    },
+    {
+        "alert_id": "DAY32-MFA-002-002",
+        "rule_id": "MFA-002",
+        "severity": "HIGH",
+        "title": "MFA Approval Outside Observed Device Baseline",
+        "username": "bdo_mandapam_01",
+        "source_ip": "198.51.100.25",
+        "description": "MFA approval originated from a device different from the observed baseline, or no baseline exists.",
+        "evidence": {
+            "event_id": "MFA-020",
+            "observed_device": "UNKNOWN-DEVICE-77",
+            "baseline_device": "DEVICE-M01",
+            "session_id": "SESSION-SIM-777"
+        },
+        "generated_at": "2026-11-18T17:44:01.886567+00:00"
+    },
+    {
+        "alert_id": "DAY32-MFA-003-003",
+        "rule_id": "MFA-003",
+        "severity": "CRITICAL",
+        "title": "MFA Approval Following Repeated Requests",
+        "username": "bdo_mandapam_01",
+        "source_ip": "198.51.100.25",
+        "description": "MFA approval followed multiple requests from the same account and IP.",
+        "evidence": {
+            "approval_event": "MFA-020",
+            "preceding_request_count": 5,
+            "request_event_ids": [
+                "MFA-010",
+                "MFA-011",
+                "MFA-012",
+                "MFA-013",
+                "MFA-014"
+            ],
+            "session_id": "SESSION-SIM-777"
+        },
+        "generated_at": "2026-11-18T17:44:01.886592+00:00"
+    },
+    {
+        "alert_id": "DAY32-MFA-004-004",
+        "rule_id": "MFA-004",
+        "severity": "CRITICAL",
+        "title": "Multiple Accounts Approved From Same IP and Device",
+        "username": "bdo_mandapam_01,finance_checker_01",
+        "source_ip": "198.51.100.25",
+        "description": "Multiple user accounts received MFA approval from the same IP and device.",
+        "evidence": {
+            "accounts": [
+                "bdo_mandapam_01",
+                "finance_checker_01"
+            ],
+            "device_id": "UNKNOWN-DEVICE-77",
+            "approval_event_ids": [
+                "MFA-020",
+                "MFA-021"
+            ]
+        },
+        "generated_at": "2026-11-18T17:44:01.886611+00:00"
+    }
+]

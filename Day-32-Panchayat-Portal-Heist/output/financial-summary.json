@@ -1,0 +1,10 @@
+{
+    "total_transactions": 8,
+    "approved_transaction_value_inr": 9665000,
+    "new_beneficiary_value_inr": 9500000,
+    "suspicious_session_value_inr": 9500000,
+    "suspicious_sessions": [
+        "SESSION-SIM-777"
+    ],
+    "alerts_generated": 10
+}

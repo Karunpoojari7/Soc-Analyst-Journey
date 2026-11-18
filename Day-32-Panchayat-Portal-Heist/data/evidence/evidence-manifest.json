@@ -1,0 +1,25 @@
+{
+    "case_id": "INC-DAY32-001",
+    "classification": "SYNTHETIC TRAINING EVIDENCE",
+    "generated_at": "2026-11-18T17:44:01.962436+00:00",
+    "files": [
+        {
+            "filename": "authentication.jsonl",
+            "sha256": "5eadc59781093d3eb1fe6c56c450f4ce7af22947167586a08c0508889b2cabd9",
+            "size_bytes": 2067,
+            "algorithm": "SHA-256"
+        },
+        {
+            "filename": "mfa-events.jsonl",
+            "sha256": "2483c666adc1a8f878c5605fd837753337d627c26212658dc95dcdf22c637980",
+            "size_bytes": 2203,
+            "algorithm": "SHA-256"
+        },
+        {
+            "filename": "transactions.jsonl",
+            "sha256": "07c33e0172672f3341619874f0f87afba62e05e6432826f0027f6a7e4740b711",
+            "size_bytes": 2176,
+            "algorithm": "SHA-256"
+        }
+    ]
+}

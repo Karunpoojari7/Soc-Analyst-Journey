@@ -1,0 +1,173 @@
+[
+    {
+        "alert_id": "DAY32-TXN-001-001",
+        "rule_id": "TXN-001",
+        "severity": "HIGH",
+        "title": "High-Value Payment to New Beneficiary",
+        "description": "An approved high-value payment was made to a newly introduced beneficiary.",
+        "evidence": {
+            "transaction_id": "TXN-003",
+            "beneficiary_id": "BEN-SIM-901",
+            "amount_inr": 2500000,
+            "maker": "bdo_mandapam_01",
+            "checker": "finance_checker_01",
+            "timestamp": "2026-11-18T10:27:00+00:00"
+        },
+        "generated_at": "2026-11-18T17:44:01.910897+00:00"
+    },
+    {
+        "alert_id": "DAY32-TXN-001-002",
+        "rule_id": "TXN-001",
+        "severity": "HIGH",
+        "title": "High-Value Payment to New Beneficiary",
+        "description": "An approved high-value payment was made to a newly introduced beneficiary.",
+        "evidence": {
+            "transaction_id": "TXN-004",
+            "beneficiary_id": "BEN-SIM-902",
+            "amount_inr": 3000000,
+            "maker": "bdo_mandapam_01",
+            "checker": "finance_checker_01",
+            "timestamp": "2026-11-18T10:29:00+00:00"
+        },
+        "generated_at": "2026-11-18T17:44:01.910917+00:00"
+    },
+    {
+        "alert_id": "DAY32-TXN-001-003",
+        "rule_id": "TXN-001",
+        "severity": "HIGH",
+        "title": "High-Value Payment to New Beneficiary",
+        "description": "An approved high-value payment was made to a newly introduced beneficiary.",
+        "evidence": {
+            "transaction_id": "TXN-005",
+            "beneficiary_id": "BEN-SIM-903",
+            "amount_inr": 1800000,
+            "maker": "bdo_mandapam_01",
+            "checker": "finance_checker_01",
+            "timestamp": "2026-11-18T10:32:00+00:00"
+        },
+        "generated_at": "2026-11-18T17:44:01.910920+00:00"
+    },
+    {
+        "alert_id": "DAY32-TXN-001-004",
+        "rule_id": "TXN-001",
+        "severity": "HIGH",
+        "title": "High-Value Payment to New Beneficiary",
+        "description": "An approved high-value payment was made to a newly introduced beneficiary.",
+        "evidence": {
+            "transaction_id": "TXN-007",
+            "beneficiary_id": "BEN-SIM-904",
+            "amount_inr": 2200000,
+            "maker": "bdo_mandapam_01",
+            "checker": "finance_checker_01",
+            "timestamp": "2026-11-18T10:38:00+00:00"
+        },
+        "generated_at": "2026-11-18T17:44:01.910923+00:00"
+    },
+    {
+        "alert_id": "DAY32-TXN-002-005",
+        "rule_id": "TXN-002",
+        "severity": "CRITICAL",
+        "title": "Rapid High-Value Transaction Burst",
+        "description": "Multiple high-value approved transactions by one maker were detected in overlapping transaction windows.",
+        "evidence": {
+            "maker": "bdo_mandapam_01",
+            "transaction_count": 4,
+            "transaction_ids": [
+                "TXN-003",
+                "TXN-004",
+                "TXN-005",
+                "TXN-007"
+            ],
+            "total_amount_inr": 9500000,
+            "window_minutes": 15,
+            "window_start": "2026-11-18T10:27:00+00:00",
+            "window_end": "2026-11-18T10:38:00+00:00",
+            "correlation_method": "overlapping_window_merge"
+        },
+        "generated_at": "2026-11-18T17:44:01.910946+00:00"
+    },
+    {
+        "alert_id": "DAY32-TXN-003-006",
+        "rule_id": "TXN-003",
+        "severity": "HIGH",
+        "title": "Repeated Maker-Checker Pairing",
+        "description": "The same maker-checker pair approved multiple high-value payments to new beneficiaries.",
+        "evidence": {
+            "maker": "bdo_mandapam_01",
+            "checker": "finance_checker_01",
+            "transaction_count": 4,
+            "transaction_ids": [
+                "TXN-003",
+                "TXN-004",
+                "TXN-005",
+                "TXN-007"
+            ],
+            "total_amount_inr": 9500000
+        },
+        "generated_at": "2026-11-18T17:44:01.910953+00:00"
+    },
+    {
+        "alert_id": "DAY32-TXN-004-007",
+        "rule_id": "TXN-004",
+        "severity": "CRITICAL",
+        "title": "Financial Transaction Linked to Suspicious Session",
+        "description": "An approved financial transaction used a session associated with authentication or MFA alerts.",
+        "evidence": {
+            "transaction_id": "TXN-003",
+            "session_id": "SESSION-SIM-777",
+            "maker": "bdo_mandapam_01",
+            "beneficiary_id": "BEN-SIM-901",
+            "amount_inr": 2500000,
+            "timestamp": "2026-11-18T10:27:00+00:00"
+        },
+        "generated_at": "2026-11-18T17:44:01.910960+00:00"
+    },
+    {
+        "alert_id": "DAY32-TXN-004-008",
+        "rule_id": "TXN-004",
+        "severity": "CRITICAL",
+        "title": "Financial Transaction Linked to Suspicious Session",
+        "description": "An approved financial transaction used a session associated with authentication or MFA alerts.",
+        "evidence": {
+            "transaction_id": "TXN-004",
+            "session_id": "SESSION-SIM-777",
+            "maker": "bdo_mandapam_01",
+            "beneficiary_id": "BEN-SIM-902",
+            "amount_inr": 3000000,
+            "timestamp": "2026-11-18T10:29:00+00:00"
+        },
+        "generated_at": "2026-11-18T17:44:01.910962+00:00"
+    },
+    {
+        "alert_id": "DAY32-TXN-004-009",
+        "rule_id": "TXN-004",
+        "severity": "CRITICAL",
+        "title": "Financial Transaction Linked to Suspicious Session",
+        "description": "An approved financial transaction used a session associated with authentication or MFA alerts.",
+        "evidence": {
+            "transaction_id": "TXN-005",
+            "session_id": "SESSION-SIM-777",
+            "maker": "bdo_mandapam_01",
+            "beneficiary_id": "BEN-SIM-903",
+            "amount_inr": 1800000,
+            "timestamp": "2026-11-18T10:32:00+00:00"
+        },
+        "generated_at": "2026-11-18T17:44:01.910965+00:00"
+    },
+    {
+        "alert_id": "DAY32-TXN-004-010",
+        "rule_id": "TXN-004",
+        "severity": "CRITICAL",
+        "title": "Financial Transaction Linked to Suspicious Session",
+        "description": "An approved financial transaction used a session associated with authentication or MFA alerts.",
+        "evidence": {
+            "transaction_id": "TXN-007",
+            "session_id": "SESSION-SIM-777",
+            "maker": "bdo_mandapam_01",
+            "beneficiary_id": "BEN-SIM-904",
+            "amount_inr": 2200000,
+            "timestamp": "2026-11-18T10:38:00+00:00"
+        },
+        "generated_at": "2026-11-18T17:44:01.910967+00:00"
+    }
+]

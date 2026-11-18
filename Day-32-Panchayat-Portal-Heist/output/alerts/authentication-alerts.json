@@ -1,0 +1,57 @@
+[
+    {
+        "alert_id": "DAY32-AUTH-001-001",
+        "rule_id": "AUTH-001",
+        "severity": "HIGH",
+        "title": "Multiple Failed Authentication Attempts",
+        "username": "bdo_mandapam_01",
+        "source_ip": "198.51.100.25",
+        "description": "Repeated failed login attempts detected.",
+        "evidence": {
+            "failure_count": 4,
+            "first_failure": "2026-11-18T10:15:00+00:00",
+            "last_failure": "2026-11-18T10:18:00+00:00",
+            "event_ids": [
+                "AUTH-010",
+                "AUTH-011",
+                "AUTH-012",
+                "AUTH-013"
+            ]
+        },
+        "generated_at": "2026-11-18T17:44:01.857668+00:00"
+    },
+    {
+        "alert_id": "DAY32-AUTH-002-002",
+        "rule_id": "AUTH-002",
+        "severity": "CRITICAL",
+        "title": "Successful Login Following Repeated Failures",
+        "username": "bdo_mandapam_01",
+        "source_ip": "198.51.100.25",
+        "description": "Successful authentication followed multiple failed attempts from the same IP.",
+        "evidence": {
+            "failed_attempts": 4,
+            "successful_event": "AUTH-020",
+            "success_timestamp": "2026-11-18T10:20:00+00:00",
+            "device_id": "UNKNOWN-DEVICE-77",
+            "session_id": "SESSION-SIM-777"
+        },
+        "generated_at": "2026-11-18T17:44:01.857731+00:00"
+    },
+    {
+        "alert_id": "DAY32-AUTH-003-003",
+        "rule_id": "AUTH-003",
+        "severity": "HIGH",
+        "title": "Multiple Accounts Authenticated From One IP",
+        "username": "bdo_mandapam_01,finance_checker_01",
+        "source_ip": "198.51.100.25",
+        "description": "Multiple user accounts successfully authenticated from the same source IP.",
+        "evidence": {
+            "accounts": [
+                "bdo_mandapam_01",
+                "finance_checker_01"
+            ],
+            "account_count": 2
+        },
+        "generated_at": "2026-11-18T17:44:01.857746+00:00"
+    }
+]

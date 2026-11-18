@@ -1,0 +1,206 @@
+{
+    "incident_id": "INC-DAY32-001",
+    "incident_title": "Suspected Financial Portal Account Takeover",
+    "severity": "CRITICAL",
+    "status": "OPEN - INVESTIGATION REQUIRED",
+    "classification": "SIMULATED SECURITY INCIDENT",
+    "generated_at": "2026-11-18T17:44:01.935207+00:00",
+    "suspicious_users": [
+        "bdo_mandapam_01",
+        "finance_checker_01"
+    ],
+    "suspicious_ips": [
+        "198.51.100.25"
+    ],
+    "suspicious_sessions": [
+        "SESSION-SIM-777"
+    ],
+    "evidence_summary": {
+        "authentication_events": 10,
+        "mfa_events": 10,
+        "authentication_alerts": 3,
+        "mfa_alerts": 4,
+        "financial_alerts": 10,
+        "correlated_transactions": 4,
+        "approved_transactions": 4,
+        "strong_timeline_events": 11,
+        "supporting_timeline_events": 6
+    },
+    "financial_exposure_inr": 9500000,
+    "new_beneficiaries": [
+        "BEN-SIM-901",
+        "BEN-SIM-902",
+        "BEN-SIM-903",
+        "BEN-SIM-904"
+    ],
+    "transaction_ids": [
+        "TXN-003",
+        "TXN-004",
+        "TXN-005",
+        "TXN-007"
+    ],
+    "timeline": [
+        {
+            "timestamp": "2026-11-18T10:15:00+00:00",
+            "category": "AUTHENTICATION",
+            "event_id": "AUTH-010",
+            "description": "bdo_mandapam_01 authentication failure from 198.51.100.25",
+            "session_id": null,
+            "source_ip": "198.51.100.25",
+            "evidence_level": "SUPPORTING"
+        },
+        {
+            "timestamp": "2026-11-18T10:16:00+00:00",
+            "category": "AUTHENTICATION",
+            "event_id": "AUTH-011",
+            "description": "bdo_mandapam_01 authentication failure from 198.51.100.25",
+            "session_id": null,
+            "source_ip": "198.51.100.25",
+            "evidence_level": "SUPPORTING"
+        },
+        {
+            "timestamp": "2026-11-18T10:17:00+00:00",
+            "category": "AUTHENTICATION",
+            "event_id": "AUTH-012",
+            "description": "bdo_mandapam_01 authentication failure from 198.51.100.25",
+            "session_id": null,
+            "source_ip": "198.51.100.25",
+            "evidence_level": "SUPPORTING"
+        },
+        {
+            "timestamp": "2026-11-18T10:18:00+00:00",
+            "category": "AUTHENTICATION",
+            "event_id": "AUTH-013",
+            "description": "bdo_mandapam_01 authentication failure from 198.51.100.25",
+            "session_id": null,
+            "source_ip": "198.51.100.25",
+            "evidence_level": "SUPPORTING"
+        },
+        {
+            "timestamp": "2026-11-18T10:19:00+00:00",
+            "category": "MFA",
+            "event_id": "MFA-010",
+            "description": "bdo_mandapam_01 MFA_REQUEST from 198.51.100.25",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": "198.51.100.25",
+            "evidence_level": "STRONG"
+        },
+        {
+            "timestamp": "2026-11-18T10:20:00+00:00",
+            "category": "AUTHENTICATION",
+            "event_id": "AUTH-020",
+            "description": "bdo_mandapam_01 authentication success from 198.51.100.25",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": "198.51.100.25",
+            "evidence_level": "STRONG"
+        },
+        {
+            "timestamp": "2026-11-18T10:20:00+00:00",
+            "category": "MFA",
+            "event_id": "MFA-011",
+            "description": "bdo_mandapam_01 MFA_REQUEST from 198.51.100.25",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": "198.51.100.25",
+            "evidence_level": "STRONG"
+        },
+        {
+            "timestamp": "2026-11-18T10:21:00+00:00",
+            "category": "AUTHENTICATION",
+            "event_id": "AUTH-021",
+            "description": "finance_checker_01 authentication success from 198.51.100.25",
+            "session_id": "SESSION-SIM-778",
+            "source_ip": "198.51.100.25",
+            "evidence_level": "SUPPORTING"
+        },
+        {
+            "timestamp": "2026-11-18T10:21:00+00:00",
+            "category": "MFA",
+            "event_id": "MFA-012",
+            "description": "bdo_mandapam_01 MFA_REQUEST from 198.51.100.25",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": "198.51.100.25",
+            "evidence_level": "STRONG"
+        },
+        {
+            "timestamp": "2026-11-18T10:22:00+00:00",
+            "category": "MFA",
+            "event_id": "MFA-013",
+            "description": "bdo_mandapam_01 MFA_REQUEST from 198.51.100.25",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": "198.51.100.25",
+            "evidence_level": "STRONG"
+        },
+        {
+            "timestamp": "2026-11-18T10:23:00+00:00",
+            "category": "MFA",
+            "event_id": "MFA-014",
+            "description": "bdo_mandapam_01 MFA_REQUEST from 198.51.100.25",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": "198.51.100.25",
+            "evidence_level": "STRONG"
+        },
+        {
+            "timestamp": "2026-11-18T10:24:00+00:00",
+            "category": "MFA",
+            "event_id": "MFA-020",
+            "description": "bdo_mandapam_01 MFA_APPROVED from 198.51.100.25",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": "198.51.100.25",
+            "evidence_level": "STRONG"
+        },
+        {
+            "timestamp": "2026-11-18T10:25:00+00:00",
+            "category": "MFA",
+            "event_id": "MFA-021",
+            "description": "finance_checker_01 MFA_APPROVED from 198.51.100.25",
+            "session_id": "SESSION-SIM-778",
+            "source_ip": "198.51.100.25",
+            "evidence_level": "SUPPORTING"
+        },
+        {
+            "timestamp": "2026-11-18T10:27:00+00:00",
+            "category": "FINANCIAL_TRANSACTION",
+            "event_id": "TXN-003",
+            "description": "approved payment of INR 2,500,000 to BEN-SIM-901",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": null,
+            "evidence_level": "STRONG"
+        },
+        {
+            "timestamp": "2026-11-18T10:29:00+00:00",
+            "category": "FINANCIAL_TRANSACTION",
+            "event_id": "TXN-004",
+            "description": "approved payment of INR 3,000,000 to BEN-SIM-902",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": null,
+            "evidence_level": "STRONG"
+        },
+        {
+            "timestamp": "2026-11-18T10:32:00+00:00",
+            "category": "FINANCIAL_TRANSACTION",
+            "event_id": "TXN-005",
+            "description": "approved payment of INR 1,800,000 to BEN-SIM-903",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": null,
+            "evidence_level": "STRONG"
+        },
+        {
+            "timestamp": "2026-11-18T10:38:00+00:00",
+            "category": "FINANCIAL_TRANSACTION",
+            "event_id": "TXN-007",
+            "description": "approved payment of INR 2,200,000 to BEN-SIM-904",
+            "session_id": "SESSION-SIM-777",
+            "source_ip": null,
+            "evidence_level": "STRONG"
+        }
+    ],
+    "investigation_assessment": "The synthetic evidence shows authentication and MFA activity associated with a session subsequently used for multiple financial transactions. Exact session linkage is classified as strong correlation within this dataset. Related account and IP activity outside that session is supporting evidence. These findings justify further investigation but do not establish the real-world cause of authentication approval or prove criminal intent.",
+    "recommended_actions": [
+        "Preserve original authentication, MFA and transaction logs.",
+        "Request authorised suspension of affected sessions.",
+        "Ask payment operations to review and hold pending transfers.",
+        "Verify beneficiary changes and approvals with authorised officials.",
+        "Review maker-checker access and audit records.",
+        "Notify authorised incident response and banking teams."
+    ]
+}

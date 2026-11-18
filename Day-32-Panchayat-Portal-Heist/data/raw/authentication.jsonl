@@ -1,0 +1,10 @@
+{"event_id": "AUTH-001", "timestamp": "2026-11-18T10:00:00+00:00", "username": "bdo_mandapam_01", "source_ip": "192.0.2.10", "device_id": "DEVICE-M01", "status": "success", "session_id": "SESSION-M001"}
+{"event_id": "AUTH-002", "timestamp": "2026-11-18T10:02:00+00:00", "username": "bdo_dharapuram_01", "source_ip": "192.0.2.20", "device_id": "DEVICE-D01", "status": "success", "session_id": "SESSION-D001"}
+{"event_id": "AUTH-003", "timestamp": "2026-11-18T10:05:00+00:00", "username": "bdo_nagapattinam_01", "source_ip": "192.0.2.30", "device_id": "DEVICE-N01", "status": "success", "session_id": "SESSION-N001"}
+{"event_id": "AUTH-010", "timestamp": "2026-11-18T10:15:00+00:00", "username": "bdo_mandapam_01", "source_ip": "198.51.100.25", "device_id": "UNKNOWN-DEVICE-77", "status": "failure", "session_id": null}
+{"event_id": "AUTH-011", "timestamp": "2026-11-18T10:16:00+00:00", "username": "bdo_mandapam_01", "source_ip": "198.51.100.25", "device_id": "UNKNOWN-DEVICE-77", "status": "failure", "session_id": null}
+{"event_id": "AUTH-012", "timestamp": "2026-11-18T10:17:00+00:00", "username": "bdo_mandapam_01", "source_ip": "198.51.100.25", "device_id": "UNKNOWN-DEVICE-77", "status": "failure", "session_id": null}
+{"event_id": "AUTH-013", "timestamp": "2026-11-18T10:18:00+00:00", "username": "bdo_mandapam_01", "source_ip": "198.51.100.25", "device_id": "UNKNOWN-DEVICE-77", "status": "failure", "session_id": null}
+{"event_id": "AUTH-020", "timestamp": "2026-11-18T10:20:00+00:00", "username": "bdo_mandapam_01", "source_ip": "198.51.100.25", "device_id": "UNKNOWN-DEVICE-77", "status": "success", "session_id": "SESSION-SIM-777"}
+{"event_id": "AUTH-021", "timestamp": "2026-11-18T10:21:00+00:00", "username": "finance_checker_01", "source_ip": "198.51.100.25", "device_id": "UNKNOWN-DEVICE-77", "status": "success", "session_id": "SESSION-SIM-778"}
+{"event_id": "AUTH-022", "timestamp": "2026-11-18T10:30:00+00:00", "username": "bdo_dharapuram_01", "source_ip": "192.0.2.20", "device_id": "DEVICE-D01", "status": "success", "session_id": "SESSION-D002"}
