@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  payguard-soc-core:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: payguard-soc-core
+    ports:
+      - "8000:8000"
+    environment:
+      - PAYGUARD_APP_NAME=PAYGUARD-SOC-Core
+      - PAYGUARD_ENVIRONMENT=synthetic-lab
+      - PAYGUARD_SYNTHETIC_CURRENCY=INR
+      - PAYGUARD_DATABASE_PATH=/app/payguard_synthetic.db
+      - PAYGUARD_ENFORCE_NETWORK_ISOLATION=true
+      - PAYGUARD_MICRO_VALUE_MAX_INR=50.00
+      - PAYGUARD_HIGH_VALUE_MIN_INR=5000.00
+      - PAYGUARD_MICRO_PROBE_WINDOW_SECONDS=300
+      - PAYGUARD_VELOCITY_MAX_TX_COUNT=3
+      - PAYGUARD_VELOCITY_WINDOW_SECONDS=60
+      - PAYGUARD_AUTH_FAILURE_BURST_LIMIT=3
+      - PAYGUARD_AUTH_FAILURE_WINDOW_SECONDS=60
+    volumes:
+      - payguard-evidence:/app/evidence
+      - payguard-db:/app/data
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  payguard-evidence:
+    driver: local
+  payguard-db:
+    driver: local
