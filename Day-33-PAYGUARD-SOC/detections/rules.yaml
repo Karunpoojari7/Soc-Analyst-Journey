@@ -1,0 +1,72 @@
+# PAYGUARD SOC - Detection Engineering Rules (Synthetic Lab Specification)
+# All financial thresholds in INR (₹) are configurable synthetic lab values.
+
+rules:
+  - id: DET-01
+    title: Micro-Value to High-Value Probe Detection
+    description: >
+      Identifies micro-value test disbursements followed rapidly by high-value transfers
+      to the same beneficiary within a configurable time window. Often indicates card/account
+      testing prior to account takeover or fund draining.
+    severity: high
+    status: active
+    tags:
+      - attack.initial_access
+      - attack.t1078
+      - fincrime.account_takeover
+    detection:
+      condition: >
+        amount_inr >= HIGH_VALUE_MIN_INR (₹5,000.00) AND
+        prior_transaction(amount_inr <= MICRO_VALUE_MAX_INR (₹50.00), delta_time <= 300s)
+      action: TRANSITION_TO_HELD
+      alert_queue: SOC_FRAUD_ESCALATION
+
+  - id: DET-02
+    title: New Beneficiary & Unusual Transaction Velocity
+    description: >
+      Detects disbursement attempts to an unseen or freshly linked beneficiary account
+      combined with anomalous transaction velocity (>3 transactions within 60s).
+    severity: high
+    status: active
+    tags:
+      - attack.persistence
+      - fincrime.velocity_abuse
+    detection:
+      condition: >
+        beneficiary_status == 'ACTIVE' AND
+        prior_approved_count(borrower_id, beneficiary_id) == 0 AND
+        borrower_recent_velocity(window=60s) >= 3
+      action: TRANSITION_TO_HELD
+      alert_queue: SOC_ANOMALY_REVIEW
+
+  - id: DET-03
+    title: Disbursement Against Unapproved or Closed Loan Reference
+    description: >
+      Detects attempts to disburse funds against a loan ID that does not exist, is in PENDING
+      status, or is marked CLOSED/EXHAUSTED.
+    severity: medium
+    status: active
+    tags:
+      - attack.defense_evasion
+      - integrity.invalid_reference
+    detection:
+      condition: >
+        loan_status != 'APPROVED' OR borrower_id != loan.borrower_id
+      action: TRANSITION_TO_REJECTED
+      alert_queue: SOC_SECURITY_TELEMETRY
+
+  - id: DET-04
+    title: Synthetic API Token Misuse and Authentication Abuse
+    description: >
+      Detects rapid consecutive authentication failures (invalid, expired, or revoked tokens)
+      from a single client identity within 60 seconds.
+    severity: critical
+    status: active
+    tags:
+      - attack.credential_access
+      - attack.t1110
+    detection:
+      condition: >
+        auth_failures(client_id, window=60s) >= 3 OR token_status == 'REVOKED'
+      action: BLOCK_AND_AUDIT
+      alert_queue: SOC_SECURITY_INCIDENT_FEED
