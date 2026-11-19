@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAYGUARD SOC — AI-Assisted Financial Attack Detection & Prevention Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            soc: {
+              bg: '#0a0f1d',
+              card: '#111827',
+              border: '#1f2937',
+              hover: '#1e293b',
+              accent: '#06b6d4',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+              crimson: '#ef4444',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0a0f1d;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+    .pulse-shield {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#0a0f1d] text-slate-100">
+
+  <!-- TOP APP BAR -->
+  <header class="border-b border-gray-800 bg-[#0d1326] sticky top-0 z-40 px-6 py-3.5 shadow-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Brand & Badges -->
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center shadow-md shadow-cyan-900/40">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
+                PAYGUARD <span class="text-cyan-400 font-extrabold">SOC</span>
+              </h1>
+              <span class="text-xs px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800 text-cyan-300 font-mono">v1.0.0</span>
+            </div>
+            <p class="text-xs text-slate-400">FinTech Security Operations & Fraud Defense Lab</p>
+          </div>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-2 pl-4 border-l border-gray-800 text-xs">
+          <!-- Network Isolation Guard -->
+          <div id="isolationBadge" class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-emerald-950/70 border border-emerald-800 text-emerald-300 font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-shield"></span>
+            <span>SHIELD ACTIVE: NETWORK ISOLATED</span>
+          </div>
+          <!-- Currency Indicator -->
+          <div class="px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 font-mono">
+            CURRENCY: <span class="text-amber-400 font-bold">INR (₹)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Auth Identity -->
+      <div class="flex items-center space-x-3">
+        <div class="hidden lg:flex items-center space-x-2 bg-slate-900 border border-slate-800 rounded-lg px-3 py-1 text-xs">
+          <span class="text-slate-400">Analyst:</span>
+          <span class="font-mono text-cyan-300 font-semibold">Vikram (soc_analyst_01)</span>
+        </div>
+        <button id="refreshBtn" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-medium text-slate-200 transition">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+          <span>Refresh</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION TABS -->
+  <nav class="border-b border-gray-800 bg-[#0d1326]/60 backdrop-blur px-6">
+    <div class="max-w-7xl mx-auto flex space-x-1 overflow-x-auto text-sm">
+      <button onclick="switchTab('overview')" class="tab-btn px-4 py-3 font-medium border-b-2 border-cyan-500 text-cyan-400 flex items-center space-x-2" data-tab="overview">
+        <span>📊 Overview</span>
+      </button>
+      <button onclick="switchTab('transactions')" class="tab-btn px-4 py-3 font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2" data-tab="transactions">
+        <span>💳 Transactions</span>
+        <span id="tabCountHeld" class="hidden text-xs px-1.5 py-0.2 rounded-full bg-amber-950 text-amber-400 border border-amber-800">0</span>
+      </button>
+      <button onclick="switchTab('alerts')" class="tab-btn px-4 py-3 font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2" data-tab="alerts">
+        <span>🚨 Alerts (DET Rules)</span>
+        <span id="tabCountAlerts" class="hidden text-xs px-1.5 py-0.2 rounded-full bg-rose-950 text-rose-400 border border-rose-800">0</span>
+      </button>
+      <button onclick="switchTab('telemetry')" class="tab-btn px-4 py-3 font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2" data-tab="telemetry">
+        <span>🛡️ Auth & Replay</span>
+      </button>
+      <button onclick="switchTab('incidents')" class="tab-btn px-4 py-3 font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2" data-tab="incidents">
+        <span>🔍 Incidents</span>
+        <span id="tabCountIncidents" class="hidden text-xs px-1.5 py-0.2 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800">0</span>
+      </button>
+      <button onclick="switchTab('evidence')" class="tab-btn px-4 py-3 font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2" data-tab="evidence">
+        <span>🔒 Evidence Vault</span>
+      </button>
+      <button onclick="switchTab('simulator')" class="tab-btn px-4 py-3 font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2" data-tab="simulator">
+        <span class="text-amber-400 font-bold">⚡ Attack Simulator</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-6">
+
+    <!-- TAB 1: OVERVIEW -->
+    <section id="tab-overview" class="tab-content space-y-6">
+      <!-- KPI Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Disbursed Volume -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
+            <span>TOTAL DISBURSED</span>
+            <span class="text-emerald-400 font-mono">APPROVED</span>
+          </div>
+          <div class="mt-2 text-2xl font-bold font-mono text-emerald-400" id="kpiDisbursed">₹0.00</div>
+          <p class="text-xs text-slate-500 mt-1" id="kpiApprovedCount">0 transactions completed</p>
+        </div>
+
+        <!-- Held Volume -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
+            <span>HELD / INTERCEPTED</span>
+            <span class="text-amber-400 font-mono">SOC REVIEW</span>
+          </div>
+          <div class="mt-2 text-2xl font-bold font-mono text-amber-400" id="kpiHeld">₹0.00</div>
+          <p class="text-xs text-slate-500 mt-1" id="kpiHeldCount">0 transactions awaiting analyst review</p>
+        </div>
+
+        <!-- Active Alerts -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
+            <span>SECURITY ALERTS</span>
+            <span class="text-rose-400 font-mono">DET-01 to 04</span>
+          </div>
+          <div class="mt-2 text-2xl font-bold font-mono text-rose-400" id="kpiAlerts">0</div>
+          <p class="text-xs text-slate-500 mt-1" id="kpiAlertsDesc">Triggered fraud detections</p>
+        </div>
+
+        <!-- Active Incidents -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 shadow-sm">
+          <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
+            <span>OPEN INCIDENTS</span>
+            <span class="text-cyan-400 font-mono">CONTAINMENT</span>
+          </div>
+          <div class="mt-2 text-2xl font-bold font-mono text-cyan-400" id="kpiIncidents">0</div>
+          <p class="text-xs text-slate-500 mt-1" id="kpiBlockedDesc">0 synthetic callers blocked</p>
+        </div>
+      </div>
+
+      <!-- Quick Action / Rules Overview banner -->
+      <div class="bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 border border-gray-800 rounded-xl p-5 shadow-sm">
+        <h3 class="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+          <span class="text-cyan-400">🛡️ Active Deterministic Rules</span>
+          <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono">Zero ML / Explainable Only</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+          <div class="bg-slate-950/60 p-3 rounded-lg border border-slate-800">
+            <span class="font-mono text-amber-400 font-bold block mb-1">DET-01: Micro-Probe</span>
+            <span class="text-slate-400">Micro-transfer (≤₹50) followed by high-value transfer within 300s.</span>
+          </div>
+          <div class="bg-slate-950/60 p-3 rounded-lg border border-slate-800">
+            <span class="font-mono text-amber-400 font-bold block mb-1">DET-02: Beneficiary Velocity</span>
+            <span class="text-slate-400">Unseen active beneficiary + velocity spike (>3 transfers/min).</span>
+          </div>
+          <div class="bg-slate-950/60 p-3 rounded-lg border border-slate-800">
+            <span class="font-mono text-rose-400 font-bold block mb-1">DET-03: Loan Status Integrity</span>
+            <span class="text-slate-400">Disbursement against PENDING or CLOSED loan facility rejected immediately.</span>
+          </div>
+          <div class="bg-slate-950/60 p-3 rounded-lg border border-slate-800">
+            <span class="font-mono text-rose-400 font-bold block mb-1">DET-04: Auth Abuse Burst</span>
+            <span class="text-slate-400">≥3 invalid token attempts within 60s triggers automated caller block.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Alerts Feed on Overview -->
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-semibold text-white">Recent Security & Fraud Events</h3>
+          <button onclick="switchTab('alerts')" class="text-xs text-cyan-400 hover:text-cyan-300">View All Alerts →</button>
+        </div>
+        <div id="overviewAlertsList" class="space-y-2 text-xs">
+          <div class="text-slate-500 py-3 text-center">No alerts loaded. Click refresh.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: TRANSACTIONS & FSM MONITOR -->
+    <section id="tab-transactions" class="tab-content hidden space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-bold text-white">Disbursement Transactions & FSM State Machine</h2>
+        <div class="flex items-center space-x-2 text-xs">
+          <button onclick="filterTransactions('ALL')" class="tx-filter-btn px-2.5 py-1 rounded bg-cyan-900/60 text-cyan-300 border border-cyan-700">ALL</button>
+          <button onclick="filterTransactions('HELD')" class="tx-filter-btn px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">HELD</button>
+          <button onclick="filterTransactions('APPROVED')" class="tx-filter-btn px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">APPROVED</button>
+          <button onclick="filterTransactions('REJECTED')" class="tx-filter-btn px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">REJECTED</button>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-950/80 border-b border-gray-800 text-slate-400 font-mono">
+              <tr>
+                <th class="p-3">TRANSACTION ID</th>
+                <th class="p-3">LOAN ID</th>
+                <th class="p-3">BORROWER</th>
+                <th class="p-3">BENEFICIARY</th>
+                <th class="p-3 text-right">AMOUNT (INR)</th>
+                <th class="p-3">STATE</th>
+                <th class="p-3">DECISION REASON</th>
+                <th class="p-3">ACTION</th>
+              </tr>
+            </thead>
+            <tbody id="transactionsTableBody" class="divide-y divide-gray-800">
+              <tr>
+                <td colspan="8" class="p-6 text-center text-slate-500">Loading transactions...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: ALERTS (DET-01 to DET-04) -->
+    <section id="tab-alerts" class="tab-content hidden space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-bold text-white">Security & Fraud Detections Queue</h2>
+        <span class="text-xs text-slate-400 font-mono">Deterministic Rules Feed</span>
+      </div>
+
+      <div id="alertsContainer" class="space-y-3">
+        <div class="p-8 text-center text-slate-500 bg-gray-900 border border-gray-800 rounded-xl">Loading alerts...</div>
+      </div>
+    </section>
+
+    <!-- TAB 4: AUTH & REPLAY TELEMETRY -->
+    <section id="tab-telemetry" class="tab-content hidden space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+          <span class="text-xs text-slate-400">TOTAL AUTH ATTEMPTS</span>
+          <div class="text-2xl font-bold font-mono text-white mt-1" id="teleTotalAuth">0</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+          <span class="text-xs text-slate-400">SUCCESSFUL AUTH</span>
+          <div class="text-2xl font-bold font-mono text-emerald-400 mt-1" id="teleSuccessAuth">0</div>
+        </div>
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4">
+          <span class="text-xs text-slate-400">FAILED / ABUSE BURSTS</span>
+          <div class="text-2xl font-bold font-mono text-rose-400 mt-1" id="teleFailAuth">0</div>
+        </div>
+      </div>
+
+      <!-- Blocked Callers Management -->
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 shadow-sm space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+            <span class="text-rose-400">⛔ Administratively Blocked Synthetic Callers</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-rose-950 text-rose-300 font-mono" id="blockedCount">0</span>
+          </h3>
+          <div class="flex items-center space-x-2">
+            <input id="manualBlockInput" type="text" placeholder="client_id to block" class="bg-slate-950 border border-gray-700 text-xs rounded px-2.5 py-1 text-slate-200">
+            <button onclick="handleManualBlock()" class="px-2.5 py-1 rounded bg-rose-900 hover:bg-rose-800 text-rose-200 text-xs font-medium">Block Caller</button>
+          </div>
+        </div>
+        <div id="blockedCallersList" class="space-y-2 text-xs">
+          <div class="text-slate-500 py-2">No callers currently blocked.</div>
+        </div>
+      </div>
+
+      <!-- Recent Auth Logs -->
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 shadow-sm">
+        <h3 class="text-sm font-semibold text-white mb-3">Authentication Log Stream</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs font-mono">
+            <thead class="bg-slate-950 text-slate-400">
+              <tr>
+                <th class="p-2.5">TIMESTAMP</th>
+                <th class="p-2.5">CLIENT ID</th>
+                <th class="p-2.5">STATUS</th>
+                <th class="p-2.5">FAILURE REASON</th>
+              </tr>
+            </thead>
+            <tbody id="authLogsBody" class="divide-y divide-gray-800">
+              <tr><td colspan="4" class="p-4 text-center text-slate-500">Loading auth logs...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: INCIDENT INVESTIGATION & RESPONSE -->
+    <section id="tab-incidents" class="tab-content hidden space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-bold text-white">SOC Incident Investigation & Active Response</h2>
+        <span class="text-xs text-slate-400 font-mono">Incident Table: soc_incidents</span>
+      </div>
+
+      <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-950 border-b border-gray-800 text-slate-400 font-mono">
+              <tr>
+                <th class="p-3">INCIDENT ID</th>
+                <th class="p-3">RULE</th>
+                <th class="p-3">SEVERITY</th>
+                <th class="p-3">TITLE</th>
+                <th class="p-3">AFFECTED ENTITY</th>
+                <th class="p-3">STATUS</th>
+                <th class="p-3">ASSIGNED ANALYST</th>
+                <th class="p-3">ACTION</th>
+              </tr>
+            </thead>
+            <tbody id="incidentsTableBody" class="divide-y divide-gray-800">
+              <tr><td colspan="8" class="p-6 text-center text-slate-500">Loading incidents...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: TAMPER-EVIDENT EVIDENCE VAULT -->
+    <section id="tab-evidence" class="tab-content hidden space-y-6">
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-sm space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-lg font-bold text-white">Cryptographic Forensic Evidence Vault</h2>
+            <p class="text-xs text-slate-400 mt-0.5">Append-only audit trail with SHA-256 hash chaining and HMAC manifest signing.</p>
+          </div>
+          <button onclick="triggerEvidenceExport()" id="exportEvidenceBtn" class="px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold shadow-md transition flex items-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+            </svg>
+            <span>Export & Verify Evidence Bundle</span>
+          </button>
+        </div>
+
+        <div id="evidenceExportResult" class="hidden p-4 rounded-lg bg-slate-950 border border-cyan-800 text-xs font-mono space-y-2">
+          <!-- Filled dynamically -->
+        </div>
+
+        <div class="p-4 rounded-lg bg-slate-950 border border-gray-800 space-y-3 text-xs">
+          <div class="flex items-center justify-between text-slate-300 font-semibold">
+            <span>Audit Ledger Immutability Architecture</span>
+            <span class="text-emerald-400 font-mono">SHA-256 Hash Chained</span>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            Every transaction state transition, authentication failure, and analyst override is recorded in an append-only SQLite ledger protected by SQL triggers (<code class="text-cyan-300">trg_audit_no_update</code>, <code class="text-cyan-300">trg_audit_no_delete</code>).
+            Each record hash is chained cryptographically: <code class="text-amber-300 font-mono">H_n = SHA256(H_{n-1} || payload_sha256 || decision_reason)</code>.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-2 pt-2 text-slate-400">
+            <div class="p-2.5 rounded bg-gray-900 border border-gray-800">
+              <div class="font-bold text-white mb-0.5">Application Triggers</div>
+              <span>Enforces append-only rule at ORM and SQL client layer.</span>
+            </div>
+            <div class="p-2.5 rounded bg-gray-900 border border-gray-800">
+              <div class="font-bold text-white mb-0.5">Hash Chain Integrity</div>
+              <span>Detects any disk-level row tampering or re-ordering.</span>
+            </div>
+            <div class="p-2.5 rounded bg-gray-900 border border-gray-800">
+              <div class="font-bold text-white mb-0.5">HMAC-SHA256 Manifest</div>
+              <span>Signs total record count and final ledger hash for court audit.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 7: ATTACK SIMULATOR CONSOLE -->
+    <section id="tab-simulator" class="tab-content hidden space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-lg font-bold text-amber-400 flex items-center gap-2">
+            <span>⚡ Interactive Attack Simulation Console</span>
+          </h2>
+          <p class="text-xs text-slate-400">Trigger simulated I4C / CERT-In attack vectors against the local PAYGUARD engine.</p>
+        </div>
+        <button onclick="runAllSimulations()" class="px-3.5 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-slate-900 text-xs font-bold transition">
+          Run All 7 Scenarios
+        </button>
+      </div>
+
+      <!-- Scenarios Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+        <!-- Scenario 1 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-cyan-400 font-bold">SCENARIO 1</span>
+              <span class="px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 font-mono text-[10px]">DET-01</span>
+            </div>
+            <h4 class="font-semibold text-white">Micro-Value Probe & High-Value Drain</h4>
+            <p class="text-slate-400 mt-1">₹50 probe transfer followed by immediate ₹40,000 disbursement.</p>
+          </div>
+          <button onclick="launchSimulation(1)" class="w-full py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 font-medium transition">
+            Launch Scenario 1
+          </button>
+        </div>
+
+        <!-- Scenario 2 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-cyan-400 font-bold">SCENARIO 2</span>
+              <span class="px-1.5 py-0.5 rounded bg-amber-950 text-amber-300 font-mono text-[10px]">DET-02</span>
+            </div>
+            <h4 class="font-semibold text-white">Unseen Beneficiary Velocity Spike</h4>
+            <p class="text-slate-400 mt-1">High-velocity ₹25,000 disbursement to an unverified beneficiary.</p>
+          </div>
+          <button onclick="launchSimulation(2)" class="w-full py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 font-medium transition">
+            Launch Scenario 2
+          </button>
+        </div>
+
+        <!-- Scenario 3 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-cyan-400 font-bold">SCENARIO 3</span>
+              <span class="px-1.5 py-0.5 rounded bg-rose-950 text-rose-300 font-mono text-[10px]">DET-03</span>
+            </div>
+            <h4 class="font-semibold text-white">Closed Loan Facility Disbursement</h4>
+            <p class="text-slate-400 mt-1">Attempting disbursement on CLOSED or invalid loan reference.</p>
+          </div>
+          <button onclick="launchSimulation(3)" class="w-full py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 font-medium transition">
+            Launch Scenario 3
+          </button>
+        </div>
+
+        <!-- Scenario 4 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-cyan-400 font-bold">SCENARIO 4</span>
+              <span class="px-1.5 py-0.5 rounded bg-rose-950 text-rose-300 font-mono text-[10px]">DET-04</span>
+            </div>
+            <h4 class="font-semibold text-white">API Authentication Burst & Stuffing</h4>
+            <p class="text-slate-400 mt-1">Rapid invalid synthetic token burst; triggers automated caller block.</p>
+          </div>
+          <button onclick="launchSimulation(4)" class="w-full py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 font-medium transition">
+            Launch Scenario 4
+          </button>
+        </div>
+
+        <!-- Scenario 5 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-cyan-400 font-bold">SCENARIO 5</span>
+              <span class="px-1.5 py-0.5 rounded bg-purple-950 text-purple-300 font-mono text-[10px]">SEC-REPLAY</span>
+            </div>
+            <h4 class="font-semibold text-white">Nonce Replay Attack</h4>
+            <p class="text-slate-400 mt-1">Replaying previously intercepted financial API request with identical nonce.</p>
+          </div>
+          <button onclick="launchSimulation(5)" class="w-full py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 font-medium transition">
+            Launch Scenario 5
+          </button>
+        </div>
+
+        <!-- Scenario 6 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-cyan-400 font-bold">SCENARIO 6</span>
+              <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[10px]">SEC-BENEF</span>
+            </div>
+            <h4 class="font-semibold text-white">Revoked Beneficiary Transfer</h4>
+            <p class="text-slate-400 mt-1">Attempting disbursement to a revoked or blacklisted recipient.</p>
+          </div>
+          <button onclick="launchSimulation(6)" class="w-full py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 font-medium transition">
+            Launch Scenario 6
+          </button>
+        </div>
+
+        <!-- Scenario 7 -->
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col justify-between space-y-3">
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-mono text-cyan-400 font-bold">SCENARIO 7</span>
+              <span class="px-1.5 py-0.5 rounded bg-rose-950 text-rose-300 font-mono text-[10px]">SEC-IDOR</span>
+            </div>
+            <h4 class="font-semibold text-white">IDOR Cross-Tenant Snooping</h4>
+            <p class="text-slate-400 mt-1">Unauthorized client attempting to access records of another borrower.</p>
+          </div>
+          <button onclick="launchSimulation(7)" class="w-full py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 font-medium transition">
+            Launch Scenario 7
+          </button>
+        </div>
+      </div>
+
+      <!-- Real-Time Simulator Output Console -->
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 shadow-sm space-y-2">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-semibold text-white font-mono flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <span>Simulation Execution Console</span>
+          </h3>
+          <button onclick="document.getElementById('simConsole').innerHTML = 'Console cleared.'" class="text-xs text-slate-500 hover:text-slate-300">Clear</button>
+        </div>
+        <pre id="simConsole" class="bg-slate-950 p-4 rounded-lg border border-gray-800 text-xs font-mono text-slate-300 overflow-x-auto max-h-72">Ready to run attack scenarios. Click "Launch" on any scenario above.</pre>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: HELD TRANSACTION REVIEW (ANALYST WORKFLOW) -->
+  <div id="reviewModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-gray-900 border border-gray-700 rounded-xl max-w-lg w-full p-6 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <span class="text-amber-400">⚠️</span>
+          <span>SOC Analyst Hold Review</span>
+        </h3>
+        <button onclick="closeReviewModal()" class="text-slate-400 hover:text-white">&times;</button>
+      </div>
+
+      <div class="text-xs space-y-3">
+        <div class="bg-slate-950 p-3 rounded-lg border border-gray-800 space-y-1">
+          <div><span class="text-slate-500">Transaction ID:</span> <span id="modalTxId" class="font-mono text-cyan-300"></span></div>
+          <div><span class="text-slate-500">Amount:</span> <span id="modalTxAmount" class="font-mono text-emerald-400 font-bold"></span></div>
+          <div><span class="text-slate-500">Hold Reason:</span> <span id="modalTxReason" class="font-mono text-amber-300"></span></div>
+        </div>
+
+        <div>
+          <label class="block text-slate-400 mb-1 font-medium">Analyst Decision</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" onclick="setReviewDecision('APPROVE')" id="btnApprove" class="p-2.5 rounded bg-emerald-950/70 border border-emerald-700 text-emerald-300 font-bold text-center">
+              ✓ APPROVE OVERRIDE
+            </button>
+            <button type="button" onclick="setReviewDecision('REJECT')" id="btnReject" class="p-2.5 rounded bg-slate-800 border border-slate-700 text-slate-400 font-bold text-center">
+              ✗ REJECT PERMANENTLY
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-400 mb-1 font-medium">SOC Analyst ID</label>
+          <input id="modalAnalystId" type="text" value="ANALYST-VIKRAM-01" class="w-full bg-slate-950 border border-gray-700 rounded p-2 text-slate-200 font-mono">
+        </div>
+
+        <div>
+          <label class="block text-slate-400 mb-1 font-medium">Mandatory Decision Reason & Telemetry Rationale (min 10 chars)</label>
+          <textarea id="modalReason" rows="3" placeholder="e.g. Beneficiary verified with borrower via out-of-band call. Micro-probe was legitimate small test transfer." class="w-full bg-slate-950 border border-gray-700 rounded p-2 text-slate-200"></textarea>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end space-x-3 pt-3 border-t border-gray-800">
+        <button onclick="closeReviewModal()" class="px-4 py-2 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium">Cancel</button>
+        <button onclick="submitReviewDecision()" class="px-4 py-2 rounded bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold shadow-md">Submit Resolution</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: INCIDENT RESPONSE ACTION -->
+  <div id="incidentModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-gray-900 border border-gray-700 rounded-xl max-w-lg w-full p-6 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <span class="text-cyan-400">🔍</span>
+          <span>SOC Incident Containment & Response</span>
+        </h3>
+        <button onclick="closeIncidentModal()" class="text-slate-400 hover:text-white">&times;</button>
+      </div>
+
+      <div class="text-xs space-y-3">
+        <div class="bg-slate-950 p-3 rounded-lg border border-gray-800 space-y-1">
+          <div><span class="text-slate-500">Incident ID:</span> <span id="incModalId" class="font-mono text-cyan-300"></span></div>
+          <div><span class="text-slate-500">Rule Code:</span> <span id="incModalRule" class="font-mono text-amber-300 font-bold"></span></div>
+          <div><span class="text-slate-500">Affected Entity:</span> <span id="incModalEntity" class="font-mono text-slate-200"></span></div>
+        </div>
+
+        <div>
+          <label class="block text-slate-400 mb-1 font-medium">Incident Status</label>
+          <select id="incModalStatus" class="w-full bg-slate-950 border border-gray-700 rounded p-2 text-slate-200">
+            <option value="OPEN">OPEN</option>
+            <option value="INVESTIGATING">INVESTIGATING</option>
+            <option value="CONTAINED">CONTAINED</option>
+            <option value="RESOLVED">RESOLVED</option>
+            <option value="FALSE_POSITIVE">FALSE_POSITIVE</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-slate-400 mb-1 font-medium">Defensive Containment Action</label>
+          <select id="incModalAction" class="w-full bg-slate-950 border border-gray-700 rounded p-2 text-slate-200 font-mono">
+            <option value="">NONE (Notes Only)</option>
+            <option value="BLOCK_SYNTHETIC_CALLER">BLOCK_SYNTHETIC_CALLER</option>
+            <option value="REVOKE_TOKEN">REVOKE_TOKEN</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-slate-400 mb-1 font-medium">Investigation Notes</label>
+          <textarea id="incModalNotes" rows="3" placeholder="Document containment actions taken..." class="w-full bg-slate-950 border border-gray-700 rounded p-2 text-slate-200"></textarea>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end space-x-3 pt-3 border-t border-gray-800">
+        <button onclick="closeIncidentModal()" class="px-4 py-2 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium">Cancel</button>
+        <button onclick="submitIncidentResponse()" class="px-4 py-2 rounded bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold shadow-md">Apply Response</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    const API_BASE = window.location.origin;
+    const SOC_TOKEN = "Bearer lab_tok_soc_analyst_777";
+    let currentReviewDecision = "APPROVE";
+    let activeTransactionForReview = null;
+    let activeIncidentForResponse = null;
+    let cachedTransactions = [];
+
+    // Switch Dashboard Tabs
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-cyan-500', 'text-cyan-400');
+        btn.classList.add('border-transparent', 'text-slate-400');
+      });
+
+      const selectedContent = document.getElementById(`tab-${tabId}`);
+      if (selectedContent) selectedContent.classList.remove('hidden');
+
+      const activeBtn = document.querySelector(`button[data-tab="${tabId}"]`);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-transparent', 'text-slate-400');
+        activeBtn.classList.add('border-cyan-500', 'text-cyan-400');
+      }
+
+      if (tabId === 'transactions') loadTransactions();
+      if (tabId === 'alerts') loadAlerts();
+      if (tabId === 'telemetry') loadTelemetry();
+      if (tabId === 'incidents') loadIncidents();
+      if (tabId === 'overview') loadOverview();
+    }
+
+    // Load Overview Metrics
+    async function loadOverview() {
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/soc/overview`, {
+          headers: { "Authorization": SOC_TOKEN }
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+
+        document.getElementById('kpiDisbursed').innerText = `₹${data.total_disbursed_inr.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+        document.getElementById('kpiApprovedCount').innerText = `${data.approved_count} transactions completed`;
+
+        document.getElementById('kpiHeld').innerText = `₹${data.total_held_inr.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+        document.getElementById('kpiHeldCount').innerText = `${data.held_count} transactions awaiting analyst review`;
+
+        document.getElementById('kpiAlerts').innerText = data.active_alerts_count;
+        document.getElementById('kpiIncidents').innerText = data.open_incidents_count;
+        document.getElementById('kpiBlockedDesc').innerText = `${data.blocked_callers_count} synthetic callers blocked`;
+
+        if (data.held_count > 0) {
+          const badge = document.getElementById('tabCountHeld');
+          badge.innerText = data.held_count;
+          badge.classList.remove('hidden');
+        }
+        if (data.active_alerts_count > 0) {
+          const badge = document.getElementById('tabCountAlerts');
+          badge.innerText = data.active_alerts_count;
+          badge.classList.remove('hidden');
+        }
+        if (data.open_incidents_count > 0) {
+          const badge = document.getElementById('tabCountIncidents');
+          badge.innerText = data.open_incidents_count;
+          badge.classList.remove('hidden');
+        }
+
+        loadRecentOverviewAlerts();
+      } catch (err) {
+        console.error("Failed to load overview:", err);
+      }
+    }
+
+    async function loadRecentOverviewAlerts() {
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/soc/alerts`, { headers: { "Authorization": SOC_TOKEN } });
+        if (!res.ok) return;
+        const alerts = await res.json();
+        const container = document.getElementById('overviewAlertsList');
+        if (alerts.length === 0) {
+          container.innerHTML = '<div class="text-slate-500 py-3 text-center">No active security alerts. System normal.</div>';
+          return;
+        }
+        container.innerHTML = alerts.slice(0, 5).map(a => `
+          <div class="flex items-center justify-between p-3 rounded-lg bg-slate-950 border border-gray-800">
+            <div class="flex items-center space-x-3">
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold ${a.severity === 'CRITICAL' ? 'bg-rose-950 text-rose-400 border border-rose-800' : 'bg-amber-950 text-amber-400 border border-amber-800'}">${a.rule_code}</span>
+              <div>
+                <span class="font-medium text-white">${a.title}</span>
+                <span class="text-slate-500 block text-[11px]">${a.decision_reason}</span>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="font-mono text-slate-400">${a.timestamp.substring(11, 19)} UTC</span>
+            </div>
+          </div>
+        `).join('');
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    // Load Transactions Table
+    async function loadTransactions() {
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/soc/transactions?limit=100`, {
+          headers: { "Authorization": SOC_TOKEN }
+        });
+        if (!res.ok) return;
+        cachedTransactions = await res.json();
+        renderTransactionsTable(cachedTransactions);
+      } catch (err) {
+        console.error("Failed to load transactions:", err);
+      }
+    }
+
+    function renderTransactionsTable(txs) {
+      const tbody = document.getElementById('transactionsTableBody');
+      if (txs.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" class="p-6 text-center text-slate-500">No transactions recorded yet.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = txs.map(t => {
+        let stateBadge = 'bg-slate-800 text-slate-300';
+        if (t.state === 'APPROVED') stateBadge = 'bg-emerald-950/80 text-emerald-400 border border-emerald-800';
+        if (t.state === 'HELD') stateBadge = 'bg-amber-950/80 text-amber-400 border border-amber-800';
+        if (t.state === 'REJECTED') stateBadge = 'bg-rose-950/80 text-rose-400 border border-rose-800';
+
+        const actionBtn = t.state === 'HELD'
+          ? `<button onclick="openReviewModal('${t.transaction_id}', ${t.amount_inr}, '${t.decision_reason}')" class="px-2.5 py-1 rounded bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold transition">Review</button>`
+          : `<span class="text-slate-500 font-mono text-[10px]">Logged</span>`;
+
+        return `
+          <tr class="hover:bg-slate-950/40">
+            <td class="p-3 font-mono text-cyan-300 font-semibold">${t.transaction_id}</td>
+            <td class="p-3 font-mono text-slate-300">${t.loan_id}</td>
+            <td class="p-3 font-mono text-slate-400">${t.borrower_id}</td>
+            <td class="p-3 font-mono text-slate-400">${t.beneficiary_id}</td>
+            <td class="p-3 font-mono text-right font-bold text-white">₹${t.amount_inr.toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
+            <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold ${stateBadge}">${t.state}</span></td>
+            <td class="p-3 font-mono text-[11px] text-slate-400">${t.decision_reason}</td>
+            <td class="p-3">${actionBtn}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterTransactions(state) {
+      document.querySelectorAll('.tx-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-cyan-900/60', 'text-cyan-300', 'border-cyan-700');
+        btn.classList.add('bg-slate-800', 'text-slate-300', 'border-slate-700');
+      });
+      event.target.classList.remove('bg-slate-800', 'text-slate-300', 'border-slate-700');
+      event.target.classList.add('bg-cyan-900/60', 'text-cyan-300', 'border-cyan-700');
+
+      if (state === 'ALL') {
+        renderTransactionsTable(cachedTransactions);
+      } else {
+        renderTransactionsTable(cachedTransactions.filter(t => t.state === state));
+      }
+    }
+
+    // Modal Review Workflow
+    function openReviewModal(txId, amount, reason) {
+      activeTransactionForReview = txId;
+      document.getElementById('modalTxId').innerText = txId;
+      document.getElementById('modalTxAmount').innerText = `₹${amount.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+      document.getElementById('modalTxReason').innerText = reason;
+      document.getElementById('modalReason').value = '';
+      setReviewDecision('APPROVE');
+      document.getElementById('reviewModal').classList.remove('hidden');
+    }
+
+    function closeReviewModal() {
+      document.getElementById('reviewModal').classList.add('hidden');
+      activeTransactionForReview = null;
+    }
+
+    function setReviewDecision(decision) {
+      currentReviewDecision = decision;
+      const btnApprove = document.getElementById('btnApprove');
+      const btnReject = document.getElementById('btnReject');
+      if (decision === 'APPROVE') {
+        btnApprove.className = 'p-2.5 rounded bg-emerald-950/70 border border-emerald-700 text-emerald-300 font-bold text-center';
+        btnReject.className = 'p-2.5 rounded bg-slate-800 border border-slate-700 text-slate-400 font-bold text-center';
+      } else {
+        btnReject.className = 'p-2.5 rounded bg-rose-950/70 border border-rose-700 text-rose-300 font-bold text-center';
+        btnApprove.className = 'p-2.5 rounded bg-slate-800 border border-slate-700 text-slate-400 font-bold text-center';
+      }
+    }
+
+    async function submitReviewDecision() {
+      const reason = document.getElementById('modalReason').value.trim();
+      const analystId = document.getElementById('modalAnalystId').value.trim();
+      if (reason.length < 10) {
+        alert("A documented operational rationale of at least 10 characters is mandatory for SOC review.");
+        return;
+      }
+
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/soc/transactions/${activeTransactionForReview}/review`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": SOC_TOKEN
+          },
+          body: JSON.stringify({
+            action: currentReviewDecision,
+            analyst_id: analystId,
+            decision_reason: reason,
+            analyst_notes: `Manual resolution from SOC Web Dashboard.`
+          })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          alert(`Review Failed: ${err.detail || JSON.stringify(err)}`);
+          return;
+        }
+
+        closeReviewModal();
+        loadTransactions();
+        loadOverview();
+      } catch (e) {
+        alert(`Error submitting review: ${e}`);
+      }
+    }
+
+    // Load Alerts
+    async function loadAlerts() {
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/soc/alerts`, { headers: { "Authorization": SOC_TOKEN } });
+        if (!res.ok) return;
+        const alerts = await res.json();
+        const container = document.getElementById('alertsContainer');
+        if (alerts.length === 0) {
+          container.innerHTML = '<div class="p-8 text-center text-slate-500 bg-gray-900 border border-gray-800 rounded-xl">No security alerts currently active.</div>';
+          return;
+        }
+        container.innerHTML = alerts.map(a => `
+          <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 shadow-sm flex items-start justify-between">
+            <div class="space-y-1">
+              <div class="flex items-center space-x-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold ${a.severity === 'CRITICAL' ? 'bg-rose-950 text-rose-300 border border-rose-800' : 'bg-amber-950 text-amber-300 border border-amber-800'}">${a.rule_code}</span>
+                <span class="font-bold text-white text-sm">${a.title}</span>
+              </div>
+              <div class="text-xs text-slate-400 font-mono">
+                Reason: <span class="text-amber-300">${a.decision_reason}</span> | Entity: <span class="text-cyan-300">${a.borrower_id || '-'}</span> | Amount: <span class="text-white">₹${a.amount_inr}</span>
+              </div>
+              <div class="text-[11px] text-slate-500">Timestamp: ${a.timestamp}</div>
+            </div>
+          </div>
+        `).join('');
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    // Load Telemetry & Blocked Callers
+    async function loadTelemetry() {
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/soc/auth-telemetry`, { headers: { "Authorization": SOC_TOKEN } });
+        if (!res.ok) return;
+        const data = await res.json();
+
+        document.getElementById('teleTotalAuth').innerText = data.total_attempts;
+        document.getElementById('teleSuccessAuth').innerText = data.successful_attempts;
+        document.getElementById('teleFailAuth').innerText = data.failed_attempts;
+        document.getElementById('blockedCount').innerText = data.blocked_callers.length;
+
+        // Blocked Callers List
+        const blockedContainer = document.getElementById('blockedCallersList');
+        if (data.blocked_callers.length === 0) {
+          blockedContainer.innerHTML = '<div class="text-slate-500 py-2">No callers currently blocked.</div>';
+        } else {
+          blockedContainer.innerHTML = data.blocked_callers.map(b => `
+            <div class="flex items-center justify-between p-2.5 rounded bg-slate-950 border border-rose-900/40">
+              <div>
+                <span class="font-mono text-rose-400 font-bold">${b.client_id}</span>
+                <span class="text-slate-400 text-xs block">${b.reason} (by ${b.blocked_by})</span>
+              </div>
+              <button onclick="unblockCaller('${b.client_id}')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700">Unblock</button>
+            </div>
+          `).join('');
+        }
+
+        // Auth Logs
+        const logsBody = document.getElementById('authLogsBody');
+        logsBody.innerHTML = data.recent_logs.slice(0, 15).map(l => `
+          <tr class="hover:bg-slate-950/40">
+            <td class="p-2.5 text-slate-500">${l.timestamp.substring(11, 19)}</td>
+            <td class="p-2.5 text-cyan-300">${l.client_id}</td>
+            <td class="p-2.5"><span class="px-1.5 py-0.5 rounded text-[10px] ${l.status === 'SUCCESS' ? 'bg-emerald-950 text-emerald-400' : 'bg-rose-950 text-rose-400'}">${l.status}</span></td>
+            <td class="p-2.5 text-slate-400">${l.failure_reason || '-'}</td>
+          </tr>
+        `).join('');
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function handleManualBlock() {
+      const client_id = document.getElementById('manualBlockInput').value.trim();
+      if (!client_id) return;
+      try {
+        await fetch(`${API_BASE}/api/v1/soc/callers/${client_id}/block`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Authorization": SOC_TOKEN },
+          body: JSON.stringify({
+            client_id: client_id,
+            reason: "Manual administrative block via SOC console",
+            analyst_id: "ANALYST-VIKRAM-01"
+          })
+        });
+        document.getElementById('manualBlockInput').value = '';
+        loadTelemetry();
+        loadOverview();
+      } catch (e) {
+        alert(e);
+      }
+    }
+
+    async function unblockCaller(client_id) {
+      try {
+        await fetch(`${API_BASE}/api/v1/soc/callers/${client_id}/unblock`, {
+          method: "POST",
+          headers: { "Authorization": SOC_TOKEN }
+        });
+        loadTelemetry();
+        loadOverview();
+      } catch (e) {
+        alert(e);
+      }
+    }
+
+    // Incidents
+    async function loadIncidents() {
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/soc/incidents`, { headers: { "Authorization": SOC_TOKEN } });
+        if (!res.ok) return;
+        const incidents = await res.json();
+        const tbody = document.getElementById('incidentsTableBody');
+        if (incidents.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="8" class="p-6 text-center text-slate-500">No SOC security incidents open.</td></tr>';
+          return;
+        }
+        tbody.innerHTML = incidents.map(inc => `
+          <tr class="hover:bg-slate-950/40">
+            <td class="p-3 font-mono text-cyan-300 font-semibold">${inc.incident_id}</td>
+            <td class="p-3 font-mono text-amber-300 font-bold">${inc.rule_code}</td>
+            <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold ${inc.severity === 'CRITICAL' ? 'bg-rose-950 text-rose-400 border border-rose-800' : 'bg-amber-950 text-amber-400 border border-amber-800'}">${inc.severity}</span></td>
+            <td class="p-3 text-white font-medium">${inc.title}</td>
+            <td class="p-3 font-mono text-slate-300">${inc.affected_entity}</td>
+            <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-800 text-slate-300 border border-slate-700">${inc.status}</span></td>
+            <td class="p-3 font-mono text-slate-400">${inc.assigned_analyst || 'Unassigned'}</td>
+            <td class="p-3">
+              <button onclick="openIncidentModal('${inc.incident_id}', '${inc.rule_code}', '${inc.affected_entity}', '${inc.status}')" class="px-2.5 py-1 rounded bg-cyan-700 hover:bg-cyan-600 text-white font-medium text-xs">Respond</button>
+            </td>
+          </tr>
+        `).join('');
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function openIncidentModal(incId, rule, entity, status) {
+      activeIncidentForResponse = incId;
+      document.getElementById('incModalId').innerText = incId;
+      document.getElementById('incModalRule').innerText = rule;
+      document.getElementById('incModalEntity').innerText = entity;
+      document.getElementById('incModalStatus').value = status;
+      document.getElementById('incModalNotes').value = '';
+      document.getElementById('incidentModal').classList.remove('hidden');
+    }
+
+    function closeIncidentModal() {
+      document.getElementById('incidentModal').classList.add('hidden');
+      activeIncidentForResponse = null;
+    }
+
+    async function submitIncidentResponse() {
+      const status = document.getElementById('incModalStatus').value;
+      const action = document.getElementById('incModalAction').value;
+      const notes = document.getElementById('incModalNotes').value.trim() || `Status updated to ${status}.`;
+
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/soc/incidents/${activeIncidentForResponse}/respond`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Authorization": SOC_TOKEN },
+          body: JSON.stringify({
+            status: status,
+            analyst_id: "ANALYST-VIKRAM-01",
+            notes: notes,
+            action: action || null
+          })
+        });
+        if (!res.ok) {
+          const err = await res.json();
+          alert(`Error: ${JSON.stringify(err)}`);
+          return;
+        }
+        closeIncidentModal();
+        loadIncidents();
+        loadOverview();
+      } catch (e) {
+        alert(e);
+      }
+    }
+
+    // Evidence Export
+    async function triggerEvidenceExport() {
+      const btn = document.getElementById('exportEvidenceBtn');
+      btn.innerText = "Exporting & Hashing...";
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/soc/evidence/export`, {
+          method: "POST",
+          headers: { "Authorization": SOC_TOKEN }
+        });
+        const data = await res.json();
+        const box = document.getElementById('evidenceExportResult');
+        box.classList.remove('hidden');
+        box.innerHTML = `
+          <div class="text-emerald-400 font-bold mb-1">✓ Evidence Exported Successfully & Cryptographically Signed</div>
+          <div>Records File : <span class="text-white">${data.records_file}</span></div>
+          <div>Manifest File: <span class="text-white">${data.manifest_file}</span></div>
+          <div>Correlation ID: <span class="text-cyan-300">${data.correlation_id}</span></div>
+          <div class="text-slate-400 text-[11px] pt-1">To verify independently: <code>python evidence/verify_evidence.py</code></div>
+        `;
+      } catch (e) {
+        alert(`Export failed: ${e}`);
+      } finally {
+        btn.innerText = "Export & Verify Evidence Bundle";
+        btn.disabled = false;
+      }
+    }
+
+    // Simulator
+    async function launchSimulation(scenarioId) {
+      const consoleBox = document.getElementById('simConsole');
+      consoleBox.innerHTML += `\n[*] Launching Attack Scenario ${scenarioId}...\n`;
+
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/simulator/run-scenario`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Authorization": SOC_TOKEN },
+          body: JSON.stringify({ scenario: scenarioId })
+        });
+        const rep = await res.json();
+        consoleBox.innerHTML += `\n=== SCENARIO ${rep.scenario_id}: ${rep.name} ===\n`;
+        consoleBox.innerHTML += `Target Rule      : ${rep.target_rule}\n`;
+        consoleBox.innerHTML += `Attack Vector    : ${rep.attack_vector}\n`;
+        consoleBox.innerHTML += `Detection Status : ${rep.detected ? 'DETECTED & MITIGATED' : 'MISSED'}\n`;
+        consoleBox.innerHTML += `Defensive Action : ${rep.defensive_action}\n`;
+        if (rep.incident_id) consoleBox.innerHTML += `Incident Raised  : ${rep.incident_id}\n`;
+        consoleBox.innerHTML += `Summary          : ${rep.summary}\n`;
+        consoleBox.innerHTML += `--------------------------------------------------------\n`;
+        consoleBox.scrollTop = consoleBox.scrollHeight;
+
+        loadOverview();
+      } catch (e) {
+        consoleBox.innerHTML += `[!] Error running scenario: ${e}\n`;
+      }
+    }
+
+    async function runAllSimulations() {
+      for (let i = 1; i <= 7; i++) {
+        await launchSimulation(i);
+      }
+    }
+
+    // Init
+    document.getElementById('refreshBtn').addEventListener('click', () => {
+      loadOverview();
+      loadTransactions();
+      loadAlerts();
+      loadTelemetry();
+      loadIncidents();
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadOverview();
+      // Auto-poll every 6 seconds
+      setInterval(() => {
+        loadOverview();
+      }, 6000);
+    });
+  </script>
+</body>
+</html>
