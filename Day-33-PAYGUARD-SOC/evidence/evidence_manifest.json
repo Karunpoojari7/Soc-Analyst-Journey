@@ -1,0 +1,14 @@
+{
+  "application": "PAYGUARD-SOC-Core",
+  "environment": "synthetic-lab",
+  "export_id": "EXP-56DD5BE504E7",
+  "exported_at": "2026-11-19T17:43:19.874906+00:00",
+  "first_event_id": "EVT-IND-8330A14AEE03",
+  "genesis_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "hashing_algorithm": "SHA-256",
+  "last_event_id": "EVT-IND-6FEE5BD0E340",
+  "manifest_signature": "9f40da64bc8af296d1716eac6d89edc9d2c8e8eb5068cd7ef4200648826cec7b",
+  "record_count": 3,
+  "root_hash": "18fd0d05348bc2f995ceb6a4a3f423192ede6ee51ccdb0d78c09a0efddd870e5",
+  "signature_algorithm": "HMAC-SHA256"
+}
