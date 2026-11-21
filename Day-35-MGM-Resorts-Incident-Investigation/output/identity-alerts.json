@@ -1,0 +1,14 @@
+[
+  {
+    "alert_id": "DAY35-employee01",
+    "username": "employee01",
+    "severity": "HIGH",
+    "failed_login_count": 3,
+    "successful_login_time": "2023-09-11T08:16:00Z",
+    "source_ip": "198.51.100.24",
+    "mfa_registration_observed": true,
+    "privilege_change_observed": true,
+    "assessment": "Suspicious identity activity requiring investigation",
+    "evidence_type": "SYNTHETIC_TRAINING_DATA"
+  }
+]

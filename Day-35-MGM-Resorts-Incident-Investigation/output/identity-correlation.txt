@@ -1,0 +1,10 @@
+IDENTITY EVENT CORRELATION REPORT
+=============================================
+
+Account: employee01
+Failed logins: 3
+Successful login: 2023-09-11T08:16:00Z
+Source IP: 198.51.100.24
+MFA registration: 2023-09-11T08:18:00Z
+Privilege change: 2023-09-11T08:21:00Z
+Assessment: Suspicious identity activity requiring investigation.
