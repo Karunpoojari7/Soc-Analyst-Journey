@@ -1,0 +1,20 @@
+timestamp,event_id,evidence_source,event_details
+2023-09-11T08:00:00Z,AUTH001,evidence/identity/authentication.csv,username=analyst01 | source_ip=192.0.2.10 | event_type=LOGIN | result=SUCCESS | mfa_method=TOTP | device=WORKSTATION-01 | location=US
+2023-09-11T08:12:00Z,AUTH002,evidence/identity/authentication.csv,username=employee01 | source_ip=192.0.2.20 | event_type=LOGIN | result=FAILURE | mfa_method=NONE | device=WORKSTATION-02 | location=US
+2023-09-11T08:13:00Z,AUTH003,evidence/identity/authentication.csv,username=employee01 | source_ip=192.0.2.20 | event_type=LOGIN | result=FAILURE | mfa_method=NONE | device=WORKSTATION-02 | location=US
+2023-09-11T08:14:00Z,AUTH004,evidence/identity/authentication.csv,username=employee01 | source_ip=192.0.2.20 | event_type=LOGIN | result=FAILURE | mfa_method=NONE | device=WORKSTATION-02 | location=US
+2023-09-11T08:16:00Z,AUTH005,evidence/identity/authentication.csv,username=employee01 | source_ip=198.51.100.24 | event_type=LOGIN | result=SUCCESS | mfa_method=PUSH | device=UNKNOWN-DEVICE | location=UNKNOWN
+2023-09-11T08:16:00Z,END001,evidence/endpoint/endpoint-events.csv,hostname=UNKNOWN-DEVICE | username=employee01 | process_name=browser.exe | parent_process=explorer.exe | action=USER_SESSION | result=STARTED
+2023-09-11T08:16:00Z,NET001,evidence/network/network-events.csv,source_ip=198.51.100.24 | destination_ip=203.0.113.10 | destination_port=443 | protocol=TCP | event_type=HTTPS_CONNECTION
+2023-09-11T08:18:00Z,AUTH006,evidence/identity/authentication.csv,username=employee01 | source_ip=198.51.100.24 | event_type=MFA_REGISTRATION | result=SUCCESS | mfa_method=PUSH | device=UNKNOWN-DEVICE | location=UNKNOWN
+2023-09-11T08:21:00Z,AUTH007,evidence/identity/authentication.csv,username=employee01 | source_ip=198.51.100.24 | event_type=PRIVILEGE_CHANGE | result=SUCCESS | mfa_method=NONE | device=UNKNOWN-DEVICE | location=UNKNOWN
+2023-09-11T08:21:00Z,END002,evidence/endpoint/endpoint-events.csv,hostname=UNKNOWN-DEVICE | username=employee01 | process_name=admin-console.exe | parent_process=browser.exe | action=PRIVILEGE_ACCESS | result=SUCCESS
+2023-09-11T08:21:00Z,NET002,evidence/network/network-events.csv,source_ip=198.51.100.24 | destination_ip=203.0.113.20 | destination_port=443 | protocol=TCP | event_type=ADMIN_PORTAL_ACCESS
+2023-09-11T08:25:00Z,AUTH008,evidence/identity/authentication.csv,username=employee01 | source_ip=198.51.100.24 | event_type=ADMIN_ACCESS | result=SUCCESS | mfa_method=NONE | device=UNKNOWN-DEVICE | location=UNKNOWN
+2023-09-11T08:25:00Z,END003,evidence/endpoint/endpoint-events.csv,hostname=UNKNOWN-DEVICE | username=employee01 | process_name=powershell.exe | parent_process=admin-console.exe | action=PROCESS_START | result=OBSERVED
+2023-09-11T08:25:00Z,NET003,evidence/network/network-events.csv,source_ip=198.51.100.24 | destination_ip=203.0.113.30 | destination_port=443 | protocol=TCP | event_type=INTERNAL_API_ACCESS
+2023-09-11T08:27:00Z,END004,evidence/endpoint/endpoint-events.csv,hostname=UNKNOWN-DEVICE | username=employee01 | process_name=service-control.exe | parent_process=powershell.exe | action=SERVICE_ENUMERATION | result=OBSERVED
+2023-09-11T08:31:00Z,AUTH009,evidence/identity/authentication.csv,username=employee01 | source_ip=198.51.100.24 | event_type=SESSION_ACTIVITY | result=SUCCESS | mfa_method=NONE | device=UNKNOWN-DEVICE | location=UNKNOWN
+2023-09-11T08:31:00Z,END005,evidence/endpoint/endpoint-events.csv,hostname=UNKNOWN-DEVICE | username=employee01 | process_name=browser.exe | parent_process=explorer.exe | action=SESSION_ACTIVITY | result=OBSERVED
+2023-09-11T08:31:00Z,NET004,evidence/network/network-events.csv,source_ip=198.51.100.24 | destination_ip=203.0.113.40 | destination_port=443 | protocol=TCP | event_type=SESSION_ACTIVITY
+2023-09-11T09:00:00Z,AUTH010,evidence/identity/authentication.csv,username=analyst01 | source_ip=192.0.2.10 | event_type=LOGIN | result=SUCCESS | mfa_method=TOTP | device=WORKSTATION-01 | location=US
