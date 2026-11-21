@@ -1,0 +1,6 @@
+timestamp,event_id,hostname,username,process_name,parent_process,action,result
+2023-09-11T08:16:00Z,END001,UNKNOWN-DEVICE,employee01,browser.exe,explorer.exe,USER_SESSION,STARTED
+2023-09-11T08:21:00Z,END002,UNKNOWN-DEVICE,employee01,admin-console.exe,browser.exe,PRIVILEGE_ACCESS,SUCCESS
+2023-09-11T08:25:00Z,END003,UNKNOWN-DEVICE,employee01,powershell.exe,admin-console.exe,PROCESS_START,OBSERVED
+2023-09-11T08:27:00Z,END004,UNKNOWN-DEVICE,employee01,service-control.exe,powershell.exe,SERVICE_ENUMERATION,OBSERVED
+2023-09-11T08:31:00Z,END005,UNKNOWN-DEVICE,employee01,browser.exe,explorer.exe,SESSION_ACTIVITY,OBSERVED
