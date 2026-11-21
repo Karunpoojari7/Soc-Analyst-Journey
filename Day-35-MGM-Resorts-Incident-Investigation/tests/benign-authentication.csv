@@ -1,0 +1,3 @@
+timestamp,event_id,username,source_ip,event_type,result,mfa_method,device,location
+2023-09-11T10:00:00Z,TEST001,employee02,192.0.2.50,LOGIN,FAILURE,NONE,WORKSTATION-03,US
+2023-09-11T10:02:00Z,TEST002,employee02,192.0.2.50,LOGIN,SUCCESS,TOTP,WORKSTATION-03,US
