@@ -1,0 +1,6 @@
+event_id,timestamp_utc,hostname,username,process_name,event_type,severity
+E001,2026-11-19T08:14:00Z,Vendor-Server-01,vendor_user01,browser.exe,USER_SESSION,LOW
+E002,2026-11-19T08:20:00Z,Vendor-Server-01,vendor_admin,powershell.exe,PROCESS_START,MEDIUM
+E003,2026-11-19T08:22:00Z,Vendor-Server-01,vendor_admin,archive-tool.exe,FILE_ARCHIVE,HIGH
+E004,2026-11-19T08:26:00Z,Vendor-Server-01,vendor_admin,unknown.exe,PROCESS_START,HIGH
+E005,2026-11-19T09:00:00Z,Vendor-Server-02,vendor_user02,browser.exe,USER_SESSION,LOW
