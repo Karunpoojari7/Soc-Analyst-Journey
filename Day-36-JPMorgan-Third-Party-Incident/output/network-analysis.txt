@@ -1,0 +1,20 @@
+DAY 36 - NETWORK TRAFFIC INVESTIGATION
+Evidence: synthetic training dataset
+Network events reviewed: 5
+
+TOTAL OUTBOUND BYTES BY SOURCE
+192.0.2.10: 15,000 bytes
+192.0.2.15: 18,000 bytes
+198.51.100.24: 20,512,000 bytes
+
+HIGH-VOLUME CONNECTION FINDINGS
+HIGH-VOLUME CONNECTION: time=2026-11-19T08:25:00Z; source=198.51.100.24; destination=203.0.113.20; port=443; bytes_sent=8500000
+HIGH-VOLUME CONNECTION: time=2026-11-19T08:27:00Z; source=198.51.100.24; destination=203.0.113.20; port=443; bytes_sent=12000000
+
+INVESTIGATION LIMITATIONS
+- Byte volume alone does not prove data exfiltration.
+- Destination ownership has not been established.
+- Port 443 indicates the destination port, not verified TLS content.
+- Network records do not prove that customer data was transferred.
+- All IP addresses are documentation ranges.
+- The dataset is synthetic training evidence.
