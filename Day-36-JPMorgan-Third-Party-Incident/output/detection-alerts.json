@@ -1,0 +1,143 @@
+[
+    {
+        "rule_id": "D36-AUTH-001",
+        "severity": "MEDIUM",
+        "title": "Repeated failed logins followed by success",
+        "description": "vendor_user01 had 2 failed attempts followed by success from 198.51.100.24.",
+        "evidence": {
+            "username": "vendor_user01",
+            "source_ip": "198.51.100.24",
+            "failed_event_ids": [
+                "I002",
+                "I003"
+            ],
+            "success_event_id": "I004"
+        },
+        "status": "REQUIRES_ANALYST_REVIEW",
+        "evidence_type": "SYNTHETIC_TRAINING_DATA"
+    },
+    {
+        "rule_id": "D36-PRIV-001",
+        "severity": "HIGH",
+        "title": "Privilege grant from suspicious source",
+        "description": "Privilege grant originated from a source associated with suspicious authentication activity.",
+        "evidence": {
+            "event_id": "I006",
+            "username": "vendor_admin",
+            "source_ip": "198.51.100.24",
+            "timestamp_utc": "2026-11-19T08:20:00Z"
+        },
+        "status": "REQUIRES_ANALYST_REVIEW",
+        "evidence_type": "SYNTHETIC_TRAINING_DATA"
+    },
+    {
+        "rule_id": "D36-DATA-001",
+        "severity": "HIGH",
+        "title": "High-volume customer data export",
+        "description": "Export exceeded the configured training threshold.",
+        "evidence": {
+            "event_id": "D003",
+            "username": "vendor_user01",
+            "source_ip": "198.51.100.24",
+            "records_accessed": 1200,
+            "timestamp_utc": "2026-11-19T08:24:00Z"
+        },
+        "status": "REQUIRES_ANALYST_REVIEW",
+        "evidence_type": "SYNTHETIC_TRAINING_DATA"
+    },
+    {
+        "rule_id": "D36-DATA-001",
+        "severity": "HIGH",
+        "title": "High-volume customer data export",
+        "description": "Export exceeded the configured training threshold.",
+        "evidence": {
+            "event_id": "D004",
+            "username": "vendor_admin",
+            "source_ip": "198.51.100.24",
+            "records_accessed": 3500,
+            "timestamp_utc": "2026-11-19T08:26:00Z"
+        },
+        "status": "REQUIRES_ANALYST_REVIEW",
+        "evidence_type": "SYNTHETIC_TRAINING_DATA"
+    },
+    {
+        "rule_id": "D36-NET-001",
+        "severity": "HIGH",
+        "title": "Large outbound network connection",
+        "description": "Outbound connection exceeded the training threshold. Data exfiltration is not established.",
+        "evidence": {
+            "event_id": "N002",
+            "source_ip": "198.51.100.24",
+            "destination_ip": "203.0.113.20",
+            "destination_port": 443,
+            "bytes_sent": 8500000,
+            "timestamp_utc": "2026-11-19T08:25:00Z"
+        },
+        "status": "REQUIRES_ANALYST_REVIEW",
+        "evidence_type": "SYNTHETIC_TRAINING_DATA"
+    },
+    {
+        "rule_id": "D36-NET-001",
+        "severity": "HIGH",
+        "title": "Large outbound network connection",
+        "description": "Outbound connection exceeded the training threshold. Data exfiltration is not established.",
+        "evidence": {
+            "event_id": "N003",
+            "source_ip": "198.51.100.24",
+            "destination_ip": "203.0.113.20",
+            "destination_port": 443,
+            "bytes_sent": 12000000,
+            "timestamp_utc": "2026-11-19T08:27:00Z"
+        },
+        "status": "REQUIRES_ANALYST_REVIEW",
+        "evidence_type": "SYNTHETIC_TRAINING_DATA"
+    },
+    {
+        "rule_id": "D36-ENDPOINT-001",
+        "severity": "MEDIUM",
+        "title": "Endpoint process requires investigation",
+        "description": "Process requires analyst review; its name alone does not prove malicious execution.",
+        "evidence": {
+            "event_id": "E002",
+            "hostname": "Vendor-Server-01",
+            "username": "vendor_admin",
+            "process_name": "powershell.exe",
+            "event_type": "PROCESS_START",
+            "timestamp_utc": "2026-11-19T08:20:00Z"
+        },
+        "status": "REQUIRES_ANALYST_REVIEW",
+        "evidence_type": "SYNTHETIC_TRAINING_DATA"
+    },
+    {
+        "rule_id": "D36-ENDPOINT-001",
+        "severity": "MEDIUM",
+        "title": "Endpoint process requires investigation",
+        "description": "Process requires analyst review; its name alone does not prove malicious execution.",
+        "evidence": {
+            "event_id": "E003",
+            "hostname": "Vendor-Server-01",
+            "username": "vendor_admin",
+            "process_name": "archive-tool.exe",
+            "event_type": "FILE_ARCHIVE",
+            "timestamp_utc": "2026-11-19T08:22:00Z"
+        },
+        "status": "REQUIRES_ANALYST_REVIEW",
+        "evidence_type": "SYNTHETIC_TRAINING_DATA"
+    },
+    {
+        "rule_id": "D36-ENDPOINT-001",
+        "severity": "MEDIUM",
+        "title": "Endpoint process requires investigation",
+        "description": "Process requires analyst review; its name alone does not prove malicious execution.",
+        "evidence": {
+            "event_id": "E004",
+            "hostname": "Vendor-Server-01",
+            "username": "vendor_admin",
+            "process_name": "unknown.exe",
+            "event_type": "PROCESS_START",
+            "timestamp_utc": "2026-11-19T08:26:00Z"
+        },
+        "status": "REQUIRES_ANALYST_REVIEW",
+        "evidence_type": "SYNTHETIC_TRAINING_DATA"
+    }
+]

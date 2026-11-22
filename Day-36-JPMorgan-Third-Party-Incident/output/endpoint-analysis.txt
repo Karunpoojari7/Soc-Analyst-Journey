@@ -1,0 +1,21 @@
+DAY 36 - ENDPOINT INVESTIGATION
+Evidence: synthetic training dataset
+Endpoint events reviewed: 5
+
+PROCESS FREQUENCY
+archive-tool.exe: 1
+browser.exe: 2
+powershell.exe: 1
+unknown.exe: 1
+
+PROCESS INVESTIGATION FINDINGS
+REVIEW REQUIRED: time=2026-11-19T08:20:00Z; host=Vendor-Server-01; user=vendor_admin; process=powershell.exe; activity=PROCESS_START; severity=MEDIUM
+REVIEW REQUIRED: time=2026-11-19T08:22:00Z; host=Vendor-Server-01; user=vendor_admin; process=archive-tool.exe; activity=FILE_ARCHIVE; severity=HIGH
+REVIEW REQUIRED: time=2026-11-19T08:26:00Z; host=Vendor-Server-01; user=vendor_admin; process=unknown.exe; activity=PROCESS_START; severity=HIGH
+
+INVESTIGATION LIMITATIONS
+- Process names alone do not establish malicious execution.
+- No executable hashes or digital signatures are available.
+- No command-line arguments or parent-process details are available.
+- Archive activity requires file-level investigation.
+- Events are synthetic training evidence.
