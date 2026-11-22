@@ -1,0 +1,20 @@
+DAY 36 - CUSTOMER DATA ACCESS INVESTIGATION
+Evidence: synthetic training dataset
+Identity events reviewed: 7
+Data access events reviewed: 6
+
+ACTIVITY VOLUME BY ACCOUNT AND SOURCE
+vendor_admin | 198.51.100.24 | 3500 record-activity units
+vendor_user01 | 192.0.2.10 | 25 record-activity units
+vendor_user01 | 198.51.100.24 | 1350 record-activity units
+vendor_user02 | 192.0.2.15 | 50 record-activity units
+
+HIGH-VOLUME EXPORT FINDINGS
+HIGH-VOLUME EXPORT: account=vendor_user01; source=198.51.100.24; records=1200; time=2026-11-19T08:24:00Z
+
+INVESTIGATION LIMITATIONS
+- Record counts represent logged activity, not unique customers.
+- READ and EXPORT counts may overlap.
+- A large export is not proof of unauthorized exfiltration.
+- Shared source IPs do not prove the same person operated accounts.
+- The dataset is synthetic and does not represent real vendor logs.

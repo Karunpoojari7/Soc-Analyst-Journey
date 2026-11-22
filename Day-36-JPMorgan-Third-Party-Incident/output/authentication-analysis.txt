@@ -1,0 +1,18 @@
+DAY 36 - AUTHENTICATION INVESTIGATION
+Evidence: synthetic training dataset
+Total identity events: 7
+
+ACCOUNT SOURCE IP SUMMARY
+vendor_admin: 198.51.100.24
+vendor_user01: 192.0.2.10, 198.51.100.24
+vendor_user02: 192.0.2.15
+
+AUTHENTICATION FINDINGS
+SUCCESS AFTER FAILURES: vendor_user01 from 198.51.100.24; failed attempts=2; success time=2026-11-19T08:14:00Z
+
+INVESTIGATION LIMITATIONS
+- A successful login does not prove account compromise.
+- Source IP changes require contextual investigation.
+- MFA challenge success does not prove MFA manipulation.
+- All IP addresses are documentation ranges.
+- These events are synthetic training evidence.
