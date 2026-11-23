@@ -1,0 +1,6 @@
+event_id,timestamp,username,source_ip,endpoint,method,status
+A001,2026-11-23T09:20:00,officer_102,198.51.100.24,/records/search,POST,200
+A002,2026-11-23T09:21:00,officer_102,198.51.100.24,/records/search,POST,200
+A003,2026-11-23T09:22:00,officer_102,198.51.100.24,/records/export,POST,200
+A004,2026-11-23T09:25:00,admin_01,198.51.100.24,/admin/permissions,POST,200
+A005,2026-11-23T10:01:00,officer_205,192.0.2.15,/records/search,POST,200

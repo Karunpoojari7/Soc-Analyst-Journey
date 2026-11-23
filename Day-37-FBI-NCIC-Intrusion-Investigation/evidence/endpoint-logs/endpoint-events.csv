@@ -1,0 +1,6 @@
+event_id,timestamp,hostname,username,process,event_type
+E001,2026-11-23T09:16:00,TRAINING-WS01,officer_102,browser.exe,USER_SESSION
+E002,2026-11-23T09:23:00,TRAINING-WS01,officer_102,powershell.exe,PROCESS_START
+E003,2026-11-23T09:24:00,TRAINING-WS01,admin_01,archive-tool.exe,FILE_ARCHIVE
+E004,2026-11-23T09:28:00,TRAINING-WS01,admin_01,unknown.exe,PROCESS_START
+E005,2026-11-23T10:00:00,TRAINING-WS02,officer_205,browser.exe,USER_SESSION
