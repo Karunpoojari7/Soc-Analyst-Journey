@@ -1,0 +1,9 @@
+timestamp,user_id,device_id,event,browser,details
+2026-11-24T09:00:00,user_001,shared_pc_01,browser_opened,Chrome,Workstation started
+2026-11-24T09:02:00,user_001,shared_pc_01,web_login,Chrome,QR-based login completed
+2026-11-24T09:15:00,user_001,shared_pc_01,tab_closed,Chrome,Browser tab closed
+2026-11-24T09:20:00,user_002,shared_pc_01,browser_opened,Chrome,Another user accessed workstation
+2026-11-24T09:22:00,user_002,shared_pc_01,page_accessed,Chrome,Previously authenticated page accessed
+2026-11-24T10:00:00,user_003,personal_pc_02,browser_opened,Firefox,Personal workstation
+2026-11-24T10:02:00,user_003,personal_pc_02,web_login,Firefox,Training login event
+2026-11-24T10:30:00,user_003,personal_pc_02,logout,Firefox,Explicit logout completed

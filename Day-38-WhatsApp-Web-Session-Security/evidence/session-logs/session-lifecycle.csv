@@ -1,0 +1,7 @@
+timestamp,user_id,device_id,event,session_status,details
+2026-11-24T09:02:00,user_001,shared_pc_01,session_created,active,Synthetic authenticated session
+2026-11-24T09:15:00,user_001,shared_pc_01,browser_tab_closed,active,Tab closure did not revoke session
+2026-11-24T09:22:00,user_001,shared_pc_01,session_accessed,active,Synthetic access after tab closure
+2026-11-24T09:25:00,user_001,shared_pc_01,session_revoked,revoked,Training responder revoked session
+2026-11-24T10:02:00,user_003,personal_pc_02,session_created,active,Synthetic authenticated session
+2026-11-24T10:30:00,user_003,personal_pc_02,explicit_logout,terminated,Session explicitly terminated

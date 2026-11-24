@@ -1,0 +1,5 @@
+timestamp,user_id,device_id,event,recipient_count,details
+2026-11-24T09:05:00,user_001,shared_pc_01,message_sent,1,Normal training message
+2026-11-24T09:23:00,user_001,shared_pc_01,message_sent,18,Unexpected bulk messaging pattern
+2026-11-24T09:24:00,user_001,shared_pc_01,link_shared,18,Synthetic suspicious link distribution
+2026-11-24T10:10:00,user_003,personal_pc_02,message_sent,1,Normal training message
