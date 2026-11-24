@@ -1,0 +1,56 @@
+[
+    {
+        "rule_id": "WWA-001",
+        "severity": "MEDIUM",
+        "user_id": "user_001",
+        "device_id": "shared_pc_01",
+        "timestamp": "2026-11-24T09:15:00",
+        "description": "Browser tab closed while authenticated session remained active.",
+        "evidence_type": "synthetic_training_data"
+    },
+    {
+        "rule_id": "WWA-002",
+        "severity": "HIGH",
+        "user_id": "user_001",
+        "device_id": "shared_pc_01",
+        "timestamp": "2026-11-24T09:22:00",
+        "description": "Authenticated session accessed after browser tab closure.",
+        "evidence_type": "synthetic_training_data"
+    },
+    {
+        "rule_id": "WWA-003",
+        "severity": "HIGH",
+        "user_id": "user_001",
+        "device_id": "shared_pc_01",
+        "timestamp": "2026-11-24T09:23:00",
+        "description": "Unusual messaging volume: 18 recipients.",
+        "evidence_type": "synthetic_training_data"
+    },
+    {
+        "rule_id": "WWA-003",
+        "severity": "HIGH",
+        "user_id": "user_001",
+        "device_id": "shared_pc_01",
+        "timestamp": "2026-11-24T09:24:00",
+        "description": "Unusual messaging volume: 18 recipients.",
+        "evidence_type": "synthetic_training_data"
+    },
+    {
+        "rule_id": "WWA-004",
+        "severity": "MEDIUM",
+        "user_id": "user_001",
+        "device_id": "shared_pc_01",
+        "timestamp": "2026-11-24T09:23:00",
+        "description": "Suspicious account activity associated with a shared workstation.",
+        "evidence_type": "synthetic_training_data"
+    },
+    {
+        "rule_id": "WWA-004",
+        "severity": "MEDIUM",
+        "user_id": "user_001",
+        "device_id": "shared_pc_01",
+        "timestamp": "2026-11-24T09:24:00",
+        "description": "Suspicious account activity associated with a shared workstation.",
+        "evidence_type": "synthetic_training_data"
+    }
+]
