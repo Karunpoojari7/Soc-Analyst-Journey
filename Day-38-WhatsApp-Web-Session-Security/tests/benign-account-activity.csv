@@ -1,0 +1,6 @@
+timestamp,user_id,device_id,event,recipient_count,details
+2026-11-24T11:00:00,user_101,personal_pc_01,message_sent,1,Normal personal message
+2026-11-24T11:05:00,user_101,personal_pc_01,message_sent,3,Normal group communication
+2026-11-24T11:10:00,user_101,personal_pc_01,browser_tab_closed,0,Browser tab closed
+2026-11-24T11:15:00,user_102,personal_pc_02,message_sent,2,Normal communication
+2026-11-24T11:20:00,user_102,personal_pc_02,logout,0,Explicit session logout

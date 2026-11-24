@@ -1,0 +1,19 @@
+timestamp,source,user_id,device_id,event,details
+2026-11-24T09:00:00,browser,user_001,shared_pc_01,browser_opened,Workstation started
+2026-11-24T09:02:00,browser,user_001,shared_pc_01,web_login,QR-based login completed
+2026-11-24T09:02:00,session,user_001,shared_pc_01,session_created,Synthetic authenticated session
+2026-11-24T09:05:00,messaging,user_001,shared_pc_01,message_sent,Normal training message
+2026-11-24T09:15:00,browser,user_001,shared_pc_01,tab_closed,Browser tab closed
+2026-11-24T09:15:00,session,user_001,shared_pc_01,browser_tab_closed,Tab closure did not revoke session
+2026-11-24T09:20:00,browser,user_002,shared_pc_01,browser_opened,Another user accessed workstation
+2026-11-24T09:22:00,browser,user_002,shared_pc_01,page_accessed,Previously authenticated page accessed
+2026-11-24T09:22:00,session,user_001,shared_pc_01,session_accessed,Synthetic access after tab closure
+2026-11-24T09:23:00,messaging,user_001,shared_pc_01,message_sent,Unexpected bulk messaging pattern
+2026-11-24T09:24:00,messaging,user_001,shared_pc_01,link_shared,Synthetic suspicious link distribution
+2026-11-24T09:25:00,session,user_001,shared_pc_01,session_revoked,Training responder revoked session
+2026-11-24T10:00:00,browser,user_003,personal_pc_02,browser_opened,Personal workstation
+2026-11-24T10:02:00,browser,user_003,personal_pc_02,web_login,Training login event
+2026-11-24T10:02:00,session,user_003,personal_pc_02,session_created,Synthetic authenticated session
+2026-11-24T10:10:00,messaging,user_003,personal_pc_02,message_sent,Normal training message
+2026-11-24T10:30:00,browser,user_003,personal_pc_02,logout,Explicit logout completed
+2026-11-24T10:30:00,session,user_003,personal_pc_02,explicit_logout,Session explicitly terminated
