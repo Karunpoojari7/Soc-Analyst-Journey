@@ -1,0 +1,24 @@
+[
+  {
+    "alert_id": "D39-006",
+    "severity": "CRITICAL",
+    "category": "IAM",
+    "actor": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:03:01Z",
+    "resource": "research-role",
+    "event_id": "CL001",
+    "evidence": "Successful IAM role modification"
+  },
+  {
+    "alert_id": "D39-007",
+    "severity": "HIGH",
+    "category": "DATA_ACCESS",
+    "actor": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:06:00Z",
+    "resource": "research-bucket",
+    "event_id": "CL003",
+    "evidence": "Successful cloud storage export"
+  }
+]

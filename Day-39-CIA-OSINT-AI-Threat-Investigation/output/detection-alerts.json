@@ -1,0 +1,96 @@
+[
+  {
+    "alert_id": "D39-003",
+    "severity": "CRITICAL",
+    "username": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:03:01Z",
+    "evidence": "Role changed to elevated",
+    "event_id": "ID005",
+    "source_file": "authentication-alerts.json"
+  },
+  {
+    "alert_id": "D39-006",
+    "severity": "CRITICAL",
+    "category": "IAM",
+    "actor": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:03:01Z",
+    "resource": "research-role",
+    "event_id": "CL001",
+    "evidence": "Successful IAM role modification",
+    "source_file": "cloud-alerts.json"
+  },
+  {
+    "alert_id": "D39-001",
+    "severity": "HIGH",
+    "username": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:02:14Z",
+    "evidence": "2 failures followed by successful login",
+    "event_id": "ID004",
+    "source_file": "authentication-alerts.json"
+  },
+  {
+    "alert_id": "D39-004",
+    "severity": "HIGH",
+    "username": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:04:02Z",
+    "evidence": "3 API requests within 60 seconds",
+    "event_ids": [
+      "API001",
+      "API002",
+      "API003"
+    ],
+    "source_file": "api-alerts.json"
+  },
+  {
+    "alert_id": "D39-005",
+    "severity": "HIGH",
+    "username": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:04:03Z",
+    "evidence": "Export request for 250 records",
+    "event_ids": [
+      "API004"
+    ],
+    "source_file": "api-alerts.json"
+  },
+  {
+    "alert_id": "D39-007",
+    "severity": "HIGH",
+    "category": "DATA_ACCESS",
+    "actor": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:06:00Z",
+    "resource": "research-bucket",
+    "event_id": "CL003",
+    "evidence": "Successful cloud storage export",
+    "source_file": "cloud-alerts.json"
+  },
+  {
+    "alert_id": "D39-009",
+    "severity": "HIGH",
+    "category": "NETWORK",
+    "event_id": "NW002",
+    "source_ip": "198.51.100.20",
+    "destination_ip": "203.0.113.50",
+    "destination_port": "443",
+    "bytes_out": 85000000,
+    "evidence": "Outbound transfer exceeded 10 MB",
+    "source_file": "endpoint-network-alerts.json"
+  },
+  {
+    "alert_id": "D39-008",
+    "severity": "MEDIUM",
+    "category": "ENDPOINT",
+    "event_id": "EP003",
+    "hostname": "APP-SERVER-01",
+    "username": "service01",
+    "process": "curl",
+    "parent_process": "python",
+    "evidence": "curl process launched by Python",
+    "source_file": "endpoint-network-alerts.json"
+  }
+]
