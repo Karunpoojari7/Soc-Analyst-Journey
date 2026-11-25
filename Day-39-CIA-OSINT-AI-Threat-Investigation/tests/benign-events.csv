@@ -1,0 +1,7 @@
+event_id,timestamp,username,source_ip,event_type,endpoint,request_count,status,bytes_out
+BN001,2026-11-25T10:00:00Z,analyst01,192.0.2.10,login,/login,1,success,1200
+BN002,2026-11-25T10:02:00Z,analyst01,192.0.2.10,api_request,/api/search,1,success,2000
+BN003,2026-11-25T10:05:00Z,analyst02,192.0.2.30,api_request,/api/search,2,success,3000
+BN004,2026-11-25T10:10:00Z,service02,192.0.2.40,storage_access,/storage/reports,1,success,5000
+BN005,2026-11-25T10:15:00Z,analyst01,192.0.2.10,login,/login,1,success,1000
+BN006,2026-11-25T10:20:00Z,analyst02,192.0.2.30,api_request,/api/search,1,success,1500
