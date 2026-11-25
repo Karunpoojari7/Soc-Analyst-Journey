@@ -1,0 +1,4 @@
+event_id,timestamp,source_ip,destination_ip,destination_port,protocol,bytes_out,action
+NW001,2026-11-25T09:00:10Z,192.0.2.10,203.0.113.10,443,TCP,1200,allowed
+NW002,2026-11-25T09:07:00Z,198.51.100.20,203.0.113.50,443,TCP,85000000,allowed
+NW003,2026-11-25T09:12:00Z,192.0.2.30,203.0.113.10,443,TCP,2500,allowed
