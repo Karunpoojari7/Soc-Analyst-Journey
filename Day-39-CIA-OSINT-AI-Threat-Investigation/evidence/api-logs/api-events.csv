@@ -1,0 +1,6 @@
+event_id,timestamp,username,source_ip,endpoint,method,status_code,request_count
+API001,2026-11-25T09:04:00Z,service01,198.51.100.20,/api/search,GET,200,1
+API002,2026-11-25T09:04:01Z,service01,198.51.100.20,/api/search,GET,200,1
+API003,2026-11-25T09:04:02Z,service01,198.51.100.20,/api/search,GET,200,1
+API004,2026-11-25T09:04:03Z,service01,198.51.100.20,/api/records/export,POST,200,250
+API005,2026-11-25T09:11:00Z,analyst02,192.0.2.30,/api/search,GET,200,1

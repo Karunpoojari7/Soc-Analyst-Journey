@@ -1,0 +1,5 @@
+event_id,timestamp,actor,source_ip,event_type,resource,result
+CL001,2026-11-25T09:03:01Z,service01,198.51.100.20,iam_role_change,research-role,success
+CL002,2026-11-25T09:05:00Z,service01,198.51.100.20,storage_access,research-bucket,success
+CL003,2026-11-25T09:06:00Z,service01,198.51.100.20,storage_export,research-bucket,success
+CL004,2026-11-25T09:12:00Z,analyst02,192.0.2.30,storage_access,public-reports,success
