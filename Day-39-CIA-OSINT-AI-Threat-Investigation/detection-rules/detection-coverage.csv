@@ -1,0 +1,9 @@
+rule_id,category,description,initial_severity,validation_status
+D39-001,Identity,Repeated failures followed by success,HIGH,synthetic_test
+D39-003,Identity,Privilege modification,CRITICAL,manual_review
+D39-004,API,Rapid API requests,HIGH,benign_threshold_test
+D39-005,API,Bulk API export,HIGH,benign_threshold_test
+D39-006,Cloud,IAM role modification,CRITICAL,manual_review
+D39-007,Cloud,Cloud storage export,HIGH,manual_review
+D39-008,Endpoint,Python launches curl,MEDIUM,manual_review
+D39-009,Network,Large outbound transfer,HIGH,benign_threshold_test
