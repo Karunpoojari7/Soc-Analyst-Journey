@@ -1,0 +1,26 @@
+[
+  {
+    "alert_id": "D39-004",
+    "severity": "HIGH",
+    "username": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:04:02Z",
+    "evidence": "3 API requests within 60 seconds",
+    "event_ids": [
+      "API001",
+      "API002",
+      "API003"
+    ]
+  },
+  {
+    "alert_id": "D39-005",
+    "severity": "HIGH",
+    "username": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:04:03Z",
+    "evidence": "Export request for 250 records",
+    "event_ids": [
+      "API004"
+    ]
+  }
+]

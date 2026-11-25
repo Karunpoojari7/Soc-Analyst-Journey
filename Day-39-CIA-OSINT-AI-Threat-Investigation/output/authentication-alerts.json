@@ -1,0 +1,20 @@
+[
+  {
+    "alert_id": "D39-001",
+    "severity": "HIGH",
+    "username": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:02:14Z",
+    "evidence": "2 failures followed by successful login",
+    "event_id": "ID004"
+  },
+  {
+    "alert_id": "D39-003",
+    "severity": "CRITICAL",
+    "username": "service01",
+    "source_ip": "198.51.100.20",
+    "timestamp": "2026-11-25T09:03:01Z",
+    "evidence": "Role changed to elevated",
+    "event_id": "ID005"
+  }
+]
