@@ -1,0 +1,20 @@
+[
+  {
+    "alert_id": "D40-CI-001",
+    "timestamp": "2026-11-26T15:57:58.043026+00:00",
+    "file": ".github/workflows/weak-workflow.yml",
+    "rule": "CI001",
+    "severity": "HIGH",
+    "evidence": "permissions: write-all",
+    "description": "Workflow grants broad write permissions."
+  },
+  {
+    "alert_id": "D40-CI-002",
+    "timestamp": "2026-11-26T15:57:58.043448+00:00",
+    "file": ".github/workflows/weak-workflow.yml",
+    "rule": "CI003",
+    "severity": "MEDIUM",
+    "evidence": "actions/checkout@v4",
+    "description": "Action uses a floating reference instead of a full commit SHA."
+  }
+]

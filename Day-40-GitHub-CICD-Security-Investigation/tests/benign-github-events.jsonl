@@ -1,0 +1,6 @@
+{"event_id":"BEN001","timestamp":"2026-11-26T10:00:00Z","actor":"developer01","action":"repo.clone","repository":"training-app","source_ip":"192.0.2.10","status":"success"}
+{"event_id":"BEN002","timestamp":"2026-11-26T10:05:00Z","actor":"developer01","action":"git.push","repository":"training-app","source_ip":"192.0.2.10","status":"success"}
+{"event_id":"BEN003","timestamp":"2026-11-26T10:10:00Z","actor":"developer01","action":"token.created","repository":"training-app","source_ip":"192.0.2.10","status":"success"}
+{"event_id":"BEN004","timestamp":"2026-11-26T10:15:00Z","actor":"developer02","action":"repo.permission.changed","repository":"training-app","source_ip":"192.0.2.11","permission":"write","status":"success"}
+{"event_id":"BEN005","timestamp":"2026-11-26T10:20:00Z","actor":"developer01","action":"workflow.run","repository":"training-app","source_ip":"192.0.2.10","status":"success"}
+{"event_id":"BEN006","timestamp":"2026-11-26T10:25:00Z","actor":"developer01","action":"token.revoked","repository":"training-app","source_ip":"192.0.2.10","status":"success"}

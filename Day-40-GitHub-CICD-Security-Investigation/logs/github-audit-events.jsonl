@@ -1,0 +1,8 @@
+{"event_id":"EVT001","timestamp":"2026-11-26T09:00:00Z","actor":"developer01","action":"repo.clone","repository":"training-app","source_ip":"192.0.2.10","token_type":"fine_grained","status":"success"}
+{"event_id":"EVT002","timestamp":"2026-11-26T09:05:00Z","actor":"developer01","action":"git.push","repository":"training-app","source_ip":"192.0.2.10","token_type":"fine_grained","status":"success"}
+{"event_id":"EVT003","timestamp":"2026-11-26T09:10:00Z","actor":"unknown-user","action":"token.created","repository":"training-app","source_ip":"198.51.100.25","token_type":"classic","status":"success"}
+{"event_id":"EVT004","timestamp":"2026-11-26T09:12:00Z","actor":"unknown-user","action":"repo.permission.changed","repository":"training-app","source_ip":"198.51.100.25","permission":"admin","status":"success"}
+{"event_id":"EVT005","timestamp":"2026-11-26T09:15:00Z","actor":"unknown-user","action":"workflow.modified","repository":"training-app","source_ip":"198.51.100.25","file":".github/workflows/deploy.yml","status":"success"}
+{"event_id":"EVT006","timestamp":"2026-11-26T09:18:00Z","actor":"unknown-user","action":"workflow.run","repository":"training-app","source_ip":"198.51.100.25","workflow":"deploy.yml","status":"success"}
+{"event_id":"EVT007","timestamp":"2026-11-26T09:25:00Z","actor":"developer01","action":"repo.clone","repository":"training-app","source_ip":"192.0.2.10","token_type":"fine_grained","status":"success"}
+{"event_id":"EVT008","timestamp":"2026-11-26T09:30:00Z","actor":"developer01","action":"token.revoked","repository":"training-app","source_ip":"192.0.2.10","status":"success"}

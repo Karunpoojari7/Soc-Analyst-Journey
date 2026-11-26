@@ -1,0 +1,42 @@
+[
+  {
+    "incident_id": "D40-V2-001",
+    "timestamp": "2026-11-26T09:10:00Z",
+    "event_id": "EVT003",
+    "actor": "unknown-user",
+    "action": "token.created",
+    "repository": "training-app",
+    "source_ip": "198.51.100.25",
+    "status": "success"
+  },
+  {
+    "incident_id": "D40-V2-001",
+    "timestamp": "2026-11-26T09:12:00Z",
+    "event_id": "EVT004",
+    "actor": "unknown-user",
+    "action": "repo.permission.changed",
+    "repository": "training-app",
+    "source_ip": "198.51.100.25",
+    "status": "success"
+  },
+  {
+    "incident_id": "D40-V2-001",
+    "timestamp": "2026-11-26T09:15:00Z",
+    "event_id": "EVT005",
+    "actor": "unknown-user",
+    "action": "workflow.modified",
+    "repository": "training-app",
+    "source_ip": "198.51.100.25",
+    "status": "success"
+  },
+  {
+    "incident_id": "D40-V2-001",
+    "timestamp": "2026-11-26T09:18:00Z",
+    "event_id": "EVT006",
+    "actor": "unknown-user",
+    "action": "workflow.run",
+    "repository": "training-app",
+    "source_ip": "198.51.100.25",
+    "status": "success"
+  }
+]

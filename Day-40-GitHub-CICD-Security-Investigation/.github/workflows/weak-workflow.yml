@@ -1,0 +1,17 @@
+name: Insecure Training Workflow
+
+on:
+  workflow_dispatch:
+
+permissions: write-all
+
+jobs:
+  training:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Run training script
+        run: echo "Training workflow executed"

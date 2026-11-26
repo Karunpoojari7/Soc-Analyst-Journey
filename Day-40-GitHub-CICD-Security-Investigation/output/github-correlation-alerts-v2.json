@@ -1,0 +1,18 @@
+[
+  {
+    "alert_id": "D40-V2-001",
+    "severity": "HIGH",
+    "actor": "unknown-user",
+    "repository": "training-app",
+    "source_ip": "198.51.100.25",
+    "correlated_events": [
+      "EVT003",
+      "EVT004",
+      "EVT005",
+      "EVT006"
+    ],
+    "sequence_duration_seconds": 480.0,
+    "detection_rule": "STRICT_TOKEN_PERMISSION_WORKFLOW_CHAIN",
+    "assessment": "Ordered suspicious activity sequence detected. Analyst validation required; not proof of compromise."
+  }
+]
