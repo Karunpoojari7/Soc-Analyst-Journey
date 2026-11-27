@@ -1,0 +1,9 @@
+=================================================================
+DAY 41 — DETECTION SCENARIO TESTS
+=================================================================
+[PASS] Repeated failures followed by success | Expected: 1 | Actual: 1
+[PASS] Legitimate successful login | Expected: 0 | Actual: 0
+[PASS] Slow failures outside correlation window | Expected: 0 | Actual: 0
+[PASS] Failures and success from different IP addresses | Expected: 0 | Actual: 0
+=================================================================
+RESULT: 4/4 tests passed
