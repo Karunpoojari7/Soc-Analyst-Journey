@@ -1,0 +1,7 @@
+{"id": "API001", "timestamp": "2026-11-27T09:09:00Z", "source_ip": "198.51.100.77", "method": "GET", "path": "/robots.txt", "status_code": 200}
+{"id": "API002", "timestamp": "2026-11-27T09:09:02Z", "source_ip": "198.51.100.77", "method": "GET", "path": "/api/v1/status", "status_code": 200}
+{"id": "API003", "timestamp": "2026-11-27T09:09:04Z", "source_ip": "198.51.100.77", "method": "GET", "path": "/api/v1/assets", "status_code": 200}
+{"id": "API004", "timestamp": "2026-11-27T09:09:06Z", "source_ip": "198.51.100.77", "method": "GET", "path": "/api/v1/users", "status_code": 403}
+{"id": "API005", "timestamp": "2026-11-27T09:09:08Z", "source_ip": "198.51.100.77", "method": "GET", "path": "/api/v1/config", "status_code": 200}
+{"id": "API006", "timestamp": "2026-11-27T09:13:00Z", "source_ip": "198.51.100.77", "method": "POST", "path": "/api/v1/admin/settings", "status_code": 200}
+{"id": "API007", "timestamp": "2026-11-27T09:21:00Z", "source_ip": "192.0.2.44", "method": "GET", "path": "/api/v1/status", "status_code": 200}
