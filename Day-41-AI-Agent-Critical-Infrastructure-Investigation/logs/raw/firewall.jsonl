@@ -1,0 +1,5 @@
+{"id": "FW001", "timestamp": "2026-11-27T09:08:58Z", "source_ip": "198.51.100.77", "destination": "web-gateway:443", "action": "ALLOW"}
+{"id": "FW002", "timestamp": "2026-11-27T09:09:01Z", "source_ip": "198.51.100.77", "destination": "api-gateway:443", "action": "ALLOW"}
+{"id": "FW003", "timestamp": "2026-11-27T09:11:00Z", "source_ip": "198.51.100.77", "destination": "admin-service:8443", "action": "ALLOW"}
+{"id": "FW004", "timestamp": "2026-11-27T09:14:00Z", "source_ip": "198.51.100.77", "destination": "control-network:502", "action": "BLOCK"}
+{"id": "FW005", "timestamp": "2026-11-27T09:22:00Z", "source_ip": "192.0.2.44", "destination": "web-gateway:443", "action": "ALLOW"}

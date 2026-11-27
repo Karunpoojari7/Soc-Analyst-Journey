@@ -1,0 +1,68 @@
+[
+  {
+    "rule_id": "DET001",
+    "severity": "HIGH",
+    "source_ip": "198.51.100.77",
+    "evidence": [
+      "AUTH002",
+      "AUTH003",
+      "AUTH004",
+      "AUTH005"
+    ],
+    "description": "Repeated authentication failures followed by success."
+  },
+  {
+    "rule_id": "DET002",
+    "severity": "HIGH",
+    "source_ip": "198.51.100.77",
+    "evidence": [
+      "API006"
+    ],
+    "description": "Successful administrative API endpoint access."
+  },
+  {
+    "rule_id": "DET003",
+    "severity": "MEDIUM",
+    "source_ip": "198.51.100.77",
+    "evidence": [
+      "FW004"
+    ],
+    "description": "Connection attempt targeting the control network.",
+    "firewall_action": "BLOCK"
+  },
+  {
+    "rule_id": "DET004",
+    "severity": "HIGH",
+    "source_ip": "198.51.100.77",
+    "evidence": [
+      "AUTH002",
+      "AUTH003",
+      "AUTH004",
+      "AUTH005",
+      "AUTH006",
+      "API001",
+      "API002",
+      "API003",
+      "API004",
+      "API005",
+      "API006",
+      "FW001",
+      "FW002",
+      "FW003",
+      "FW004"
+    ],
+    "description": "Activity correlated across authentication, API and firewall logs."
+  },
+  {
+    "rule_id": "DET004",
+    "severity": "HIGH",
+    "source_ip": "192.0.2.44",
+    "evidence": [
+      "AUTH001",
+      "AUTH007",
+      "API007",
+      "FW005"
+    ],
+    "description": "Activity correlated across authentication, API and firewall logs."
+  }
+]
