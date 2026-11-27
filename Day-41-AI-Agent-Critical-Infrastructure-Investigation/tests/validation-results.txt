@@ -1,0 +1,74 @@
+DAY 41 — VALIDATION RESULTS
+===========================
+Fri Nov 27 03:17:42 PM UTC 2026
+
+1. Python syntax validation
+PASS
+
+2. Detection engine
+Infrastructure Detection Engine
+===============================
+Authentication events: 7
+API events: 7
+Firewall events: 5
+Total alerts: 5
+DET001 | HIGH | 198.51.100.77 | Repeated authentication failures followed by success.
+DET002 | HIGH | 198.51.100.77 | Successful administrative API endpoint access.
+DET003 | MEDIUM | 198.51.100.77 | Connection attempt targeting the control network.
+DET004 | HIGH | 192.0.2.44 | Activity correlated across authentication, API and firewall logs.
+DET004 | HIGH | 198.51.100.77 | Activity correlated across authentication, API and firewall logs.
+Output: output/infrastructure-alerts.json
+
+3. Detection validation
+Total alerts: 5
+Detected rules: ['DET001', 'DET002', 'DET003', 'DET004']
+PASS: All four detection rules generated alerts.
+PASS: Alert schema validation.
+
+4. Incident correlation
+Incidents created: 2
+INC-DAY41-001 198.51.100.77 HIGH ['DET001', 'DET002', 'DET003', 'DET004']
+INC-DAY41-002 192.0.2.44 HIGH ['DET004']
+
+5. Timeline generation
+Timeline generated: output/incident-timeline.json
+Events: 19
+2026-11-27T09:00:00Z authentication.jsonl AUTH001 192.0.2.44
+2026-11-27T09:08:58Z firewall.jsonl FW001 198.51.100.77
+2026-11-27T09:09:00Z api-access.jsonl API001 198.51.100.77
+2026-11-27T09:09:01Z firewall.jsonl FW002 198.51.100.77
+2026-11-27T09:09:02Z api-access.jsonl API002 198.51.100.77
+2026-11-27T09:09:04Z api-access.jsonl API003 198.51.100.77
+2026-11-27T09:09:06Z api-access.jsonl API004 198.51.100.77
+2026-11-27T09:09:08Z api-access.jsonl API005 198.51.100.77
+2026-11-27T09:10:00Z authentication.jsonl AUTH002 198.51.100.77
+2026-11-27T09:10:08Z authentication.jsonl AUTH003 198.51.100.77
+2026-11-27T09:10:16Z authentication.jsonl AUTH004 198.51.100.77
+2026-11-27T09:10:24Z authentication.jsonl AUTH005 198.51.100.77
+2026-11-27T09:11:00Z firewall.jsonl FW003 198.51.100.77
+2026-11-27T09:12:00Z authentication.jsonl AUTH006 198.51.100.77
+2026-11-27T09:13:00Z api-access.jsonl API006 198.51.100.77
+2026-11-27T09:14:00Z firewall.jsonl FW004 198.51.100.77
+2026-11-27T09:20:00Z authentication.jsonl AUTH007 192.0.2.44
+2026-11-27T09:21:00Z api-access.jsonl API007 192.0.2.44
+2026-11-27T09:22:00Z firewall.jsonl FW005 192.0.2.44
+
+6. Evidence hashing
+054d56c161c48bcfad763ce2d113d48b5743bc6220a311552306586600437c9d logs/raw/authentication.jsonl
+ee2b877c0192b91d1911e58289bc180087393e097891e01557a9a4ced103dc4a logs/raw/api-access.jsonl
+c26a7859ef86ad76abe9bf8d3657f3e5357c42757c5089ea4a241ce3292ec243 logs/raw/firewall.jsonl
+4184fb25939df5fb4607d5ab9f1bf1da2897fbd3ad9445d122ba8e0e993edce2 output/infrastructure-alerts.json
+b5624f48b56db03ca6be4d3e64e9ec57e71d836747b3d4c4949b6d7cfad686a6 output/correlated-incidents.json
+92235b5b64c9d74db10917da3768f247c90d7ea45a2f0f29396ddf62d03907bc output/incident-timeline.json
+
+Manifest: evidence/sha256-manifest.txt
+
+7. Evidence integrity verification
+logs/raw/authentication.jsonl: OK
+logs/raw/api-access.jsonl: OK
+logs/raw/firewall.jsonl: OK
+output/infrastructure-alerts.json: OK
+output/correlated-incidents.json: OK
+output/incident-timeline.json: OK
+
+VALIDATION COMMANDS COMPLETED
