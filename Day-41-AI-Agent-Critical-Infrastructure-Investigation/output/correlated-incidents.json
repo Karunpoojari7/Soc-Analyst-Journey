@@ -1,0 +1,85 @@
+[
+  {
+    "incident_id": "INC-DAY41-001",
+    "source_ip": "192.0.2.44",
+    "window_seconds": 600,
+    "start_time": "2026-11-27T09:00:00Z",
+    "end_time": "2026-11-27T09:00:00Z",
+    "log_sources": [
+      "authentication.jsonl"
+    ],
+    "event_count": 1,
+    "evidence_ids": [
+      "AUTH001"
+    ],
+    "detection_rules": [
+      "DET004"
+    ],
+    "severity": "HIGH",
+    "cross_source_activity": false,
+    "assessment": "Suspicious activity detected in one log source."
+  },
+  {
+    "incident_id": "INC-DAY41-002",
+    "source_ip": "192.0.2.44",
+    "window_seconds": 600,
+    "start_time": "2026-11-27T09:20:00Z",
+    "end_time": "2026-11-27T09:22:00Z",
+    "log_sources": [
+      "api-access.jsonl",
+      "authentication.jsonl",
+      "firewall.jsonl"
+    ],
+    "event_count": 3,
+    "evidence_ids": [
+      "API007",
+      "AUTH007",
+      "FW005"
+    ],
+    "detection_rules": [
+      "DET004"
+    ],
+    "severity": "HIGH",
+    "cross_source_activity": true,
+    "assessment": "Suspicious activity correlated across multiple log sources."
+  },
+  {
+    "incident_id": "INC-DAY41-003",
+    "source_ip": "198.51.100.77",
+    "window_seconds": 600,
+    "start_time": "2026-11-27T09:08:58Z",
+    "end_time": "2026-11-27T09:14:00Z",
+    "log_sources": [
+      "api-access.jsonl",
+      "authentication.jsonl",
+      "firewall.jsonl"
+    ],
+    "event_count": 15,
+    "evidence_ids": [
+      "API001",
+      "API002",
+      "API003",
+      "API004",
+      "API005",
+      "API006",
+      "AUTH002",
+      "AUTH003",
+      "AUTH004",
+      "AUTH005",
+      "AUTH006",
+      "FW001",
+      "FW002",
+      "FW003",
+      "FW004"
+    ],
+    "detection_rules": [
+      "DET001",
+      "DET002",
+      "DET003",
+      "DET004"
+    ],
+    "severity": "HIGH",
+    "cross_source_activity": true,
+    "assessment": "Suspicious activity correlated across multiple log sources."
+  }
+]
